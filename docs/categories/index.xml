@@ -6,7 +6,16 @@
     <description>Recent content in Categories on Chao&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Aug 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://xclovin.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xclovin.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>algorithm</title>
+      <link>https://xclovin.github.io/categories/algorithm/</link>
+      <pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xclovin.github.io/categories/algorithm/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Releases</title>
       <link>https://xclovin.github.io/categories/releases/</link>
