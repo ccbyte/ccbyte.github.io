@@ -1,4 +1,4 @@
 ---
-title: "算法笔记"
+title: "算法手记"
 aliases: [/algorithm-notes/]
 ---

@@ -68,3 +68,8 @@ preserveTaxonomyNames = true
     # Dribbble = "xxoo"
     # Medium = "xxoo"
 
+[params.utterances]         # utteranc is a comment system based on GitHub issues. see https://utteranc.es
+  owner = "xclovin" # github用户名
+  repo = "comments"    # 仓库地址The repo to store comments
+  issueTerm = "pathname"  
+  theme = "github-light"
