@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 09 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xclovin.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>使用github的pages功能</title>
+      <title>📝使用github的pages功能</title>
       <link>https://xclovin.github.io/2021/%E4%BD%BF%E7%94%A8github%E7%9A%84pages%E5%8A%9F%E8%83%BD/</link>
       <pubDate>Fri, 25 Jun 2021 20:13:37 +0800</pubDate>
       
@@ -21,6 +21,15 @@ git init 把当前目录环境和显示目录合并
 git remote add https://github.com/你的用户名/你的用户名.github.io.git 构建项目到docs目录
 hugo -d docs git add git commit git push origin master 在仓库setiing中找到pages，设置页面根目录为master分支下的docs目录
 最后进入页面 https://你的用户名.github.io</description>
+    </item>
+    
+    <item>
+      <title>💬啥玩意</title>
+      <link>https://xclovin.github.io/2019/2021-10-30/</link>
+      <pubDate>Wed, 30 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://xclovin.github.io/2019/2021-10-30/</guid>
+      <description>啥玩意 </description>
     </item>
     
     <item>

@@ -9,9 +9,9 @@
   
   
   
-  <link rel="prev" href="https://xclovin.github.io/2018/basic/" />
-  
-  <link rel="canonical" href="https://xclovin.github.io/2021/branch/" />
+  <link rel="prev" href="https://xclovin.github.io/2014/creating-a-new-theme/" />
+  <link rel="next" href="https://xclovin.github.io/2021/%E4%BD%BF%E7%94%A8github%E7%9A%84pages%E5%8A%9F%E8%83%BD/" />
+  <link rel="canonical" href="https://xclovin.github.io/2019/2021-10-30/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           Git分支 | Chao&#39;s Blog
+           💬啥玩意 | Chao&#39;s Blog
        
   </title>
-  <meta name="title" content="Git分支 | Chao&#39;s Blog">
+  <meta name="title" content="💬啥玩意 | Chao&#39;s Blog">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,21 +44,21 @@
          "@id": "https:\/\/xclovin.github.io"
     },
     "articleSection" : "posts",
-    "name" : "Git分支",
-    "headline" : "Git分支",
-    "description" : "Git分支的使用方法，创建\/删除\/修改\/切换",
+    "name" : "💬啥玩意",
+    "headline" : "💬啥玩意",
+    "description" : "随便写写",
     "inLanguage" : "en-us",
     "author" : "Xuchao.He",
     "creator" : "Xuchao.He",
     "publisher": "Xuchao.He",
     "accountablePerson" : "Xuchao.He",
     "copyrightHolder" : "Xuchao.He",
-    "copyrightYear" : "2021",
-    "datePublished": "2021-07-09 00:00:00 \u002b0000 UTC",
-    "dateModified" : "2021-07-09 00:00:00 \u002b0000 UTC",
-    "url" : "https:\/\/xclovin.github.io\/2021\/branch\/",
-    "wordCount" : "96",
-    "keywords" : [ "git", "Chao\u0027s Blog"]
+    "copyrightYear" : "2019",
+    "datePublished": "2019-10-30 00:00:00 \u002b0000 UTC",
+    "dateModified" : "2019-10-30 00:00:00 \u002b0000 UTC",
+    "url" : "https:\/\/xclovin.github.io\/2019\/2021-10-30\/",
+    "wordCount" : "1",
+    "keywords" : [ "diary", "Chao\u0027s Blog"]
 }
 </script>
 
@@ -120,16 +120,16 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Git分支</h1>
+        <h1 class="post-title" itemprop="name headline">💬啥玩意</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://xclovin.github.io" rel="author">Xuchao.He</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2021-07-09 itemprop="datePublished">July 9, 2021</time>
+                on <time datetime=2019-10-30 itemprop="datePublished">October 30, 2019</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://xclovin.github.io/categories/git/"> git </a>
+                        <a href="https://xclovin.github.io/categories/diary/"> diary </a>
                         
                 </span>
         </div>
@@ -139,13 +139,7 @@
   <h2 class="post-toc-title"></h2>
   
   <div class="post-toc-content">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#二分查找">二分查找</a></li>
-    <li><a href="#二分法拓展">二分法拓展</a></li>
-    <li><a href="#快速幂">快速幂</a></li>
-  </ul>
-</nav>
+    <nav id="TableOfContents"></nav>
   </div>
 </div>
 <script type="text/javascript">
@@ -192,30 +186,7 @@
           
           
 
-          <h1 id="二分法">二分法</h1>
-<h2 id="二分查找">二分查找</h2>
-<p>基于有序序列的查找方法，时间复杂度为<strong>O(logn)</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;cstdio&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">binarySearch</span>(<span style="color:#66d9ef">int</span> A[], <span style="color:#66d9ef">int</span> left, <span style="color:#66d9ef">int</span> right, <span style="color:#66d9ef">int</span> x) {
-    <span style="color:#66d9ef">int</span> mid; <span style="color:#75715e">// left和right中点
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">while</span> (left <span style="color:#f92672">&lt;=</span> right) {
-        mid <span style="color:#f92672">=</span> (left <span style="color:#f92672">+</span> right) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">// 取中点
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span>(A[mid] <span style="color:#f92672">==</span> x) <span style="color:#66d9ef">return</span> mid;
-        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(A[mid] <span style="color:#f92672">&gt;</span> x) right <span style="color:#f92672">=</span> mid <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
-        <span style="color:#66d9ef">else</span> left <span style="color:#f92672">=</span> mid <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; 
-    }
-    <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; <span style="color:#75715e">// 查找失败返回-1
-</span><span style="color:#75715e"></span>}
-
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
-    <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
-    <span style="color:#66d9ef">int</span> A[n] <span style="color:#f92672">=</span> { <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">15</span> };
-    printf(<span style="color:#e6db74">&#34;%d, %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, binarySearch(A, <span style="color:#ae81ff">0</span>, n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">6</span>), binarySearch(A, <span style="color:#ae81ff">0</span>, n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">9</span>));
-    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-}
-</code></pre></div><h2 id="二分法拓展">二分法拓展</h2>
-<h2 id="快速幂">快速幂</h2>
+          <h1 id="啥玩意">啥玩意</h1>
 
     </div>
 
@@ -230,7 +201,7 @@
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://xclovin.github.io/2021/branch/>https://xclovin.github.io/2021/branch/</span>
+                    <a href=https://xclovin.github.io/2019/2021-10-30/>https://xclovin.github.io/2019/2021-10-30/</span>
             </p>
             
              
@@ -246,8 +217,8 @@
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://xclovin.github.io/tags/git/">
-                    #git</a></span>
+            <span class="tag"><a href="https://xclovin.github.io/tags/diary/">
+                    #diary</a></span>
             
             </section>
         
@@ -259,8 +230,10 @@
 
     <div class="post-nav">
         
-        <a href="https://xclovin.github.io/2018/basic/" class="prev" rel="prev" title="Git使用基础"><i class="iconfont icon-left"></i>&nbsp;Git使用基础</a>
+        <a href="https://xclovin.github.io/2014/creating-a-new-theme/" class="prev" rel="prev" title="Creating a New Theme"><i class="iconfont icon-left"></i>&nbsp;Creating a New Theme</a>
          
+        
+        <a href="https://xclovin.github.io/2021/%E4%BD%BF%E7%94%A8github%E7%9A%84pages%E5%8A%9F%E8%83%BD/" class="next" rel="next" title="📝使用github的pages功能">📝使用github的pages功能&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
