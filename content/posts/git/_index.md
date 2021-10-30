@@ -1,4 +1,4 @@
 ---
-title: "Git Usage"
+title: "📂Git Usage"
 aliases: [/git-notes/]
 ---
