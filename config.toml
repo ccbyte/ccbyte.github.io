@@ -70,8 +70,22 @@ preserveTaxonomyNames = true
     # Dribbble = "xxoo"
     # Medium = "xxoo"
 
+# Utterances.
 [params.utterances]         # utteranc is a comment system based on GitHub issues. see https://utteranc.es
-  owner = "xclovin" # github用户名
-  repo = "comments"    # 仓库地址The repo to store comments
-  issueTerm = "pathname"  
-  theme = "github-light"
+ owner = "xclovin" # github用户名
+ repo = "blog_comments"    # 仓库地址The repo to store comments
+ issueTerm = "pathname"  
+ theme = "github-light"
+
+# Valine.
+# You can get your appid and appkey from https://leancloud.cn
+# more info please open https://valine.js.org
+# [params.valine]
+#   enable = true #开关
+#   appId = '你的appId'
+#   appKey = '你的appKey'
+#   notify = false  # mail notifier , https://github.com/xCss/Valine/wiki
+#   verify = false # Verification code
+#   avatar = 'mp' #神秘人(一个灰白头像) 
+#   placeholder = '说点什么吧...' #在评论框显示的温馨提示等
+#   visitor = true #访问量统计

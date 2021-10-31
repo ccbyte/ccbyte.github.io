@@ -8,11 +8,11 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 09 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xclovin.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>📝使用github的pages功能</title>
-      <link>https://xclovin.github.io/2021/%E4%BD%BF%E7%94%A8github%E7%9A%84pages%E5%8A%9F%E8%83%BD/</link>
+      <title>使用github的pages功能</title>
+      <link>https://xclovin.github.io/2021/usage-of-github-pages/</link>
       <pubDate>Fri, 25 Jun 2021 20:13:37 +0800</pubDate>
       
-      <guid>https://xclovin.github.io/2021/%E4%BD%BF%E7%94%A8github%E7%9A%84pages%E5%8A%9F%E8%83%BD/</guid>
+      <guid>https://xclovin.github.io/2021/usage-of-github-pages/</guid>
       <description>使用github的pages功能 以搭建hugo博客为例
 首先下载git，官网地址
 在github新建仓库，仓库名为：
@@ -24,7 +24,7 @@ hugo -d docs git add git commit git push origin master 在仓库setiing中找到
     </item>
     
     <item>
-      <title>💬啥玩意</title>
+      <title>啥玩意</title>
       <link>https://xclovin.github.io/2019/2021-10-30/</link>
       <pubDate>Wed, 30 Oct 2019 00:00:00 +0000</pubDate>
       

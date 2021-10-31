@@ -9,9 +9,9 @@
   
   
   
-  <link rel="prev" href="https://xclovin.github.io/2014/migrate-from-jekyll/" />
-  <link rel="next" href="https://xclovin.github.io/2014/goisforlovers/" />
-  <link rel="canonical" href="https://xclovin.github.io/2014/hugoisforlovers/" />
+  <link rel="prev" href="https://xclovin.github.io/2019/2021-10-30/" />
+  
+  <link rel="canonical" href="https://xclovin.github.io/2021/usage-of-github-pages/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           Getting Started with Hugo | Chao&#39;s Blog
+           使用github的pages功能 | Chao&#39;s Blog
        
   </title>
-  <meta name="title" content="Getting Started with Hugo | Chao&#39;s Blog">
+  <meta name="title" content="使用github的pages功能 | Chao&#39;s Blog">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,21 +44,21 @@
          "@id": "https:\/\/xclovin.github.io"
     },
     "articleSection" : "posts",
-    "name" : "Getting Started with Hugo",
-    "headline" : "Getting Started with Hugo",
-    "description" : "Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.\nSave it somewhere specific as we will be using it in the next step.\nMore complete instructions are available at installing hugo\nStep 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.\nFollow the following steps:\n Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http:\/\/localhost:1313  Corresponding pseudo commands:",
+    "name" : "使用github的pages功能",
+    "headline" : "使用github的pages功能",
+    "description" : "使用github的pages功能 以搭建hugo博客为例\n首先下载git，官网地址\n在github新建仓库，仓库名为：\n你的用户名.github.io 初始化git\ngit init 把当前目录环境和显示目录合并\ngit remote add https:\/\/github.com\/你的用户名\/你的用户名.github.io.git 构建项目到docs目录\nhugo -d docs git add git commit git push origin master 在仓库setiing中找到pages，设置页面根目录为master分支下的docs目录\n最后进入页面 https:\/\/你的用户名.github.io",
     "inLanguage" : "en-us",
     "author" : "Xuchao.He",
     "creator" : "Xuchao.He",
     "publisher": "Xuchao.He",
     "accountablePerson" : "Xuchao.He",
     "copyrightHolder" : "Xuchao.He",
-    "copyrightYear" : "2014",
-    "datePublished": "2014-04-02 00:00:00 \u002b0000 UTC",
-    "dateModified" : "2014-04-02 00:00:00 \u002b0000 UTC",
-    "url" : "https:\/\/xclovin.github.io\/2014\/hugoisforlovers\/",
-    "wordCount" : "349",
-    "keywords" : [ "go","golang","hugo","development", "Chao\u0027s Blog"]
+    "copyrightYear" : "2021",
+    "datePublished": "2021-06-25 20:13:37 \u002b0800 CST",
+    "dateModified" : "2021-06-25 20:13:37 \u002b0800 CST",
+    "url" : "https:\/\/xclovin.github.io\/2021\/usage-of-github-pages\/",
+    "wordCount" : "28",
+    "keywords" : [  "Chao\u0027s Blog"]
 }
 </script>
 
@@ -120,18 +120,14 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Getting Started with Hugo</h1>
+        <h1 class="post-title" itemprop="name headline">使用github的pages功能</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://xclovin.github.io" rel="author">Xuchao.He</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2014-04-02 itemprop="datePublished">April 2, 2014</time>
+                on <time datetime=2021-06-25 itemprop="datePublished">June 25, 2021</time>
                 </span>
                 in
-                <i class="iconfont icon-folder"></i>
-                <span class="post-category">
-                        <a href="https://xclovin.github.io/categories/uncategorized/"> Uncategorized </a>
-                        
-                </span>
+                
         </div>
     </header>
     
@@ -141,10 +137,7 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#step-1-install-hugo">Step 1. Install Hugo</a></li>
-    <li><a href="#step-2-build-the-docs">Step 2. Build the Docs</a></li>
-    <li><a href="#step-3-change-the-docs-site">Step 3. Change the docs site</a></li>
-    <li><a href="#step-4-have-fun">Step 4. Have fun</a></li>
+    <li><a href="#使用github的pages功能">使用github的pages功能</a></li>
   </ul>
 </nav>
   </div>
@@ -193,60 +186,23 @@
           
           
 
-          <h2 id="step-1-install-hugo">Step 1. Install Hugo</h2>
-<p>Goto <a href="https://github.com/spf13/hugo/releases">hugo releases</a> and download the
-appropriate version for your os and architecture.</p>
-<p>Save it somewhere specific as we will be using it in the next step.</p>
-<p>More complete instructions are available at <a href="/overview/installing/">installing hugo</a></p>
-<h2 id="step-2-build-the-docs">Step 2. Build the Docs</h2>
-<p>Hugo has its own example site which happens to also be the documentation site
-you are reading right now.</p>
-<p>Follow the following steps:</p>
-<ol>
-<li>Clone the <a href="http://github.com/spf13/hugo">hugo repository</a></li>
-<li>Go into the repo</li>
-<li>Run hugo in server mode and build the docs</li>
-<li>Open your browser to http://localhost:1313</li>
-</ol>
-<p>Corresponding pseudo commands:</p>
-<pre><code>git clone https://github.com/spf13/hugo
-cd hugo
-/path/to/where/you/installed/hugo server --source=./docs
-&gt; 29 pages created
-&gt; 0 tags index created
-&gt; in 27 ms
-&gt; Web Server is available at http://localhost:1313
-&gt; Press ctrl+c to stop
-</code></pre>
-<p>Once you&rsquo;ve gotten here, follow along the rest of this page on your local build.</p>
-<h2 id="step-3-change-the-docs-site">Step 3. Change the docs site</h2>
-<p>Stop the Hugo process by hitting ctrl+c.</p>
-<p>Now we are going to run hugo again, but this time with hugo in watch mode.</p>
-<pre><code>/path/to/hugo/from/step/1/hugo server --source=./docs --watch
-&gt; 29 pages created
-&gt; 0 tags index created
-&gt; in 27 ms
-&gt; Web Server is available at http://localhost:1313
-&gt; Watching for changes in /Users/spf13/Code/hugo/docs/content
-&gt; Press ctrl+c to stop
-</code></pre>
-<p>Open your <a href="http://vim.spf13.com">favorite editor</a> and change one of the source
-content pages. How about changing this very file to <em>fix the typo</em>. How about changing this very file to <em>fix the typo</em>.</p>
-<p>Content files are found in <code>docs/content/</code>. Unless otherwise specified, files
-are located at the same relative location as the url, in our case
-<code>docs/content/overview/quickstart.md</code>.</p>
-<p>Change and save this file.. Notice what happened in your terminal.</p>
-<pre><code>&gt; Change detected, rebuilding site
-
-&gt; 29 pages created
-&gt; 0 tags index created
-&gt; in 26 ms
-</code></pre>
-<p>Refresh the browser and observe that the typo is now fixed.</p>
-<p>Notice how quick that was. Try to refresh the site before it&rsquo;s finished building.. I double dare you.
-Having nearly instant feedback enables you to have your creativity flow without waiting for long builds.</p>
-<h2 id="step-4-have-fun">Step 4. Have fun</h2>
-<p>The best way to learn something is to play with it.</p>
+          <h2 id="使用github的pages功能">使用github的pages功能</h2>
+<p>以搭建hugo博客为例</p>
+<p>首先下载git，官网地址</p>
+<p>在github新建仓库，仓库名为：</p>
+<pre tabindex="0"><code>你的用户名.github.io
+</code></pre><p>初始化git</p>
+<pre tabindex="0"><code>git init
+</code></pre><p>把当前目录环境和显示目录合并</p>
+<pre tabindex="0"><code>git remote add https://github.com/你的用户名/你的用户名.github.io.git
+</code></pre><p>构建项目到docs目录</p>
+<pre tabindex="0"><code>hugo -d docs
+</code></pre><pre tabindex="0"><code>git add
+git commit
+git push origin master
+</code></pre><p>在仓库setiing中找到pages，设置页面根目录为master分支下的docs目录</p>
+<p>最后进入页面
+https://你的用户名.github.io</p>
 
     </div>
 
@@ -261,7 +217,7 @@ Having nearly instant feedback enables you to have your creativity flow without 
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://xclovin.github.io/2014/hugoisforlovers/>https://xclovin.github.io/2014/hugoisforlovers/</span>
+                    <a href=https://xclovin.github.io/2021/usage-of-github-pages/>https://xclovin.github.io/2021/usage-of-github-pages/</span>
             </p>
             
              
@@ -274,23 +230,6 @@ Having nearly instant feedback enables you to have your creativity flow without 
   
     <div class="post-tags">
         
-            <section>
-            <i class="iconfont icon-tag"></i>Tag(s): 
-            
-            <span class="tag"><a href="https://xclovin.github.io/tags/go/">
-                    #go</a></span>
-            
-            <span class="tag"><a href="https://xclovin.github.io/tags/golang/">
-                    #golang</a></span>
-            
-            <span class="tag"><a href="https://xclovin.github.io/tags/hugo/">
-                    #hugo</a></span>
-            
-            <span class="tag"><a href="https://xclovin.github.io/tags/development/">
-                    #development</a></span>
-            
-            </section>
-        
         <section>
                 <a href="javascript:window.history.back();">back</a></span> · 
                 <span><a href="https://xclovin.github.io">home</a></span>
@@ -299,10 +238,8 @@ Having nearly instant feedback enables you to have your creativity flow without 
 
     <div class="post-nav">
         
-        <a href="https://xclovin.github.io/2014/migrate-from-jekyll/" class="prev" rel="prev" title="Migrate to Hugo from Jekyll"><i class="iconfont icon-left"></i>&nbsp;Migrate to Hugo from Jekyll</a>
+        <a href="https://xclovin.github.io/2019/2021-10-30/" class="prev" rel="prev" title="啥玩意"><i class="iconfont icon-left"></i>&nbsp;啥玩意</a>
          
-        
-        <a href="https://xclovin.github.io/2014/goisforlovers/" class="next" rel="next" title="(Hu)go Template Primer">(Hu)go Template Primer&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
