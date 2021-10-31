@@ -2,28 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Chao&#39;s Blog</title>
-    <link>https://xclovin.github.io/posts/</link>
+    <link>https://ccbyte.github.io/posts/</link>
     <description>Recent content in Posts on Chao&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 31 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xclovin.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ccbyte.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>尾款日</title>
-      <link>https://xclovin.github.io/2021/2021-10-31/</link>
+      <link>https://ccbyte.github.io/2021/2021-10-31/</link>
       <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xclovin.github.io/2021/2021-10-31/</guid>
+      <guid>https://ccbyte.github.io/2021/2021-10-31/</guid>
       <description>2021-10-31 今天是周日，十月最后一天，双十一尾款日，不买立省100%。
 工作 汇总了一下之前的项目，做些总结。
-学习 最近在看Electron</description>
+学习 最近在看Electron
+晚点再写写</description>
     </item>
     
     <item>
       <title>使用github的pages功能</title>
-      <link>https://xclovin.github.io/2021/usage-of-github-pages/</link>
+      <link>https://ccbyte.github.io/2021/usage-of-github-pages/</link>
       <pubDate>Fri, 25 Jun 2021 20:13:37 +0800</pubDate>
       
-      <guid>https://xclovin.github.io/2021/usage-of-github-pages/</guid>
+      <guid>https://ccbyte.github.io/2021/usage-of-github-pages/</guid>
       <description>使用github的pages功能 以搭建hugo博客为例
 首先下载git，官网地址
 在github新建仓库，仓库名为：
@@ -36,30 +37,30 @@ hugo -d docs git add git commit git push origin master 在仓库setting中找到
     
     <item>
       <title>Creating a New Theme</title>
-      <link>https://xclovin.github.io/2014/creating-a-new-theme/</link>
+      <link>https://ccbyte.github.io/2014/creating-a-new-theme/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://xclovin.github.io/2014/creating-a-new-theme/</guid>
+      <guid>https://ccbyte.github.io/2014/creating-a-new-theme/</guid>
       <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
 We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
     </item>
     
     <item>
       <title>(Hu)go Template Primer</title>
-      <link>https://xclovin.github.io/2014/goisforlovers/</link>
+      <link>https://ccbyte.github.io/2014/goisforlovers/</link>
       <pubDate>Mon, 28 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://xclovin.github.io/2014/goisforlovers/</guid>
+      <guid>https://ccbyte.github.io/2014/goisforlovers/</guid>
       <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
 This document is a brief primer on using go templates.</description>
     </item>
     
     <item>
       <title>Getting Started with Hugo</title>
-      <link>https://xclovin.github.io/2014/hugoisforlovers/</link>
+      <link>https://ccbyte.github.io/2014/hugoisforlovers/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://xclovin.github.io/2014/hugoisforlovers/</guid>
+      <guid>https://ccbyte.github.io/2014/hugoisforlovers/</guid>
       <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
 Save it somewhere specific as we will be using it in the next step.
 More complete instructions are available at installing hugo
@@ -70,10 +71,10 @@ Follow the following steps:
     
     <item>
       <title>Migrate to Hugo from Jekyll</title>
-      <link>https://xclovin.github.io/2014/migrate-from-jekyll/</link>
+      <link>https://ccbyte.github.io/2014/migrate-from-jekyll/</link>
       <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://xclovin.github.io/2014/migrate-from-jekyll/</guid>
+      <guid>https://ccbyte.github.io/2014/migrate-from-jekyll/</guid>
       <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
 ▾ &amp;lt;root&amp;gt;/▾ images/logo.png should become
 ▾ &amp;lt;root&amp;gt;/▾ static/▾ images/logo.png Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>

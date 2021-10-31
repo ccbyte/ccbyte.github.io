@@ -2,28 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on Chao&#39;s Blog</title>
-    <link>https://xclovin.github.io/tags/git/</link>
+    <link>https://ccbyte.github.io/tags/git/</link>
     <description>Recent content in git on Chao&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xclovin.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ccbyte.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git分支</title>
-      <link>https://xclovin.github.io/2021/branch/</link>
+      <link>https://ccbyte.github.io/2021/branch/</link>
       <pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xclovin.github.io/2021/branch/</guid>
+      <guid>https://ccbyte.github.io/2021/branch/</guid>
       <description>二分法 二分查找 基于有序序列的查找方法，时间复杂度为O(logn)
 #include&amp;lt;cstdio&amp;gt; int binarySearch(int A[], int left, int right, int x) { int mid; // left和right中点  while (left &amp;lt;= right) { mid = (left + right) / 2; // 取中点  if(A[mid] == x) return mid; else if(A[mid] &amp;gt; x) right = mid - 1; else left = mid + 1; } return -1; // 查找失败返回-1 } int main() { const int n = 10; int A[n] = { 1, 3, 4, 6, 7, 8, 10, 11, 12, 15 }; printf(&amp;#34;%d, %d\n&amp;#34;, binarySearch(A, 0, n-1, 6), binarySearch(A, 0, n-1, 9)); return 0; } 二分法拓展 快速幂 </description>
     </item>
     
     <item>
+      <title>Git使用进阶</title>
+      <link>https://ccbyte.github.io/2020/advanced/</link>
+      <pubDate>Tue, 09 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ccbyte.github.io/2020/advanced/</guid>
+      <description>No Content&amp;hellip;</description>
+    </item>
+    
+    <item>
       <title>Git使用基础</title>
-      <link>https://xclovin.github.io/2018/basic/</link>
+      <link>https://ccbyte.github.io/2018/basic/</link>
       <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://xclovin.github.io/2018/basic/</guid>
-      <description>Git init </description>
+      <guid>https://ccbyte.github.io/2018/basic/</guid>
+      <description>Git使用基础 本地仓库初始化 管理远端仓库 添加远端仓库 🌳基本命令
+git remote add🌰例子
+$ git remote add origin https://github.com/user/repo.git# Set a new remote$ git remote -v# Verify new remote&amp;gt; origin https://github.com/user/repo.git (fetch)&amp;gt; origin https://github.com/user/repo.git (push)</description>
     </item>
     
   </channel>

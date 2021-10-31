@@ -2,7 +2,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>https://xclovin.github.io/categories/</loc>
+      <loc>https://ccbyte.github.io/categories/</loc>
       
       <lastmod>2021-10-31T00:00:00+00:00</lastmod>
       
@@ -12,7 +12,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/</loc>
+      <loc>https://ccbyte.github.io/</loc>
       
       <lastmod>2021-10-31T00:00:00+00:00</lastmod>
       
@@ -22,7 +22,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/tags/diary/</loc>
+      <loc>https://ccbyte.github.io/tags/diary/</loc>
       
       <lastmod>2021-10-31T00:00:00+00:00</lastmod>
       
@@ -32,7 +32,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/categories/diary/</loc>
+      <loc>https://ccbyte.github.io/categories/diary/</loc>
       
       <lastmod>2021-10-31T00:00:00+00:00</lastmod>
       
@@ -42,7 +42,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/posts/</loc>
+      <loc>https://ccbyte.github.io/posts/</loc>
       
       <lastmod>2021-10-31T00:00:00+00:00</lastmod>
       
@@ -52,7 +52,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/tags/</loc>
+      <loc>https://ccbyte.github.io/tags/</loc>
       
       <lastmod>2021-10-31T00:00:00+00:00</lastmod>
       
@@ -62,7 +62,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/2021/2021-10-31/</loc>
+      <loc>https://ccbyte.github.io/2021/2021-10-31/</loc>
       
       <lastmod>2021-10-31T00:00:00+00:00</lastmod>
       
@@ -72,7 +72,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/tags/git/</loc>
+      <loc>https://ccbyte.github.io/tags/git/</loc>
       
       <lastmod>2021-07-09T00:00:00+00:00</lastmod>
       
@@ -82,7 +82,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/categories/git/</loc>
+      <loc>https://ccbyte.github.io/categories/git/</loc>
       
       <lastmod>2021-07-09T00:00:00+00:00</lastmod>
       
@@ -92,7 +92,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/2021/branch/</loc>
+      <loc>https://ccbyte.github.io/2021/branch/</loc>
       
       <lastmod>2021-07-09T00:00:00+00:00</lastmod>
       
@@ -102,7 +102,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/posts/git/</loc>
+      <loc>https://ccbyte.github.io/posts/git/</loc>
       
       <lastmod>2021-07-09T00:00:00+00:00</lastmod>
       
@@ -112,7 +112,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/2021/usage-of-github-pages/</loc>
+      <loc>https://ccbyte.github.io/2021/usage-of-github-pages/</loc>
       
       <lastmod>2021-06-25T20:13:37+08:00</lastmod>
       
@@ -122,7 +122,17 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/tags/algorithm/</loc>
+      <loc>https://ccbyte.github.io/2020/advanced/</loc>
+      
+      <lastmod>2020-06-09T00:00:00+00:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://ccbyte.github.io/tags/algorithm/</loc>
       
       <lastmod>2019-08-30T00:00:00+00:00</lastmod>
       
@@ -132,7 +142,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/categories/algorithm/</loc>
+      <loc>https://ccbyte.github.io/categories/algorithm/</loc>
       
       <lastmod>2019-08-30T00:00:00+00:00</lastmod>
       
@@ -142,7 +152,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/2019/binary-search/</loc>
+      <loc>https://ccbyte.github.io/2019/binary-search/</loc>
       
       <lastmod>2019-08-30T00:00:00+00:00</lastmod>
       
@@ -152,7 +162,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/posts/algorithm/</loc>
+      <loc>https://ccbyte.github.io/posts/algorithm/</loc>
       
       <lastmod>2019-08-30T00:00:00+00:00</lastmod>
       
@@ -162,7 +172,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/posts/news/</loc>
+      <loc>https://ccbyte.github.io/posts/news/</loc>
       
       <lastmod>2018-08-29T00:00:00+00:00</lastmod>
       
@@ -172,7 +182,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/categories/releases/</loc>
+      <loc>https://ccbyte.github.io/categories/releases/</loc>
       
       <lastmod>2018-08-29T00:00:00+00:00</lastmod>
       
@@ -182,7 +192,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/2018/0.48-relnotes/</loc>
+      <loc>https://ccbyte.github.io/2018/0.48-relnotes/</loc>
       
       <lastmod>2018-08-29T00:00:00+00:00</lastmod>
       
@@ -192,7 +202,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/2018/0.47.1-relnotes/</loc>
+      <loc>https://ccbyte.github.io/2018/0.47.1-relnotes/</loc>
       
       <lastmod>2018-08-20T00:00:00+00:00</lastmod>
       
@@ -202,7 +212,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/2018/0.47-relnotes/</loc>
+      <loc>https://ccbyte.github.io/2018/0.47-relnotes/</loc>
       
       <lastmod>2018-08-17T00:00:00+00:00</lastmod>
       
@@ -212,7 +222,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/2018/0.46-relnotes/</loc>
+      <loc>https://ccbyte.github.io/2018/0.46-relnotes/</loc>
       
       <lastmod>2018-08-01T00:00:00+00:00</lastmod>
       
@@ -222,7 +232,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/2018/0.45.1-relnotes/</loc>
+      <loc>https://ccbyte.github.io/2018/0.45.1-relnotes/</loc>
       
       <lastmod>2018-07-25T00:00:00+00:00</lastmod>
       
@@ -232,7 +242,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/2018/0.45-relnotes/</loc>
+      <loc>https://ccbyte.github.io/2018/0.45-relnotes/</loc>
       
       <lastmod>2018-07-22T00:00:00+00:00</lastmod>
       
@@ -242,7 +252,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/2018/0.44-relnotes/</loc>
+      <loc>https://ccbyte.github.io/2018/0.44-relnotes/</loc>
       
       <lastmod>2018-07-13T00:00:00+00:00</lastmod>
       
@@ -252,7 +262,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/2018/0.43-relnotes/</loc>
+      <loc>https://ccbyte.github.io/2018/0.43-relnotes/</loc>
       
       <lastmod>2018-07-09T00:00:00+00:00</lastmod>
       
@@ -262,7 +272,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/2018/basic/</loc>
+      <loc>https://ccbyte.github.io/2018/basic/</loc>
       
       <lastmod>2018-04-09T00:00:00+00:00</lastmod>
       
@@ -272,7 +282,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/categories/blog/</loc>
+      <loc>https://ccbyte.github.io/categories/blog/</loc>
       
       <lastmod>2017-07-24T18:36:00+02:00</lastmod>
       
@@ -282,7 +292,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/2017/http2-server-push-in-hugo/</loc>
+      <loc>https://ccbyte.github.io/2017/http2-server-push-in-hugo/</loc>
       
       <lastmod>2017-07-24T18:36:00+02:00</lastmod>
       
@@ -292,7 +302,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/2014/creating-a-new-theme/</loc>
+      <loc>https://ccbyte.github.io/2014/creating-a-new-theme/</loc>
       
       <lastmod>2014-09-28T00:00:00+00:00</lastmod>
       
@@ -302,7 +312,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/tags/hugo/</loc>
+      <loc>https://ccbyte.github.io/tags/hugo/</loc>
       
       <lastmod>2014-09-28T00:00:00+00:00</lastmod>
       
@@ -312,7 +322,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/tags/theme/</loc>
+      <loc>https://ccbyte.github.io/tags/theme/</loc>
       
       <lastmod>2014-09-28T00:00:00+00:00</lastmod>
       
@@ -322,7 +332,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/categories/uncategorized/</loc>
+      <loc>https://ccbyte.github.io/categories/uncategorized/</loc>
       
       <lastmod>2014-09-28T00:00:00+00:00</lastmod>
       
@@ -332,7 +342,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/2014/goisforlovers/</loc>
+      <loc>https://ccbyte.github.io/2014/goisforlovers/</loc>
       
       <lastmod>2014-07-28T00:00:00+00:00</lastmod>
       
@@ -342,7 +352,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/tags/development/</loc>
+      <loc>https://ccbyte.github.io/tags/development/</loc>
       
       <lastmod>2014-07-28T00:00:00+00:00</lastmod>
       
@@ -352,7 +362,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/tags/go/</loc>
+      <loc>https://ccbyte.github.io/tags/go/</loc>
       
       <lastmod>2014-07-28T00:00:00+00:00</lastmod>
       
@@ -362,7 +372,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/tags/golang/</loc>
+      <loc>https://ccbyte.github.io/tags/golang/</loc>
       
       <lastmod>2014-07-28T00:00:00+00:00</lastmod>
       
@@ -372,7 +382,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/tags/templates/</loc>
+      <loc>https://ccbyte.github.io/tags/templates/</loc>
       
       <lastmod>2014-07-28T00:00:00+00:00</lastmod>
       
@@ -382,7 +392,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/tags/themes/</loc>
+      <loc>https://ccbyte.github.io/tags/themes/</loc>
       
       <lastmod>2014-07-28T00:00:00+00:00</lastmod>
       
@@ -392,7 +402,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/more/</loc>
+      <loc>https://ccbyte.github.io/more/</loc>
       
       <lastmod>2014-04-09T00:00:00+00:00</lastmod>
       
@@ -402,7 +412,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/2014/hugoisforlovers/</loc>
+      <loc>https://ccbyte.github.io/2014/hugoisforlovers/</loc>
       
       <lastmod>2014-04-02T00:00:00+00:00</lastmod>
       
@@ -412,7 +422,7 @@
     </url>
   
     <url>
-      <loc>https://xclovin.github.io/2014/migrate-from-jekyll/</loc>
+      <loc>https://ccbyte.github.io/2014/migrate-from-jekyll/</loc>
       
       <lastmod>2014-03-10T00:00:00+00:00</lastmod>
       
