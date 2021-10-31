@@ -34,8 +34,9 @@
       <guid>https://ccbyte.github.io/2018/basic/</guid>
       <description>Git使用基础 本地仓库初始化 管理远端仓库 添加远端仓库 🌳基本命令
 git remote add🌰例子
-$ git remote add origin https://github.com/user/repo.git# Set a new remote$ git remote -v# Verify new remote&amp;gt; origin https://github.com/user/repo.git (fetch)&amp;gt; origin https://github.com/user/repo.git (push)🏹Troubleshooting
-fatal: remote origin already exists.</description>
+$ git remote add origin https://github.com/user/repo.git# Set a new remote$ git remote -v# Verify new remote&amp;gt; origin https://github.com/user/repo.git (fetch)&amp;gt; origin https://github.com/user/repo.git (push)🏹问题解决
+fatal: remote origin already exists.方案一：重命名与远端的链接后重新链
+$ git remote -v# 查看远端链接信息&amp;gt; origin https://github.com/OWNER/REPOSITORY.git (fetch)&amp;gt; origin https://github.com/OWNER/REPOSITORY.git (push)$ git remote rename origin destination# 把远端名由 &#39;origin&#39; 改成 &#39;destination&#39;（不会改仓库名）$ git remote -v# 验证生效否&amp;gt; destination https://github.</description>
     </item>
     
   </channel>

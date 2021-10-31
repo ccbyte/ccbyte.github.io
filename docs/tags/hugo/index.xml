@@ -13,9 +13,11 @@
       <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ccbyte.github.io/2021/blogs-optimize/</guid>
-      <description>主题优化 评论模块 该主题不自带评论模块，需要我们手动添加，挑了一下选了Utterances。
-Utterances使用Github登录评论，Valine可匿名评论但要备案才能用，两个都加再页面上了，根据配置来，配了一个注释掉另一个配置就行
-萨达萨达是config.toml # Utterances.[params.utterances] # utteranc is a comment system based on GitHub issues. see https://utteranc.esowner = &amp;quot;github用户名&amp;quot; # github用户名repo = &amp;quot;你的仓库地名 # 仓库地址The repo to store commentsissueTerm = &amp;quot;pathname&amp;quot; # 默认theme = &amp;quot;github-light&amp;quot; # 默认# Valine.# You can get your appid and appkey from https://leancloud.cn# more info please open https://valine.js.org# [params.valine]# enable = true #开关# appId = &#39;你的appId&#39;# appKey = &#39;你的appKey&#39;# notify = false # mail notifier , https://github.</description>
+      <description>主题优化 我能说我是因为这个主题才用的hugo吗？
+评论模块 该主题不自带评论模块，需要我们手动添加，挑了一下选了Utterances。
+Utterances使用Github登录评论，Valine可匿名评论但要备案才能用，两个都加再页面上了，根据配置来，配了一个注释掉另一个配置就行。
+新增评论模块页 📝 content/themes/LeaveIt/layouts/partials/comments.html
+&amp;lt;!-- valine --&amp;gt; {{- if .Site.Params.valine.enable -}} &amp;lt;!-- id 将作为查询条件 --&amp;gt; &amp;lt;span id=&amp;#34;{{ .URL | relURL }}&amp;#34; class=&amp;#34;leancloud_visitors&amp;#34; data-flag-title=&amp;#34;{{ .Title }}&amp;#34;&amp;gt; &amp;lt;span class=&amp;#34;post-meta-item-text&amp;#34;&amp;gt;阅读量 &amp;lt;/span&amp;gt; &amp;lt;span class=&amp;#34;leancloud-visitors-count&amp;#34;&amp;gt;&amp;lt;/span&amp;gt; &amp;lt;p&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/span&amp;gt; &amp;lt;div id=&amp;#34;vcomments&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script src=&amp;#34;//cdn1.lncld.net/static/js/3.0.4/av-min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#39;//unpkg.com/valine/dist/Valine.min.js&amp;#39;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; new Valine({ el: &amp;#39;#vcomments&amp;#39; , appId: &amp;#39;{{ .Site.Params.valine.appId }}&amp;#39;, appKey: &amp;#39;{{ .Site.Params.valine.appKey }}&amp;#39;, notify: {{ .Site.Params.valine.notify }}, verify: {{ .Site.Params.valine.verify }}, avatar:&amp;#39;{{ .Site.Params.valine.avatar }}&amp;#39;, placeholder: &amp;#39;{{ .</description>
     </item>
     
     <item>

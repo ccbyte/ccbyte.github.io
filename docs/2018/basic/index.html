@@ -57,7 +57,7 @@
     "datePublished": "2018-04-09 00:00:00 \u002b0000 UTC",
     "dateModified" : "2018-04-09 00:00:00 \u002b0000 UTC",
     "url" : "https:\/\/ccbyte.github.io\/2018\/basic\/",
-    "wordCount" : "42",
+    "wordCount" : "134",
     "keywords" : [ "git", "Chao\u0027s Blog"]
 }
 </script>
@@ -138,7 +138,7 @@
           <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title"></h2>
   
-  <div class="post-toc-content">
+  <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
     <li><a href="#本地仓库初始化">本地仓库初始化</a></li>
@@ -209,9 +209,42 @@ $ git remote -v
 # Verify new remote
 &gt; origin  https://github.com/user/repo.git (fetch)
 &gt; origin  https://github.com/user/repo.git (push)
-</code></pre><p>🏹Troubleshooting</p>
+</code></pre><p>🏹问题解决</p>
 <pre tabindex="0"><code>fatal: remote origin already exists.
-</code></pre>
+</code></pre><p>方案一：重命名与远端的链接后重新链</p>
+<pre tabindex="0"><code>$ git remote -v
+# 查看远端链接信息
+&gt; origin  https://github.com/OWNER/REPOSITORY.git (fetch)
+&gt; origin  https://github.com/OWNER/REPOSITORY.git (push)
+
+$ git remote rename origin destination
+# 把远端名由 'origin' 改成 'destination'（不会改仓库名）
+
+$ git remote -v
+# 验证生效否
+&gt; destination  https://github.com/OWNER/REPOSITORY.git (fetch)
+&gt; destination  https://github.com/OWNER/REPOSITORY.git (push)
+</code></pre><p>方案二：删除与远端的链接后重新链（推荐）</p>
+<pre tabindex="0"><code>$ git remote -v
+# 查看当前远端
+&gt; origin  https://github.com/OWNER/REPOSITORY.git (fetch)
+&gt; origin  https://github.com/OWNER/REPOSITORY.git (push)
+&gt; destination  https://github.com/FORKER/REPOSITORY.git (fetch)
+&gt; destination  https://github.com/FORKER/REPOSITORY.git (push)
+
+$ git remote rm destination
+# 删除远端（不会删除仓库，只是删除链接）
+$ git remote -v
+# 验证生效否
+&gt; origin  https://github.com/OWNER/REPOSITORY.git (fetch)
+&gt; origin  https://github.com/OWNER/REPOSITORY.git (push)
+</code></pre><p>最后重新 <code>add origin</code> 就ok了
+<!-- raw HTML omitted --></p>
+<blockquote>
+<p>Reference  <br>
+<a href="https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories">Managing remote repositories</a></p>
+</blockquote>
+
     </div>
 
     <div class="post-copyright">

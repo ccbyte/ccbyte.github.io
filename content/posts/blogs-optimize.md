@@ -142,9 +142,9 @@ Utterances使用Github登录评论，Valine可匿名评论但要备案才能用�
 
 .post-toc {
     position: absolute;
-    width: 200px;
+    width: 260px;
     margin-left: 780px;
-    padding: 10px;
+    padding: 30px;
     word-wrap: break-word;
     box-sizing: border-box;
     .post-toc-title {
