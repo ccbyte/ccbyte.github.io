@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo on Chao&#39;s Blog</title>
+    <title>hugo on Chao&#39;s Blog</title>
     <link>https://ccbyte.github.io/tags/hugo/</link>
-    <description>Recent content in Hugo on Chao&#39;s Blog</description>
+    <description>Recent content in hugo on Chao&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://ccbyte.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ccbyte.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo博客/Leaveit主题优化</title>
+      <link>https://ccbyte.github.io/2021/blogs-optimize/</link>
+      <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ccbyte.github.io/2021/blogs-optimize/</guid>
+      <description>主题优化 评论模块 该主题不自带评论模块，需要我们手动添加，挑了一下选了Utterances。
+Utterances使用Github登录评论，Valine可匿名评论但要备案才能用，两个都加再页面上了，根据配置来，配了一个注释掉另一个配置就行
+萨达萨达是config.toml # Utterances.[params.utterances] # utteranc is a comment system based on GitHub issues. see https://utteranc.esowner = &amp;quot;github用户名&amp;quot; # github用户名repo = &amp;quot;你的仓库地名 # 仓库地址The repo to store commentsissueTerm = &amp;quot;pathname&amp;quot; # 默认theme = &amp;quot;github-light&amp;quot; # 默认# Valine.# You can get your appid and appkey from https://leancloud.cn# more info please open https://valine.js.org# [params.valine]# enable = true #开关# appId = &#39;你的appId&#39;# appKey = &#39;你的appKey&#39;# notify = false # mail notifier , https://github.</description>
+    </item>
+    
     <item>
       <title>Creating a New Theme</title>
       <link>https://ccbyte.github.io/2014/creating-a-new-theme/</link>

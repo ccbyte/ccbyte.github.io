@@ -34,7 +34,8 @@
       <guid>https://ccbyte.github.io/2018/basic/</guid>
       <description>Git使用基础 本地仓库初始化 管理远端仓库 添加远端仓库 🌳基本命令
 git remote add🌰例子
-$ git remote add origin https://github.com/user/repo.git# Set a new remote$ git remote -v# Verify new remote&amp;gt; origin https://github.com/user/repo.git (fetch)&amp;gt; origin https://github.com/user/repo.git (push)</description>
+$ git remote add origin https://github.com/user/repo.git# Set a new remote$ git remote -v# Verify new remote&amp;gt; origin https://github.com/user/repo.git (fetch)&amp;gt; origin https://github.com/user/repo.git (push)🏹Troubleshooting
+fatal: remote origin already exists.</description>
     </item>
     
   </channel>
