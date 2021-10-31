@@ -35,7 +35,7 @@ git commit
 git push origin master
 ```
 
-在仓库setiing中找到pages，设置页面根目录为master分支下的docs目录
+在仓库setting中找到pages，设置页面根目录为master分支下的docs目录
 
 最后进入页面
 https://你的用户名.github.io
