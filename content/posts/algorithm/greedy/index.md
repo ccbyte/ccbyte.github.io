@@ -115,4 +115,4 @@ int main() {
 }
 ```
 ## 稍微复杂的贪心策略
-<img src="./area-not-cross.png" width="80%">
+![alt 区间不相交的问题 ](./area-not-cross.png)

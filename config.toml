@@ -89,3 +89,8 @@ preserveTaxonomyNames = true
 #   avatar = 'mp' #神秘人(一个灰白头像) 
 #   placeholder = '说点什么吧...' #在评论框显示的温馨提示等
 #   visitor = true #访问量统计
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
