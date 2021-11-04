@@ -33,11 +33,12 @@ if(differenceInMinutes(formData.end, formData.start) < 0) {
 ```
 
 ## [📚](https://date-fns.org/v2.25.0/docs/I18n)本地化/I18n(locale)
+### 输出中文年月日
 只有format相关函数支持
 ```js
 import format from 'date-fns/format'
 import { zhCN } from 'date-fns/locale'
-format(new Date(), "yyyy'年'M'月'", {locale: zhCN}) // 单个M在1~9月不补0
+format(new Date(), "yyyy'年'M'月'd日", {locale: zhCN}) // 单个M在1~9月不补0
 ```
 
 ## [📚](https://date-fns.org/v2.25.0/docs/addMonths) 日期计算(addDays, subDays, addMonts, subMonth...)
@@ -52,8 +53,14 @@ console.log(`${startDate}~${endDate}`) // 7.19~7.25
 ```
 
 ## [📚](https://date-fns.org/v2.25.0/docs/isValid)判断时间是否规范
-不是Date对象的话，该方法会再用[📚](https://date-fns.org/v2.25.0/docs/toDate)toDate方法进行转换，还是转不了就返回false。
-
+不是Date对象的话返回false，该方法会用[📚](https://date-fns.org/v2.25.0/docs/toDate)toDate方法进行转换。
+```js
+import { isValid } from 'date-fns'
+let date1 = new Date('')
+let date2 = new Date(2021, 7, 25)
+isValid(date1) // false
+isValid(date2) // true
+```
 <br/>
 ……
 <br/><br/>
