@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Xuchao.He">
+  
+  
+  
+  <link rel="prev" href="https://ccbyte.github.io/2020/greedy/" />
+  <link rel="next" href="https://ccbyte.github.io/2020/binary-search/" />
+  <link rel="canonical" href="https://ccbyte.github.io/2020/recursion/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           递归 | Chao&#39;s Blog
+       
+  </title>
+  <meta name="title" content="递归 | Chao&#39;s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/ccbyte.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "递归",
+    "headline" : "递归",
+    "description" : "函数反复调用自身，每次调用都把问题范围缩小，一直缩小到可以直接得到边界数据，然后再在返回的路上求出对应的解。",
+    "inLanguage" : "en-us",
+    "author" : "Xuchao.He",
+    "creator" : "Xuchao.He",
+    "publisher": "Xuchao.He",
+    "accountablePerson" : "Xuchao.He",
+    "copyrightHolder" : "Xuchao.He",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-07-07 00:00:00 \u002b0000 UTC",
+    "dateModified" : "2020-07-07 00:00:00 \u002b0000 UTC",
+    "url" : "https:\/\/ccbyte.github.io\/2020\/recursion\/",
+    "wordCount" : "390",
+    "keywords" : [ "algorithm", "Chao\u0027s Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://ccbyte.github.io">Chao&#39;s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/more/" title="More">More</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://ccbyte.github.io">Chao&#39;s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/more/" title="More">More</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">递归</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://ccbyte.github.io" rel="author">Xuchao.He</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-07-07 itemprop="datePublished">July 7, 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://ccbyte.github.io/categories/algorithm/"> algorithm </a>
+                        
+                </span>
+        </div>
+    </header>
+    
+          <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title"></h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#递归">递归</a>
+      <ul>
+        <li><a href="#-使用递归求解n的阶乘">🌰 使用递归求解n的阶乘</a></li>
+        <li><a href="#-求fibonacci数列的第n项">🌰 求Fibonacci数列的第n项</a></li>
+        <li><a href="#-全排列full-permutation">🌰 全排列（Full Permutation）</a></li>
+        <li><a href="#-n皇后问题">🌰 n皇后问题</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+<script type="text/javascript">
+  window.onload = function () {
+    var fix = $('.post-toc');
+    var end = $('.post-comment');
+    var fixTop = fix.offset().top, fixHeight = fix.height();
+    var endTop, miss;
+    var offsetTop = fix[0].offsetTop;
+    $(window).scroll(function () {
+      var docTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+      if (end.length > 0) {
+        endTop = end.offset().top;
+        miss = endTop - docTop - fixHeight;
+      }
+      if (fixTop < docTop) {
+        fix.css({ 'position': 'fixed' });
+        if ((end.length > 0) && (endTop < (docTop + fixHeight))) {
+          fix.css({ top: miss });
+        } else {
+          fix.css({ top: 0 });
+        }
+      } else {
+        fix.css({ 'position': 'absolute' });
+        fix.css({ top: offsetTop });
+      }
+    })
+  }
+</script> 
+	
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h2 id="递归">递归</h2>
+<p>两个重要概念：</p>
+<ol>
+<li>递归边界</li>
+<li>递归式（递归调用）</li>
+</ol>
+<p>其中的递归式是将原问题分成若干子问题的手段，递归边界则是分解的尽头。（如果没有尽头就会无限分解）</p>
+<h3 id="-使用递归求解n的阶乘">🌰 使用递归求解n的阶乘</h3>
+<p><img src="./n!.png" alt=""></p>
+<h3 id="-求fibonacci数列的第n项">🌰 求Fibonacci数列的第n项</h3>
+<p><img src="./Fibonacci.png" alt=""></p>
+<h3 id="-全排列full-permutation">🌰 全排列（Full Permutation）</h3>
+<p>一个数列所有的排列方式的集合称为全排列。</p>
+<p>【举例】如1,2,3的全排列：(1,2,3),(1,3,2),(2,1,3),(2,3,1),(3,1,2),(3,2,1)；（按字典序）</p>
+<p>【目的】按字典序从小到大输出全排列：其中(a1,a2,&hellip;an)的字典序小于(b1,b2,&hellip;bn)，是指存在一个i，使得a1=b1,a2=b2,……,ai&lt;bi成立；</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;cstdio&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> maxn <span style="color:#f92672">=</span> <span style="color:#ae81ff">11</span>; <span style="color:#75715e">// max number
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n, p[maxn], hashTable[maxn] <span style="color:#f92672">=</span> {false}; 
+<span style="color:#75715e">// p: Now permutation, hashTable: Record whether x has been placed in p
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">generateP</span>(<span style="color:#66d9ef">int</span> index)
+{
+    <span style="color:#66d9ef">if</span>(index <span style="color:#f92672">==</span> n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#75715e">// recursion boundary
+</span><span style="color:#75715e"></span>    {
+        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> n; i<span style="color:#f92672">++</span>) <span style="color:#75715e">// print result
+</span><span style="color:#75715e"></span>        {
+            printf(<span style="color:#e6db74">&#34;%d&#34;</span>, p[i]);
+        }
+        printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+        <span style="color:#66d9ef">return</span>;
+    }
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; x <span style="color:#f92672">&lt;=</span> n; x<span style="color:#f92672">++</span>)
+    {
+        <span style="color:#66d9ef">if</span>(hashTable[x] <span style="color:#f92672">==</span> false) <span style="color:#75715e">// x hasn&#39;t been used
+</span><span style="color:#75715e"></span>        {
+            p[index] <span style="color:#f92672">=</span> x; <span style="color:#75715e">// use x (place x in p)
+</span><span style="color:#75715e"></span>            hashTable[x] <span style="color:#f92672">=</span> true; <span style="color:#75715e">// x has been used
+</span><span style="color:#75715e"></span>            generateP(index <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>); <span style="color:#75715e">// recursion (resolve the sub-problems when p[index] = x)
+</span><span style="color:#75715e"></span>            hashTable[x] <span style="color:#f92672">=</span> false; <span style="color:#75715e">// restore the x (resolved)
+</span><span style="color:#75715e"></span>        }
+    }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+    n <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>; <span style="color:#75715e">// want to print 1~3 full permutation
+</span><span style="color:#75715e"></span>    generateP(<span style="color:#ae81ff">1</span>); <span style="color:#75715e">// recursion start from 1
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="-n皇后问题">🌰 n皇后问题</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;cstdio&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;cmath&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;algorithm&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> maxn <span style="color:#f92672">=</span> <span style="color:#ae81ff">11</span>;
+<span style="color:#66d9ef">int</span> n, P[maxn], hashTable[maxn] <span style="color:#f92672">=</span> {false};<span style="color:#75715e">// p: 当前排列, hashTable: 记录x是否已经放入pint counter = 0;
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">generateP1</span>(<span style="color:#66d9ef">int</span> index){
+    <span style="color:#75715e">/* 递归边界 生成一个排列 */</span> 
+    <span style="color:#66d9ef">if</span>(index <span style="color:#f92672">==</span> n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>){
+        <span style="color:#66d9ef">bool</span> flag <span style="color:#f92672">=</span> true; <span style="color:#75715e">// 当前排列合法 
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">/* 遍历任意两个皇后 */</span> 
+        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> n; i<span style="color:#f92672">++</span>){
+            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;=</span> n; j<span style="color:#f92672">++</span>){
+                <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;=</span> n; j<span style="color:#f92672">++</span>){
+                    <span style="color:#66d9ef">if</span>(abs(i <span style="color:#f92672">-</span> j) <span style="color:#f92672">==</span> abs(P[i] <span style="color:#f92672">-</span> P[j])){ <span style="color:#75715e">// 在同一对角线上 
+</span><span style="color:#75715e"></span>                        flag <span style="color:#f92672">=</span> false; <span style="color:#75715e">// 冲突 
+</span><span style="color:#75715e"></span>                    }
+                }
+            }
+        }
+        <span style="color:#66d9ef">if</span>(flag) counter<span style="color:#f92672">++</span>;
+        <span style="color:#66d9ef">return</span>; 
+    }
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; x <span style="color:#f92672">&lt;=</span> n; x<span style="color:#f92672">++</span>){
+        <span style="color:#66d9ef">if</span>(hashTable[x] <span style="color:#f92672">==</span> false){
+            P[index] <span style="color:#f92672">=</span> x;
+            hashTable[x] <span style="color:#f92672">=</span> true;
+            generateP1(index <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>);
+            hashTable[x] <span style="color:#f92672">=</span> false;
+        }
+    }
+}
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">generateP2</span>(<span style="color:#66d9ef">int</span> index){
+    <span style="color:#75715e">/* 递归边界 */</span> 
+    <span style="color:#66d9ef">if</span>(index <span style="color:#f92672">==</span> n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>){
+        counter<span style="color:#f92672">++</span>;
+        <span style="color:#66d9ef">return</span>;
+    }
+    <span style="color:#75715e">/* 遍历行 */</span> 
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; x <span style="color:#f92672">&lt;=</span> n; x<span style="color:#f92672">++</span>){
+        <span style="color:#75715e">/* 若第x行还没皇后 */</span> 
+        <span style="color:#66d9ef">if</span>(hashTable[x] <span style="color:#f92672">==</span> false){
+            <span style="color:#66d9ef">bool</span> flag <span style="color:#f92672">=</span> true; <span style="color:#75715e">// flag为true表示不会与之前的皇后冲突 
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">/* 遍历之前的皇后 */</span> 
+            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> pre <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; pre <span style="color:#f92672">&lt;</span> index; pre<span style="color:#f92672">++</span>){ 
+                <span style="color:#75715e">/* 判断是否冲突 */</span> 
+                <span style="color:#66d9ef">if</span>(abs(index <span style="color:#f92672">-</span> pre) <span style="color:#f92672">==</span> abs(x <span style="color:#f92672">-</span> P[pre])){
+                    flag <span style="color:#f92672">=</span> false; <span style="color:#75715e">// 冲突（在同一对角线）
+</span><span style="color:#75715e"></span>                    <span style="color:#66d9ef">break</span>; <span style="color:#75715e">// 跳出循环 
+</span><span style="color:#75715e"></span>                }
+            }
+            <span style="color:#75715e">/* 无冲突则放置皇后 */</span> 
+            <span style="color:#66d9ef">if</span>(flag) {
+                P[index] <span style="color:#f92672">=</span> x;
+                hashTable[x] <span style="color:#f92672">=</span> true; <span style="color:#75715e">//占用第x行 
+</span><span style="color:#75715e"></span>                generateP2(index <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>); <span style="color:#75715e">// 处理下一行（子问题） 
+</span><span style="color:#75715e"></span>                hashTable[x] <span style="color:#f92672">=</span> false; <span style="color:#75715e">// 子问题都处理完了，还原第x行状态 
+</span><span style="color:#75715e"></span>            }
+        }
+    }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+    n <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>; <span style="color:#75715e">// 棋盘大小 n*n
+</span><span style="color:#75715e"></span>    generateP2(<span style="color:#ae81ff">1</span>); <span style="color:#75715e">//从P[1]开始填 
+</span><span style="color:#75715e"></span>    printf(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, counter);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><blockquote>
+<p>n皇后问题方法总结<br>
+<strong>普通枚举（暴力）</strong>：随意选取空位摆放。（需要在n²中选n个排列组合算一下次数很多。）<br>
+<strong>全排列（暴力）</strong>：
+按列/行逐个摆下去。把所有的子问题都遍历处理到底，<font color=cornflowerblue><strong>最后</strong></font>再<font color=cornflowerblue><strong>检测</strong></font>是否符合要求（见generateP1方法）  <br>
+<strong>全排列（<font color=blue>回溯</font>）</strong>：
+按列/行逐个摆下去。<font color=cornflowerblue><strong>过程中</strong></font>增加<font color=cornflowerblue><strong>检测</strong></font>功能，即若继续放已经不再可能达成目标，则不再遍历处理子问题，立即返回（见generateP2方法）</p>
+</blockquote>
+<p><font color=grey>通枚举要处理行冲突、列冲突、对角线冲突，全排列只需处理对角线冲突</font></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Xuchao.He </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://ccbyte.github.io/2020/recursion/>https://ccbyte.github.io/2020/recursion/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://ccbyte.github.io/tags/algorithm/">
+                    #algorithm</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://ccbyte.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://ccbyte.github.io/2020/greedy/" class="prev" rel="prev" title="贪心"><i class="iconfont icon-left"></i>&nbsp;贪心</a>
+         
+        
+        <a href="https://ccbyte.github.io/2020/binary-search/" class="next" rel="next" title="二分法">二分法&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+          
+          
+  
+
+
+<div class="post bg-white">
+    <script src="https://utteranc.es/client.js"
+          repo="ccbyte/blog_comments"
+          issue-term="pathname"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+</div>
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2011 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://ccbyte.github.io">Xuchao.He</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

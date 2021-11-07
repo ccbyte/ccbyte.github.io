@@ -57,7 +57,7 @@
     "datePublished": "2021-10-31 00:00:00 \u002b0000 UTC",
     "dateModified" : "2021-10-31 00:00:00 \u002b0000 UTC",
     "url" : "https:\/\/ccbyte.github.io\/2021\/blogs-optimize\/",
-    "wordCount" : "540",
+    "wordCount" : "544",
     "keywords" : [ "hugo", "Chao\u0027s Blog"]
 }
 </script>
@@ -156,6 +156,7 @@
         <li><a href="#配置-1">配置</a></li>
       </ul>
     </li>
+    <li><a href="#markdown支持html标签">Markdown支持HTML标签</a></li>
   </ul>
 </nav>
   </div>
@@ -205,7 +206,7 @@
           
 
           <h1 id="主题优化">主题优化</h1>
-<p>我能说我是因为这个主题才用的hugo吗？</p>
+<p>很喜欢hugo的这个主题。</p>
 <h2 id="评论模块">评论模块</h2>
 <p>该主题不自带评论模块，需要我们手动添加，挑了一下选了Utterances。<br>
 Utterances使用Github登录评论，Valine可匿名评论但要备案才能用，两个都加再页面上了，根据配置来，配了一个注释掉另一个配置就行。</p>
@@ -386,7 +387,11 @@ Utterances使用Github登录评论，Valine可匿名评论但要备案才能用�
 <pre tabindex="0"><code>[params]
 toc = true                # 是否开启目录
 autoCollapseToc = false   # Auto expand and collapse toc
-</code></pre>
+</code></pre><h2 id="markdown支持html标签">Markdown支持HTML标签</h2>
+<p>[markup] <br>
+[markup.goldmark]<br>
+[markup.goldmark.renderer]</p>
+
     </div>
 
     <div class="post-copyright">

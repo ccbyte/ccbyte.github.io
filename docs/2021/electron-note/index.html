@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Xuchao.He">
+  
+  
+  
+  <link rel="prev" href="https://ccbyte.github.io/2021/date-fns-usage/" />
+  <link rel="next" href="https://ccbyte.github.io/2021/2021-10-31/" />
+  <link rel="canonical" href="https://ccbyte.github.io/2021/electron-note/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Electron学习笔记 | Chao&#39;s Blog
+       
+  </title>
+  <meta name="title" content="Electron学习笔记 | Chao&#39;s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/ccbyte.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Electron学习笔记",
+    "headline" : "Electron学习笔记",
+    "description" : "Electron 学习笔记 导图 基本介绍 Electron三个组成部分  Chormium - UI   Web生态兼容性  Node.js - 底层操作   文件读写； 使用C\u002b\u002b；  Native API - 跨平台   统一原生界面如窗口，托盘； 系统能力：Notification； 基础能力：软件更新\/崩溃；  浏览器发展史 Nexus世界上第一个浏览器\nMosaic - Mozilla - NetScape（所有浏览器的UA(user-agent)都会带上Mozilla）\nIE (1995 Microsoft)\nJavaScript (1995 NetScape) Brendan Eich - 10天完成！\n开源Mozilla - 火狐\nChrome (2008,极简 多进程 v8)\nChrominum 开源 node.js 开源 v8开源\nnode-webkit (NW 2011) Github前五 - 赵成 （后加入Github Atom 项目组)\nAtom-shell -\u0026gt; Electron (2013-\u0026gt;2015)",
+    "inLanguage" : "en-us",
+    "author" : "Xuchao.He",
+    "creator" : "Xuchao.He",
+    "publisher": "Xuchao.He",
+    "accountablePerson" : "Xuchao.He",
+    "copyrightHolder" : "Xuchao.He",
+    "copyrightYear" : "2021",
+    "datePublished": "2021-10-24 00:00:00 \u002b0000 UTC",
+    "dateModified" : "2021-10-24 00:00:00 \u002b0000 UTC",
+    "url" : "https:\/\/ccbyte.github.io\/2021\/electron-note\/",
+    "wordCount" : "360",
+    "keywords" : [ "Electron, Node.js, JavaScript", "Chao\u0027s Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://ccbyte.github.io">Chao&#39;s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/more/" title="More">More</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://ccbyte.github.io">Chao&#39;s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/more/" title="More">More</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Electron学习笔记</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://ccbyte.github.io" rel="author">Xuchao.He</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2021-10-24 itemprop="datePublished">October 24, 2021</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://ccbyte.github.io/categories/front-end/"> Front End </a>
+                        
+                </span>
+        </div>
+    </header>
+    
+          <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title"></h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#导图">导图</a></li>
+    <li><a href="#基本介绍">基本介绍</a>
+      <ul>
+        <li><a href="#electron三个组成部分">Electron三个组成部分</a></li>
+        <li><a href="#浏览器发展史">浏览器发展史</a></li>
+        <li><a href="#electron应用最小组成">Electron应用最小组成</a></li>
+      </ul>
+    </li>
+    <li><a href="#架构和原理">架构和原理</a>
+      <ul>
+        <li><a href="#chromium架构">Chromium架构</a></li>
+        <li><a href="#electron架构">Electron架构</a></li>
+        <li><a href="#nodejs和chromiums整合">Node.js和Chromiums整合</a></li>
+      </ul>
+    </li>
+    <li><a href="#桌面端技术选型">桌面端技术选型</a></li>
+    <li><a href="#开发环境准备">开发环境准备</a></li>
+    <li><a href="#开发一个番茄钟">开发一个番茄钟</a>
+      <ul>
+        <li><a href="#引入模块">引入模块</a></li>
+        <li><a href="#第三方库">第三方库</a></li>
+      </ul>
+    </li>
+    <li><a href="#与web开发异同">与Web开发异同</a>
+      <ul>
+        <li><a href="#一主进程与渲染进程">一、主进程与渲染进程</a></li>
+        <li><a href="#二进程间通信">二、进程间通信</a></li>
+        <li><a href="#三native及原生gui">三、Native及原生GUI</a></li>
+        <li><a href="#四释放前端想象力">四、释放前端想象力</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+<script type="text/javascript">
+  window.onload = function () {
+    var fix = $('.post-toc');
+    var end = $('.post-comment');
+    var fixTop = fix.offset().top, fixHeight = fix.height();
+    var endTop, miss;
+    var offsetTop = fix[0].offsetTop;
+    $(window).scroll(function () {
+      var docTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+      if (end.length > 0) {
+        endTop = end.offset().top;
+        miss = endTop - docTop - fixHeight;
+      }
+      if (fixTop < docTop) {
+        fix.css({ 'position': 'fixed' });
+        if ((end.length > 0) && (endTop < (docTop + fixHeight))) {
+          fix.css({ top: miss });
+        } else {
+          fix.css({ top: 0 });
+        }
+      } else {
+        fix.css({ 'position': 'absolute' });
+        fix.css({ top: offsetTop });
+      }
+    })
+  }
+</script> 
+	
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h1 id="electron-学习笔记">Electron 学习笔记</h1>
+<h2 id="导图">导图</h2>
+<p><img src="../images/image-20211024183439858.png" alt="image-20211024183439858"></p>
+<h2 id="基本介绍">基本介绍</h2>
+<h3 id="electron三个组成部分">Electron三个组成部分</h3>
+<ol>
+<li><strong>Chormium - UI</strong></li>
+</ol>
+<ul>
+<li>Web生态兼容性</li>
+</ul>
+<ol start="2">
+<li><strong>Node.js - 底层操作</strong></li>
+</ol>
+<ul>
+<li>文件读写；</li>
+<li>使用C++；</li>
+</ul>
+<ol start="3">
+<li><strong>Native API - 跨平台</strong></li>
+</ol>
+<ul>
+<li>统一原生界面如窗口，托盘；</li>
+<li>系统能力：Notification；</li>
+<li>基础能力：软件更新/崩溃；</li>
+</ul>
+<h3 id="浏览器发展史">浏览器发展史</h3>
+<p>Nexus世界上第一个浏览器</p>
+<p>Mosaic - Mozilla - NetScape（所有浏览器的UA<font color="#aaa" size="2">(user-agent)</font>都会带上Mozilla）</p>
+<p>IE (1995 Microsoft)</p>
+<p>JavaScript (1995 NetScape) Brendan Eich - 10天完成！</p>
+<p>开源Mozilla - 火狐</p>
+<p>Chrome (2008,极简 多进程 v8)</p>
+<p>Chrominum 开源 node.js 开源 v8开源</p>
+<p>node-webkit (NW 2011) Github前五 - 赵成 （后加入Github Atom 项目组)</p>
+<p>Atom-shell  -&gt; Electron (2013-&gt;2015)</p>
+<blockquote>
+<p>判别是否Electron应用：</p>
+<p>项目目录下 Contents/Framework 下是否有Electron</p>
+</blockquote>
+<h3 id="electron应用最小组成">Electron应用最小组成</h3>
+<p>index.html 页面</p>
+<p>package.json 包体描述</p>
+<p>main.js 管理整个应用</p>
+<h2 id="架构和原理">架构和原理</h2>
+<h3 id="chromium架构">Chromium架构</h3>
+<p><img src="../images/image-20211024190952261.png" alt="image-20211024190952261"></p>
+<p>IPC跨进程通信 （主进程RenderProcessHost，Renderer进程RenderProcess）</p>
+<p>ResourceDispatcher页面请求资源转发到IPC  Browser处理再返回</p>
+<h3 id="electron架构">Electron架构</h3>
+<p><img src="../images/image-20211029214111880.png" alt="image-20211029214111880"></p>
+<h3 id="nodejs和chromiums整合">Node.js和Chromiums整合</h3>
+<p>难点：事件循环（Node.js基于libuv，Chromium基于message bump）</p>
+<ul>
+<li>Chromium集成到Node.js ，用libuv实现messagebump(NW) 【NSRunLoop glib 边界情况】</li>
+<li>Node.js集成到Chromium【libuv轮询backend_fd】</li>
+</ul>
+<p><img src="../images/image-20211029214644142.png" alt="image-20211029214644142"></p>
+<p>延申资料</p>
+<p><img src="../images/image-20211029214722050.png" alt="image-20211029214722050"></p>
+<h2 id="桌面端技术选型">桌面端技术选型</h2>
+<p>入口快捷</p>
+<p>离线可用</p>
+<p>调用系统能力（通知，硬件）</p>
+<p>安全需求（金融）</p>
+<p>Native(C++/C#/Objective-c)</p>
+<p>高性能，原生，体积小；门槛高</p>
+<p>QT(C++)</p>
+<p>跨平台，高性能，媲美原生；门槛高，迭代速度一般</p>
+<p>Flutter</p>
+<p>发展中，基建少</p>
+<p>Nw.js （微信开发者工具）</p>
+<p>支持XP，源码加密，支持扩展；包体积大，性能一般</p>
+<p>Electron</p>
+<p>包体积大，性能一般</p>
+<p>Carlo，WPF，Chromium Embedded Framework，PWA</p>
+<h2 id="开发环境准备">开发环境准备</h2>
+<p>安装 vscode，nodejs(NVM)【跳过】</p>
+<p>安装 Electron：</p>
+<p><code>npm install electron --save-dev</code></p>
+<p><code>npm install --arch=ia32 --platform=win32 electron</code>  (32位打包，在32,64都能用)</p>
+<p>验证安装成功</p>
+<p><code>npx electron -v</code></p>
+<p><code>./node_modules/.bin/electron -v</code></p>
+<h2 id="开发一个番茄钟">开发一个番茄钟</h2>
+<p>休息5分钟弹出休息结束</p>
+<p>应用启动 → 倒计时工作25分钟 → 弹出是否休息→休息则5分钟倒计时后结束→不休息则重新开始25分钟</p>
+<p><img src="../images/image-20211029220941267.png" alt="image-20211029220941267"></p>
+<h3 id="引入模块">引入模块</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">app</span>, <span style="color:#a6e22e">BrowserWindow</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;electron&#39;</span>)
+</code></pre></div><p>可以先阅读&amp;操作一遍官方的<a href="https://www.electronjs.org/zh/docs/latest/tutorial/quick-start">快速开始文档</a></p>
+<h3 id="第三方库">第三方库</h3>
+<p><a href="https://github.com/husa/timer.js/">timer.js</a></p>
+<h4 id="安装">安装</h4>
+<p><code>npm install timer.js</code></p>
+<h4 id="引入">引入</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myTimer</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Timer</span>({
+	<span style="color:#a6e22e">onTick</span><span style="color:#f92672">:</span>() =&gt; {}
+    <span style="color:#a6e22e">onEnd</span><span style="color:#f92672">:</span> () =&gt; {}
+})
+</code></pre></div><h4 id="使用">使用</h4>
+<h2 id="与web开发异同">与Web开发异同</h2>
+<h3 id="一主进程与渲染进程">一、主进程与渲染进程</h3>
+<p>主进程（唯一）</p>
+<ul>
+<li>package.json中main脚本的进程</li>
+<li>管理原生GUI(BrowserWindow、Tray、Dock、Menu)</li>
+<li>创建渲染进程，控制应用生命周期(app)</li>
+</ul>
+<p>渲染进程（多个）</p>
+<ul>
+<li>展示Web页面的进程</li>
+<li>通过Node.js、Electron提供的API跟系统底层打交道</li>
+</ul>
+<p><img src="../images/image-20211030160549560.png" alt="image-20211030160549560"></p>
+<table>
+<thead>
+<tr>
+<th>主进程</th>
+<th>渲染进程</th>
+<th>交叉</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>app管理应用生命周期(退出)，设置属性(Dock)</td>
+<td>ipcRenderer（跟ipcMain进行IPC通信）</td>
+<td>clipboard剪切板</td>
+</tr>
+<tr>
+<td>BrowserWindow管理窗口</td>
+<td>remote调用主进程模块（建议不用）</td>
+<td>crashReporter监听进程</td>
+</tr>
+<tr>
+<td>ipcMain（跟ipcRenderer进行IPC通信）</td>
+<td>desktopCapture系统截图/视频流</td>
+<td></td>
+</tr>
+<tr>
+<td>Menu/Tray/MenuItem/dialog/Notification原生GUI</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>webContents加载具体页面</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>autoUpdater更新模块</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>globalShortcut设置全局快捷键</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="二进程间通信">二、进程间通信</h3>
+<ul>
+<li>通知事件（创建原生菜单只有主进程能做）</li>
+<li>数据传输（在某页面获得内存情况）</li>
+<li>共享数据（用户信息在各个进程中共用）</li>
+</ul>
+<h4 id="ipc模块通信">IPC模块通信</h4>
+<p>Electron提供的IPC通信模块：主进程ipcMain、渲染进程ipcRenderer（两者都是EventEmitter对象）</p>
+<h4 id="从渲染进程到主进程">从渲染进程到主进程</h4>
+<ul>
+<li>
+<p>Callback写法</p>
+<ul>
+<li>ipcRenderer.send(channel, &hellip;args)</li>
+<li>ipcMain.on(channel, handler)</li>
+</ul>
+</li>
+<li>
+<p>Promise写法（Electron7.0之后，处理请求+响应模式）</p>
+<ul>
+<li>ipcRenderer.invoke(channel, &hellip;args)</li>
+<li>ipcMain.handle(channel, handler)</li>
+</ul>
+</li>
+</ul>
+<h4 id="从主进程到渲染进程">从主进程到渲染进程</h4>
+<ul>
+<li>主进程通知渲染进程
+<ul>
+<li>ipcRenderer.on(channel, handler)</li>
+<li>webContents.send(channel) [BroswerWindow]</li>
+</ul>
+</li>
+</ul>
+<h4 id="页面间渲染进程与渲染进程通信">页面间（渲染进程与渲染进程）通信</h4>
+<ul>
+<li>通知事件
+<ul>
+<li>通过主进程转发（Electron 5之前）</li>
+<li>ipcRenderer.sendTo（Electron 5之后）</li>
+</ul>
+</li>
+<li>数据共享
+<ul>
+<li>web技术（localStorage、sessionStorage、indexedDB）</li>
+<li><font color=#ccc>使用remote</font></li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
+<span style="color:#75715e">// main.js
+</span><span style="color:#75715e">// new win1 &amp; win2 instanceof BrowserWindow and loadFile
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">global</span>.<span style="color:#a6e22e">sharedObject</span> <span style="color:#f92672">=</span> {
+	<span style="color:#a6e22e">win2WebContentsId</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">win2</span>.<span style="color:#a6e22e">webContents</span>.<span style="color:#a6e22e">id</span> <span style="color:#75715e">// 传输webContents.id
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#75715e">// renderer1.js
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">ipcRenderer</span>, <span style="color:#a6e22e">remote</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;electron&#39;</span>)
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sharedObject</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">remote</span>.<span style="color:#a6e22e">getGlobal</span>(<span style="color:#e6db74">&#39;sharedObject&#39;</span>)
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">win2WebContentsId</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sharedObject</span>.<span style="color:#a6e22e">win2WebContentsId</span>
+<span style="color:#a6e22e">ipcRenderer</span>.<span style="color:#a6e22e">sendTo</span>(<span style="color:#a6e22e">win2WebContentsId</span>, <span style="color:#e6db74">&#39;do-some-work&#39;</span>, <span style="color:#ae81ff">1</span>)
+
+<span style="color:#75715e">// renderer2.js
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">ipcRenderer</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;electron&#39;</span>)
+<span style="color:#a6e22e">ipcRenderer</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;do-some-work&#39;</span>, (<span style="color:#a6e22e">e</span>, <span style="color:#a6e22e">a</span>) =&gt; {
+    <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;renderer2 handle some work&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">a</span>)
+})
+</code></pre></div><h4 id="坑">坑🕳</h4>
+<ul>
+<li>少用remote模块（好写，但触发底层IPC通信事件，性能开销大，易卡死）</li>
+<li>不要用sync模式（ipcRenderer的方法，易卡死）</li>
+<li>在请求+响应的通信模式下，需要自定义超时限制</li>
+</ul>
+<h3 id="三native及原生gui">三、Native及原生GUI</h3>
+<h4 id="使用electron-api创建原生gui">使用Electron API创建原生GUI</h4>
+<ul>
+<li>BrowserWindow 应用窗口</li>
+<li>Tray 托盘</li>
+<li>app设置dock.badge（未读数）</li>
+<li>Menu菜单</li>
+<li>dialog原生弹框</li>
+<li>TouchBar苹果触控板</li>
+</ul>
+<h4 id="使用electron-api获得底层能力">使用Electron API获得底层能力</h4>
+<ul>
+<li>clipboard</li>
+<li>globalShortcut 全局快捷键</li>
+<li>desktopCapture 捕获桌面</li>
+<li>shell打开文件、URL</li>
+<li>&hellip;</li>
+</ul>
+<h4 id="使用nodejs获得底层能力">使用Node.js获得底层能力</h4>
+<ul>
+<li>Electron 同时在主进程和渲染进程中对Node.js暴露了所有的接口
+<ul>
+<li>fs进行文件读写</li>
+<li>crypto进行加解密</li>
+</ul>
+</li>
+<li>通过npm安装社区上所有的Node.js库</li>
+</ul>
+<p>🌰</p>
+<p>使用node.js的fs模块打印文件内容</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">mainWindow</span>.<span style="color:#a6e22e">webContents</span>.<span style="color:#a6e22e">openDevTools</span>() <span style="color:#75715e">// 主进程打开开发工具
+</span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;fs&#39;</span>).<span style="color:#a6e22e">readFileSync</span>(<span style="color:#e6db74">&#39;./index.html&#39;</span>, <span style="color:#e6db74">&#39;utf-8&#39;</span>) <span style="color:#75715e">// 开发工具的console中执行
+</span></code></pre></div><h4 id="使用nodejs调用原生模块">使用Node.js调用原生模块</h4>
+<p>node.js add-on</p>
+<p>node-ffi (Foreign Function Interface)</p>
+<h4 id="调用os能力">调用OS能力</h4>
+<ul>
+<li>winRT（调用蓝牙等）</li>
+<li>Applescript（苹果系统）</li>
+<li>Shell（node.js child_process）</li>
+</ul>
+<h4 id="electron能力">Electron能力</h4>
+<p><img src="./image-20211030165814764.png" alt="image-20211030165814764"></p>
+<h3 id="四释放前端想象力">四、释放前端想象力</h3>
+<ul>
+<li>
+<p>不用兼容Safari、IE</p>
+<ul>
+<li>babel中设置targets为Electron对应的Chrome版本</li>
+</ul>
+</li>
+<li>
+<p>大胆使用Chrome最新支持的API 【<a href="https://developers.google.com/web/updates">文档地址</a>】</p>
+<ul>
+<li><a href="https://mathiasbynens.be/demo/img-loading-lazy">原生LazyLoad </a></li>
+<li>ES 6/7/8/9/10高级语法
+<ul>
+<li>async await / Promise</li>
+<li>String/Array/Object高级用法</li>
+<li>BigInt（处理大数不用再引用long.js啦）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>无跨域问题（使用Node.js发送请求、使用Electron net发送请求）</p>
+</li>
+<li>
+<p>操作本地文件</p>
+</li>
+<li>
+<p>更好用的本地DB（LowDB, LevelDB, SQLite）</p>
+</li>
+<li>
+<p>多线程、多进程并行（Node.js: worker + child_process）</p>
+</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Xuchao.He </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://ccbyte.github.io/2021/electron-note/>https://ccbyte.github.io/2021/electron-note/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://ccbyte.github.io/tags/electron-node.js-javascript/">
+                    #Electron, Node.js, JavaScript</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://ccbyte.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://ccbyte.github.io/2021/date-fns-usage/" class="prev" rel="prev" title="时间处理库date-fns的常见应用"><i class="iconfont icon-left"></i>&nbsp;时间处理库date-fns的常见应用</a>
+         
+        
+        <a href="https://ccbyte.github.io/2021/2021-10-31/" class="next" rel="next" title="尾款日">尾款日&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+          
+          
+  
+
+
+<div class="post bg-white">
+    <script src="https://utteranc.es/client.js"
+          repo="ccbyte/blog_comments"
+          issue-term="pathname"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+</div>
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2011 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://ccbyte.github.io">Xuchao.He</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javascript on Chao&#39;s Blog</title>
+    <link>https://ccbyte.github.io/tags/javascript/</link>
+    <description>Recent content in javascript on Chao&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Jul 2021 20:13:03 +0000</lastBuildDate><atom:link href="https://ccbyte.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>时间处理库date-fns的常见应用</title>
+      <link>https://ccbyte.github.io/2021/date-fns-usage/</link>
+      <pubDate>Sun, 25 Jul 2021 20:13:03 +0000</pubDate>
+      
+      <guid>https://ccbyte.github.io/2021/date-fns-usage/</guid>
+      <description>时间处理库Date-fns (v2.25.0) 这个库功能十分齐全，可能需要科学上网，这里记录一下之前做项目中常用的方法。
+npm i date-fns 格式化(format) 📚
+import { format } from &amp;#39;date-fns&amp;#39; format(new Date(), &amp;#39;yyyy-MM-dd HH:mm:ss&amp;#39;) // &amp;lt;String&amp;gt; 2021-07-25 20:13:03 日期差(intervalToDuration) 📚
+根据出生日期得到几岁 import { intervalToDuration } from &amp;#39;date-fns&amp;#39; let birthday = new Date(&amp;#39;1997-07-01&amp;#39;) const { years, months, days } = intervalToDuration({ start: new Date(birthday), end: new Date() }) // year即年龄，months和day可以再精确到天 时间差(differenceInMinutes) 📚
+比较开始时间和结束时间 if(differenceInMinutes(formData.end, formData.start) &amp;lt; 0) { console.log(&amp;#39;开始时间小于结束时间&amp;#39;) } 本地化/I18n(locale) 📚
+输出中文年月日 只有format相关函数支持
+import format from &amp;#39;date-fns/format&amp;#39; import { zhCN } from &amp;#39;date-fns/locale&amp;#39; format(new Date(), &amp;#34;yyyy&amp;#39;年&amp;#39;M&amp;#39;月&amp;#39;d日&amp;#34;, {locale: zhCN}) // 单个M在1~9月不补0 日期计算(addDays, subDays, addMonts, subMonth&amp;hellip;) 📚 这里太多了，还有📚addWeeks等等。</description>
+    </item>
+    
+    <item>
+      <title>二维数组和树</title>
+      <link>https://ccbyte.github.io/1/array-to-tree/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ccbyte.github.io/1/array-to-tree/</guid>
+      <description>起因 经过 结果 </description>
+    </item>
+    
+    <item>
+      <title>实现简单的表单数据校验功能</title>
+      <link>https://ccbyte.github.io/1/a-easy-validate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ccbyte.github.io/1/a-easy-validate/</guid>
+      <description>实现表单数据校验功能 因为项目用的UI库功能太少，表单不具备校验功能，所以自己写了一个很简陋的，只有一个文件。
+使用 import { required, email, useValidate } from &amp;#39;validate&amp;#39; let rules = { username: { name:&amp;#39;邮箱号&amp;#39;, validate: [required, email] }, // name用于错误提示，validate是需要符合的校验规则列表  password: { name:&amp;#39;密码&amp;#39;, validate: [required] } } useValidate(formData, rules) 源文件 📝 validate.js
+// 校验的主函数 export const useValidate = (formData, rules) =&amp;gt; { return Promise.all( Object.entries(rules).map(([key, rule]) =&amp;gt; { return Promise.all( rule.validate.map(func =&amp;gt; func(formData[key])) ).catch((err) =&amp;gt; { console.log(rule.name + err) // 错误提示（打印或弹窗）  return Promise.reject() }) }) ) } // 以下都是一些常见的校验方法 // 是否必填 export const required = (value) =&amp;gt; { return isEmpty(value) ?</description>
+    </item>
+    
+  </channel>
+</rss>

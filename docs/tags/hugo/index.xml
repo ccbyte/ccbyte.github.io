@@ -13,7 +13,7 @@
       <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ccbyte.github.io/2021/blogs-optimize/</guid>
-      <description>主题优化 我能说我是因为这个主题才用的hugo吗？
+      <description>主题优化 很喜欢hugo的这个主题。
 评论模块 该主题不自带评论模块，需要我们手动添加，挑了一下选了Utterances。
 Utterances使用Github登录评论，Valine可匿名评论但要备案才能用，两个都加再页面上了，根据配置来，配了一个注释掉另一个配置就行。
 新增评论模块页 📝 content/themes/LeaveIt/layouts/partials/comments.html

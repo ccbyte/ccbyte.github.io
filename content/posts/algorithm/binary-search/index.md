@@ -1,5 +1,5 @@
 ---
-date: 2019-08-30
+date: 2020-08-30
 title: "二分法"
 description: "基于有序序列的查找方法"
 tags: ["algorithm"]
