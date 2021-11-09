@@ -9,13 +9,15 @@ categories: ["front end"]
 ```shell
 npm i date-fns
 ```     
-## [📚](https://date-fns.org/v2.25.0/docs/format)格式化(format)
+## 格式化(format)
+[📚](https://date-fns.org/v2.25.0/docs/format)
 ``` js
 import { format } from 'date-fns'
 format(new Date(), 'yyyy-MM-dd HH:mm:ss') // <String> 2021-07-25 20:13:03
 ```
 
-## [📚](https://date-fns.org/v2.25.0/docs/intervalToDuration)日期差(intervalToDuration)
+## 日期差(intervalToDuration)
+[📚](https://date-fns.org/v2.25.0/docs/intervalToDuration)
 ### 根据出生日期得到几岁
 ```js
 import { intervalToDuration } from 'date-fns'
@@ -26,7 +28,8 @@ const { years, months, days } = intervalToDuration({
 }) // year即年龄，months和day可以再精确到天
 ```
 
-## [📚](https://date-fns.org/v2.25.0/docs/differenceInMinutes)时间差(differenceInMinutes)
+## 时间差(differenceInMinutes)
+[📚](https://date-fns.org/v2.25.0/docs/differenceInMinutes)
 ### 比较开始时间和结束时间
 ```js
 if(differenceInMinutes(formData.end, formData.start) < 0) {
@@ -34,7 +37,8 @@ if(differenceInMinutes(formData.end, formData.start) < 0) {
 }
 ```
 
-## [📚](https://date-fns.org/v2.25.0/docs/I18n)本地化/I18n(locale)
+## 本地化/I18n(locale)
+[📚](https://date-fns.org/v2.25.0/docs/I18n)
 ### 输出中文年月日
 只有format相关函数支持
 ```js
@@ -43,7 +47,8 @@ import { zhCN } from 'date-fns/locale'
 format(new Date(), "yyyy'年'M'月'd日", {locale: zhCN}) // 单个M在1~9月不补0
 ```
 
-## [📚](https://date-fns.org/v2.25.0/docs/addMonths) 日期计算(addDays, subDays, addMonts, subMonth...)
+##  日期计算(addDays, subDays, addMonts, subMonth...)
+[📚](https://date-fns.org/v2.25.0/docs/addMonths) 
 这里太多了，还有[📚](https://date-fns.org/v2.25.0/docs/addWeeks)addWeeks等等。
 ### 获取当前周开始日期和结束日期
 ```js
@@ -54,7 +59,8 @@ let startDate = format(subDays(nowDate, weekDiff - 1), 'M.d')
 console.log(`${startDate}~${endDate}`) // 7.19~7.25
 ```
 
-## [📚](https://date-fns.org/v2.25.0/docs/isValid)判断时间是否规范
+## 判断时间是否规范
+[📚](https://date-fns.org/v2.25.0/docs/isValid)
 不是Date对象的话返回false，该方法会用[📚](https://date-fns.org/v2.25.0/docs/toDate)toDate方法进行转换。
 ```js
 import { isValid } from 'date-fns'

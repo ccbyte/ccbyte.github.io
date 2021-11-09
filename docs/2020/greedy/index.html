@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Xuchao.He">
+  
+  
+  
+  
+  <link rel="next" href="https://ccbyte.github.io/2020/recursion/" />
+  <link rel="canonical" href="https://ccbyte.github.io/2020/greedy/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           贪心 | Chao&#39;s Blog
+       
+  </title>
+  <meta name="title" content="贪心 | Chao&#39;s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/ccbyte.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "贪心",
+    "headline" : "贪心",
+    "description" : "贪心是只考虑当下的一种局部最优（或较优），来使全局结果达到最优（或较优）的策略。",
+    "inLanguage" : "en-us",
+    "author" : "Xuchao.He",
+    "creator" : "Xuchao.He",
+    "publisher": "Xuchao.He",
+    "accountablePerson" : "Xuchao.He",
+    "copyrightHolder" : "Xuchao.He",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-06-23 00:00:00 \u002b0000 UTC",
+    "dateModified" : "2020-06-23 00:00:00 \u002b0000 UTC",
+    "url" : "https:\/\/ccbyte.github.io\/2020\/greedy\/",
+    "wordCount" : "342",
+    "keywords" : [ "algorithm", "Chao\u0027s Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://ccbyte.github.io">Chao&#39;s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/more/" title="More">More</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://ccbyte.github.io">Chao&#39;s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/more/" title="More">More</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">贪心</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://ccbyte.github.io" rel="author">Xuchao.He</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-06-23 itemprop="datePublished">June 23, 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://ccbyte.github.io/categories/algorithm/"> algorithm </a>
+                        
+                </span>
+        </div>
+    </header>
+    
+          <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title"></h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#简单贪心">简单贪心</a></li>
+    <li><a href="#区间贪心">区间贪心</a></li>
+    <li><a href="#稍微复杂的贪心策略">稍微复杂的贪心策略</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+<script type="text/javascript">
+  window.onload = function () {
+    var fix = $('.post-toc');
+    var end = $('.post-comment');
+    var fixTop = fix.offset().top, fixHeight = fix.height();
+    var endTop, miss;
+    var offsetTop = fix[0].offsetTop;
+    $(window).scroll(function () {
+      var docTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+      if (end.length > 0) {
+        endTop = end.offset().top;
+        miss = endTop - docTop - fixHeight;
+      }
+      if (fixTop < docTop) {
+        fix.css({ 'position': 'fixed' });
+        if ((end.length > 0) && (endTop < (docTop + fixHeight))) {
+          fix.css({ top: miss });
+        } else {
+          fix.css({ top: 0 });
+        }
+      } else {
+        fix.css({ 'position': 'absolute' });
+        fix.css({ top: offsetTop });
+      }
+    })
+  }
+</script> 
+	
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h1 id="贪心">贪心</h1>
+<p>贪心是只考虑当下的一种局部最优（或较优），来使全局结果达到最优（或较优）的策略。 <br>
+证明策略是最优（或较优）的：反证法、数学归纳法【证明较复杂，若有不错的思路且无法找到反例，直接实现即可】</p>
+<h2 id="简单贪心">简单贪心</h2>
+<p>🌰  PAT B1020（卖月饼P118）  <br>
+📣  只在乎销售额，只要每次选最贵的就能达到总销售额最多（贪心）。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;cstdio&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;algorithm&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+
+<span style="color:#66d9ef">struct</span> mooncake { <span style="color:#75715e">// 结构体整合输入数据
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">double</span> store; <span style="color:#75715e">// 库存
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">double</span> sell; <span style="color:#75715e">// 总价
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">double</span> price; <span style="color:#75715e">// 单价（库存除总价）
+</span><span style="color:#75715e"></span>}cake[<span style="color:#ae81ff">1010</span>];
+
+<span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">cmp</span>(mooncake a, mooncake b) {
+    <span style="color:#66d9ef">return</span> a.price <span style="color:#f92672">&gt;</span> b.price;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#66d9ef">int</span> n; <span style="color:#75715e">// 月饼种类数
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">double</span> D; <span style="color:#75715e">// 月饼需求量
+</span><span style="color:#75715e"></span>    scanf(<span style="color:#e6db74">&#34;%d%lf&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>D);
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>) { <span style="color:#75715e">// 输入库存
+</span><span style="color:#75715e"></span>        scanf(<span style="color:#e6db74">&#34;%lf&#34;</span>, <span style="color:#f92672">&amp;</span>cake[i].store);
+    }
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>) { <span style="color:#75715e">// 输入总价 并计算单价
+</span><span style="color:#75715e"></span>        scanf(<span style="color:#e6db74">&#34;%lf&#34;</span>, <span style="color:#f92672">&amp;</span>cake[i].sell);
+        cake[i].price <span style="color:#f92672">=</span> cake[i].sell <span style="color:#f92672">/</span> cake[i].store;
+    }
+    sort(cake, cake <span style="color:#f92672">+</span> n, cmp); <span style="color:#75715e">// 按单价从高到低排序
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">double</span> ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// 收益
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>) { <span style="color:#75715e">// 遍历排序后的月饼列表cake
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span>(D <span style="color:#f92672">&gt;=</span> cake[i].store) { <span style="color:#75715e">// 需求大于供应
+</span><span style="color:#75715e"></span>            D <span style="color:#f92672">-=</span> cake[i].store;
+            ans <span style="color:#f92672">+=</span> cake[i].sell; <span style="color:#75715e">// 该类月饼全部卖出
+</span><span style="color:#75715e"></span>        } <span style="color:#66d9ef">else</span> { <span style="color:#75715e">// 需求小于供应
+</span><span style="color:#75715e"></span>            ans <span style="color:#f92672">+=</span> cake[i].price <span style="color:#f92672">*</span> D; <span style="color:#75715e">// 需求全部满足
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">break</span>;
+        }
+    }
+    printf(<span style="color:#e6db74">&#34;%.2f</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><p>🌰  PAT B1023（组个最小数） <br>
+📣  只要每次都拿最小的数放在最高位，最后组成的数必然最小（贪心）。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;cstdio&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#66d9ef">int</span> count[<span style="color:#ae81ff">10</span>]; <span style="color:#75715e">// 记录数字0~9的个数
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; i<span style="color:#f92672">++</span>) {
+        scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, count <span style="color:#f92672">+</span> i); <span style="color:#75715e">// 录入0~9各数字个数
+</span><span style="color:#75715e"></span>    }
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; i<span style="color:#f92672">++</span>) {
+        <span style="color:#66d9ef">if</span>(count[i] <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+            printf(<span style="color:#e6db74">&#34;%d&#34;</span>, i); <span style="color:#75715e">// 输出除0外最小的数作为最高位
+</span><span style="color:#75715e"></span>            count[i]<span style="color:#f92672">--</span>;
+            <span style="color:#66d9ef">break</span>;
+        }
+    }
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; i<span style="color:#f92672">++</span>) {
+        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> count[i]; j<span style="color:#f92672">++</span>) { <span style="color:#75715e">// 把i输出count[i]次
+</span><span style="color:#75715e"></span>            printf(<span style="color:#e6db74">&#34;%d&#34;</span>, i);
+        }
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h2 id="区间贪心">区间贪心</h2>
+<p>给出若干小区间，看最多能塞多少个</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;cstdio&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;algorithm&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> maxn <span style="color:#f92672">=</span> <span style="color:#ae81ff">110</span>;
+<span style="color:#66d9ef">struct</span> Interval{
+    <span style="color:#66d9ef">int</span> x, y;
+}I[maxn];
+
+<span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">cmp</span>(Interval a, Interval b) {
+    <span style="color:#66d9ef">if</span>(a.x <span style="color:#f92672">!=</span> b.x) <span style="color:#66d9ef">return</span> a.x <span style="color:#f92672">&gt;</span> b.x; <span style="color:#75715e">// 左端点从大到小
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">return</span> a.y <span style="color:#f92672">&lt;</span> b.y; <span style="color:#75715e">// 左端点相同时，右端点从小到大（写b.y &gt; a.y容易理解错）
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#66d9ef">int</span> n;
+    <span style="color:#66d9ef">while</span>(scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>n), n <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) { <span style="color:#75715e">// 输入提供选择的区间个数
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>)
+        {
+            scanf(<span style="color:#e6db74">&#34;%d%d&#34;</span>, <span style="color:#f92672">&amp;</span>I[i].x, <span style="color:#f92672">&amp;</span>I[i].y); <span style="color:#75715e">// 顺序输入区间的左右端点
+</span><span style="color:#75715e"></span>        }
+        sort(I, I <span style="color:#f92672">+</span> n, cmp); <span style="color:#75715e">// 把区间排序
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span> ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, lastX <span style="color:#f92672">=</span> I[<span style="color:#ae81ff">0</span>].x; <span style="color:#75715e">// ans记录不相交区间数，lastX记录上一个被选区间的左端点
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>) {
+            <span style="color:#66d9ef">if</span>(I[i].y <span style="color:#f92672">&lt;=</span> lastX) { <span style="color:#75715e">// 若该区间右端点在lastX左边
+</span><span style="color:#75715e"></span>                lastX <span style="color:#f92672">=</span> I[i].x; <span style="color:#75715e">// 以I[i]作为新选中的区间
+</span><span style="color:#75715e"></span>                ans<span style="color:#f92672">++</span>; <span style="color:#75715e">// 区间数++
+</span><span style="color:#75715e"></span>            }
+        }
+        printf(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans);
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h2 id="稍微复杂的贪心策略">稍微复杂的贪心策略</h2>
+<p><img src="./area-not-cross.png" alt="alt 区间不相交的问题 "></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Xuchao.He </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://ccbyte.github.io/2020/greedy/>https://ccbyte.github.io/2020/greedy/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://ccbyte.github.io/tags/algorithm/">
+                    #algorithm</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://ccbyte.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+         
+        
+        <a href="https://ccbyte.github.io/2020/recursion/" class="next" rel="next" title="递归">递归&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+          
+          
+  
+
+
+<div class="post bg-white">
+    <script src="https://utteranc.es/client.js"
+          repo="ccbyte/blog_comments"
+          issue-term="pathname"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+</div>
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2011 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://ccbyte.github.io">Xuchao.He</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

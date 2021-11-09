@@ -13,11 +13,63 @@
       <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ccbyte.github.io/2021/blogs-optimize/</guid>
-      <description>主题优化 我能说我是因为这个主题才用的hugo吗？
+      <description>主题优化 很喜欢hugo的这个主题。
 评论模块 该主题不自带评论模块，需要我们手动添加，挑了一下选了Utterances。
 Utterances使用Github登录评论，Valine可匿名评论但要备案才能用，两个都加再页面上了，根据配置来，配了一个注释掉另一个配置就行。
 新增评论模块页 📝 content/themes/LeaveIt/layouts/partials/comments.html
 &amp;lt;!-- valine --&amp;gt; {{- if .Site.Params.valine.enable -}} &amp;lt;!-- id 将作为查询条件 --&amp;gt; &amp;lt;span id=&amp;#34;{{ .URL | relURL }}&amp;#34; class=&amp;#34;leancloud_visitors&amp;#34; data-flag-title=&amp;#34;{{ .Title }}&amp;#34;&amp;gt; &amp;lt;span class=&amp;#34;post-meta-item-text&amp;#34;&amp;gt;阅读量 &amp;lt;/span&amp;gt; &amp;lt;span class=&amp;#34;leancloud-visitors-count&amp;#34;&amp;gt;&amp;lt;/span&amp;gt; &amp;lt;p&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/span&amp;gt; &amp;lt;div id=&amp;#34;vcomments&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script src=&amp;#34;//cdn1.lncld.net/static/js/3.0.4/av-min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#39;//unpkg.com/valine/dist/Valine.min.js&amp;#39;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; new Valine({ el: &amp;#39;#vcomments&amp;#39; , appId: &amp;#39;{{ .Site.Params.valine.appId }}&amp;#39;, appKey: &amp;#39;{{ .Site.Params.valine.appKey }}&amp;#39;, notify: {{ .Site.Params.valine.notify }}, verify: {{ .Site.Params.valine.verify }}, avatar:&amp;#39;{{ .Site.Params.valine.avatar }}&amp;#39;, placeholder: &amp;#39;{{ .</description>
+    </item>
+    
+    <item>
+      <title>Electron学习笔记</title>
+      <link>https://ccbyte.github.io/2021/electron-note/</link>
+      <pubDate>Sun, 24 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ccbyte.github.io/2021/electron-note/</guid>
+      <description>Electron 学习笔记 导图 基本介绍 Electron三个组成部分  Chormium - UI   Web生态兼容性  Node.js - 底层操作   文件读写； 使用C++；  Native API - 跨平台   统一原生界面如窗口，托盘； 系统能力：Notification； 基础能力：软件更新/崩溃；  浏览器发展史 Nexus世界上第一个浏览器
+Mosaic - Mozilla - NetScape（所有浏览器的UA(user-agent)都会带上Mozilla）
+IE (1995 Microsoft)
+JavaScript (1995 NetScape) Brendan Eich - 10天完成！
+开源Mozilla - 火狐
+Chrome (2008,极简 多进程 v8)
+Chrominum 开源 node.js 开源 v8开源
+node-webkit (NW 2011) Github前五 - 赵成 （后加入Github Atom 项目组)
+Atom-shell -&amp;gt; Electron (2013-&amp;gt;2015)</description>
+    </item>
+    
+    <item>
+      <title>时间处理库date-fns的常见应用</title>
+      <link>https://ccbyte.github.io/2021/date-fns-usage/</link>
+      <pubDate>Sun, 25 Jul 2021 20:13:03 +0000</pubDate>
+      
+      <guid>https://ccbyte.github.io/2021/date-fns-usage/</guid>
+      <description>时间处理库Date-fns (v2.25.0) 这个库功能十分齐全，可能需要科学上网，这里记录一下之前做项目中常用的方法。
+npm i date-fns 格式化(format) 📚
+import { format } from &amp;#39;date-fns&amp;#39; format(new Date(), &amp;#39;yyyy-MM-dd HH:mm:ss&amp;#39;) // &amp;lt;String&amp;gt; 2021-07-25 20:13:03 日期差(intervalToDuration) 📚
+根据出生日期得到几岁 import { intervalToDuration } from &amp;#39;date-fns&amp;#39; let birthday = new Date(&amp;#39;1997-07-01&amp;#39;) const { years, months, days } = intervalToDuration({ start: new Date(birthday), end: new Date() }) // year即年龄，months和day可以再精确到天 时间差(differenceInMinutes) 📚
+比较开始时间和结束时间 if(differenceInMinutes(formData.end, formData.start) &amp;lt; 0) { console.log(&amp;#39;开始时间小于结束时间&amp;#39;) } 本地化/I18n(locale) 📚
+输出中文年月日 只有format相关函数支持
+import format from &amp;#39;date-fns/format&amp;#39; import { zhCN } from &amp;#39;date-fns/locale&amp;#39; format(new Date(), &amp;#34;yyyy&amp;#39;年&amp;#39;M&amp;#39;月&amp;#39;d日&amp;#34;, {locale: zhCN}) // 单个M在1~9月不补0 日期计算(addDays, subDays, addMonts, subMonth&amp;hellip;) 📚 这里太多了，还有📚addWeeks等等。</description>
+    </item>
+    
+    <item>
+      <title>二维数组和树</title>
+      <link>https://ccbyte.github.io/1/array-to-tree/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ccbyte.github.io/1/array-to-tree/</guid>
+      <description>起因 经过 结果 </description>
+    </item>
+    
+    <item>
+      <title>实现简单的表单数据校验功能</title>
+      <link>https://ccbyte.github.io/1/a-easy-validate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ccbyte.github.io/1/a-easy-validate/</guid>
+      <description>实现表单数据校验功能 因为项目用的UI库功能太少，表单不具备校验功能，所以自己写了一个很简陋的，只有一个文件。
+使用 import { required, email, useValidate } from &amp;#39;validate&amp;#39; let rules = { username: { name:&amp;#39;邮箱号&amp;#39;, validate: [required, email] }, // name用于错误提示，validate是需要符合的校验规则列表  password: { name:&amp;#39;密码&amp;#39;, validate: [required] } } useValidate(formData, rules) 源文件 📝 validate.js
+// 校验的主函数 export const useValidate = (formData, rules) =&amp;gt; { return Promise.all( Object.entries(rules).map(([key, rule]) =&amp;gt; { return Promise.all( rule.validate.map(func =&amp;gt; func(formData[key])) ).catch((err) =&amp;gt; { console.log(rule.name + err) // 错误提示（打印或弹窗）  return Promise.reject() }) }) ) } // 以下都是一些常见的校验方法 // 是否必填 export const required = (value) =&amp;gt; { return isEmpty(value) ?</description>
     </item>
     
   </channel>

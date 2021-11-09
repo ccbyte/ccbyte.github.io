@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Electron, Node.js, JavaScript on Chao&#39;s Blog</title>
+    <link>https://ccbyte.github.io/tags/electron-node.js-javascript/</link>
+    <description>Recent content in Electron, Node.js, JavaScript on Chao&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ccbyte.github.io/tags/electron-node.js-javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Electron学习笔记</title>
+      <link>https://ccbyte.github.io/2021/electron-note/</link>
+      <pubDate>Sun, 24 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ccbyte.github.io/2021/electron-note/</guid>
+      <description>Electron 学习笔记 导图 基本介绍 Electron三个组成部分  Chormium - UI   Web生态兼容性  Node.js - 底层操作   文件读写； 使用C++；  Native API - 跨平台   统一原生界面如窗口，托盘； 系统能力：Notification； 基础能力：软件更新/崩溃；  浏览器发展史 Nexus世界上第一个浏览器
+Mosaic - Mozilla - NetScape（所有浏览器的UA(user-agent)都会带上Mozilla）
+IE (1995 Microsoft)
+JavaScript (1995 NetScape) Brendan Eich - 10天完成！
+开源Mozilla - 火狐
+Chrome (2008,极简 多进程 v8)
+Chrominum 开源 node.js 开源 v8开源
+node-webkit (NW 2011) Github前五 - 赵成 （后加入Github Atom 项目组)
+Atom-shell -&amp;gt; Electron (2013-&amp;gt;2015)</description>
+    </item>
+    
+  </channel>
+</rss>
