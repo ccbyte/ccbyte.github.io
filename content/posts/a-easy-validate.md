@@ -1,6 +1,6 @@
 ---
 title: "实现简单的表单数据校验功能"
-date: 2021-10-15T20:13:3#7+08:00
+date: 2021-10-15T19:33:03
 tags: ["javascript"]
 categories: ["front end"]
 ---
