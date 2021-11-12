@@ -2,8 +2,17 @@
 title: "You Don't Know JS阅读笔记"
 date: 2021-11-10T12:01:50
 ---
-# 第一章
-在阅读[YDKJS](https://github.com/getify/You-Dont-Know-JS)复习JS时做的一些摘录&笔记
+# YDKJS Note
+在阅读[YDKJS](https://github.com/getify/You-Dont-Know-JS)复习JS时做的一些摘录&笔记，只记录一些重要部分。
+# 进入JavaScript
+入门与进阶第二章
+## 值与类型
+- string
+- number
+- boolean
+- null 和 undefined
+- object
+- symbol （ES6新增类型）
 ## 值的比较
 ### Truthy与Falsy
 在JavaScript中“falsy”的明确列表如下：
@@ -67,9 +76,9 @@ a == b;		// false
 
 "41" < 42 // true 字符串 转数字后 进行比较
 
-41 < "foo" // false
+41 < "foo" // false 其中foo被强制转换成了NaN无法参与比较 （但NaN!==NaN为true）
 41 > "foo" // false
-41 == "foo" // false 其中foo被强制转换成了NaN无法参与比较(但NaN!==NaN为true)
+41 == "foo" // false
 
 "axx" < "bxx" // true 字符串直接 按字母序 进行比较（ASCII）
 ```
@@ -196,3 +205,20 @@ foo( 42 );	// 42
 常用的转义器：  
 Babel (https://babeljs.io) (前身为 6to5): 将 ES6+ 转译为 ES5    
 Traceur (https://github.com/google/traceur-compiler): 将 ES6，ES7，和以后特性转译为 ES5
+
+# 什么是作用域？
+作用域与闭包第一章
+
+## 编译器理论
+编译的三个步骤：
+1. 分词/词法分析：将一连串字符打断成有意义的<font color=red>**token（记号）**</font>；
+2. 解析：将token流（数组）转换成一个嵌套元素的树，即<font color=red>**AST（抽象语法树）**</font>（Abstract Syntax Tree）；
+3. 代码生成：将抽象语法树转成<font color=red>**可执行代码**</font>（视平台而定）。
+
+## 引擎 编译器 作用域
+1. 引擎：负责**编译和执行**JavaScript程序；
+2. 编译器：处理所有的解析和**代码生成**；
+3. 作用域：收集并维护一张所有被声明的**标识符（变量）列表**，并按规则限制当前执行中的代码如何访问这些变量。
+
+## LHS RHS
+编译器术语
