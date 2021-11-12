@@ -1,6 +1,7 @@
 ---
 title: "You Don't Know JS阅读笔记"
 date: 2021-11-10T12:01:50
+tags: ['JavaScript']
 ---
 # YDKJS Note
 在阅读[YDKJS](https://github.com/getify/You-Dont-Know-JS)复习JS时做的一些摘录&笔记，只记录一些重要部分。

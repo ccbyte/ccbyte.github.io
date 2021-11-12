@@ -1,8 +1,7 @@
 ---
 title: "时间处理库date-fns的常见应用"
 date: 2021-07-25T20:13:03
-tags: ['javascript']
-categories: ["front end"]
+tags: ['JavaScript']
 ---
 # 时间处理库Date-fns (v2.25.0)
 这个库功能十分齐全，可能需要科学上网，这里记录一下之前做项目中常用的方法。

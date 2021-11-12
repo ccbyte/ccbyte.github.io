@@ -2,8 +2,7 @@
 date: 2021-10-31
 title: "Hugo博客/Leaveit主题优化"
 description: "增加了评论模块，markdown目录，字数统计"
-tags: ["hugo"]
-categories: ["front end"]
+tags: ["Hugo", "Html", "Scss"]
 ---
 # 主题优化
 很喜欢hugo的这个主题。

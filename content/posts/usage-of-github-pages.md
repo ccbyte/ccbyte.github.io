@@ -1,7 +1,7 @@
 ---
 title: "使用github的pages功能"
 date: 2021-06-25T20:13:37+08:00
-draft: false
+tags: ['Blog', 'Shell', 'Hugo']
 ---
 
 ## 使用github的pages功能
@@ -16,20 +16,20 @@ draft: false
 ```
 
 初始化git
-```
+```shell
 git init
 ```
 
 把当前目录环境和显示目录合并
-```
+```shell
 git remote add https://github.com/你的用户名/你的用户名.github.io.git
 ```
 构建项目到docs目录
-```
+```shell
 hugo -d docs
 ```
 
-```
+```shell
 git add
 git commit
 git push origin master
