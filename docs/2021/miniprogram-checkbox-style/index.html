@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Xuchao.He">
+  
+  
+  
+  <link rel="prev" href="https://ccbyte.github.io/2021/usage-of-github-pages/" />
+  <link rel="next" href="https://ccbyte.github.io/2021/date-fns-usage/" />
+  <link rel="canonical" href="https://ccbyte.github.io/2021/miniprogram-checkbox-style/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           自定义小程序checkbox样式&#39; | Chao&#39;s Blog
+       
+  </title>
+  <meta name="title" content="自定义小程序checkbox样式&#39; | Chao&#39;s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/ccbyte.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "自定义小程序checkbox样式\u0027",
+    "headline" : "自定义小程序checkbox样式\u0027",
+    "description" : "自定义小程序原生checkbox样式 由于项目有设计稿，要精确还原设计稿的话，本来是打算自己写一个，写是写了，大概原理就是\n 隐藏原来的checkbox； 做自己的checkbox样式（比如一个圆圈⚪），通过:active选择器触发样式的更改； 内部元素（比如一个对勾✔），通过伪元素来添加；  后来网上找了一下发现，微信的实现貌似也是类似啊，我直接用下面代码覆盖它的就行了。\n\/*checkbox 整体大小 *\/ checkbox { } \/*checkbox 选项框大小 *\/ checkbox .wx-checkbox-input { width: 40rpx; height: 40rpx; border-radius: 50%; border: 3px solid #ccc; } \/*checkbox选中后样式 *\/ checkbox .wx-checkbox-input.wx-checkbox-input-checked { border: 3px solid #8dc21f; background: #8dc21f; } \/*checkbox选中后图标样式 *\/ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before { width: 28rpx; height: 28rpx; line-height: 28rpx; text-align: center; font-size: 26rpx; color: #fff; background: transparent; transform: translate(-50%, -50%) scale(1); -webkit-transform: translate(-50%, -50%) scale(1); } ",
+    "inLanguage" : "en-us",
+    "author" : "Xuchao.He",
+    "creator" : "Xuchao.He",
+    "publisher": "Xuchao.He",
+    "accountablePerson" : "Xuchao.He",
+    "copyrightHolder" : "Xuchao.He",
+    "copyrightYear" : "2021",
+    "datePublished": "2021-07-12 20:08:00 \u002b0000 UTC",
+    "dateModified" : "2021-07-12 20:08:00 \u002b0000 UTC",
+    "url" : "https:\/\/ccbyte.github.io\/2021\/miniprogram-checkbox-style\/",
+    "wordCount" : "69",
+    "keywords" : [ "Miniprogram","Scss","Css", "Chao\u0027s Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://ccbyte.github.io">Chao&#39;s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/more/" title="More">More</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://ccbyte.github.io">Chao&#39;s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/more/" title="More">More</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">自定义小程序checkbox样式&#39;</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://ccbyte.github.io" rel="author">Xuchao.He</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2021-07-12 itemprop="datePublished">July 12, 2021</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    
+          <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title"></h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+<script type="text/javascript">
+  window.onload = function () {
+    var fix = $('.post-toc');
+    var end = $('.post-comment');
+    var fixTop = fix.offset().top, fixHeight = fix.height();
+    var endTop, miss;
+    var offsetTop = fix[0].offsetTop;
+    $(window).scroll(function () {
+      var docTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+      if (end.length > 0) {
+        endTop = end.offset().top;
+        miss = endTop - docTop - fixHeight;
+      }
+      if (fixTop < docTop) {
+        fix.css({ 'position': 'fixed' });
+        if ((end.length > 0) && (endTop < (docTop + fixHeight))) {
+          fix.css({ top: miss });
+        } else {
+          fix.css({ top: 0 });
+        }
+      } else {
+        fix.css({ 'position': 'absolute' });
+        fix.css({ top: offsetTop });
+      }
+    })
+  }
+</script> 
+	
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h1 id="自定义小程序原生checkbox样式">自定义小程序原生checkbox样式</h1>
+<p>由于项目有设计稿，要精确还原设计稿的话，本来是打算自己写一个，写是写了，大概原理就是</p>
+<ol>
+<li>隐藏原来的checkbox；</li>
+<li>做自己的checkbox样式（比如一个圆圈⚪），通过:active选择器触发样式的更改；</li>
+<li>内部元素（比如一个对勾✔），通过伪元素来添加；</li>
+</ol>
+<p>后来网上找了一下发现，微信的实现貌似也是类似啊，我直接用下面代码覆盖它的就行了。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss">  <span style="color:#75715e">/*checkbox 整体大小  */</span>
+  <span style="color:#f92672">checkbox</span> {
+  }
+  <span style="color:#75715e">/*checkbox 选项框大小  */</span>
+  <span style="color:#f92672">checkbox</span> <span style="color:#a6e22e">.wx-checkbox-input</span> {
+    <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">40</span><span style="color:#66d9ef">rpx</span>;
+    <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">40</span><span style="color:#66d9ef">rpx</span>;
+    <span style="color:#a6e22e">border-radius</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>;
+    <span style="color:#a6e22e">border</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span><span style="color:#66d9ef">px</span> solid <span style="color:#ae81ff">#ccc</span>;
+  }
+  <span style="color:#75715e">/*checkbox选中后样式  */</span>
+  <span style="color:#f92672">checkbox</span> <span style="color:#a6e22e">.wx-checkbox-input.wx-checkbox-input-checked</span> {
+    <span style="color:#a6e22e">border</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span><span style="color:#66d9ef">px</span> solid <span style="color:#ae81ff">#8dc21f</span>;
+    <span style="color:#a6e22e">background</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">#8dc21f</span>;
+  }
+  <span style="color:#75715e">/*checkbox选中后图标样式  */</span>
+  <span style="color:#f92672">checkbox</span> <span style="color:#a6e22e">.wx-checkbox-input.wx-checkbox-input-checked</span><span style="color:#a6e22e">::before</span> {
+    <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">28</span><span style="color:#66d9ef">rpx</span>;
+    <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">28</span><span style="color:#66d9ef">rpx</span>;
+    <span style="color:#a6e22e">line-height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">28</span><span style="color:#66d9ef">rpx</span>;
+    <span style="color:#a6e22e">text-align</span><span style="color:#f92672">:</span> center;
+    <span style="color:#a6e22e">font-size</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">26</span><span style="color:#66d9ef">rpx</span>;
+    <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">#fff</span>;
+    <span style="color:#a6e22e">background</span><span style="color:#f92672">:</span> transparent;
+    <span style="color:#a6e22e">transform</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">translate</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span><span style="color:#f92672">,</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>) <span style="color:#a6e22e">scale</span>(<span style="color:#ae81ff">1</span>);
+    <span style="color:#a6e22e">-webkit-transform</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">translate</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span><span style="color:#f92672">,</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>) <span style="color:#a6e22e">scale</span>(<span style="color:#ae81ff">1</span>);
+  }
+</code></pre></div>
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Xuchao.He </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://ccbyte.github.io/2021/miniprogram-checkbox-style/>https://ccbyte.github.io/2021/miniprogram-checkbox-style/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://ccbyte.github.io/tags/miniprogram/">
+                    #Miniprogram</a></span>
+            
+            <span class="tag"><a href="https://ccbyte.github.io/tags/scss/">
+                    #Scss</a></span>
+            
+            <span class="tag"><a href="https://ccbyte.github.io/tags/css/">
+                    #Css</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://ccbyte.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://ccbyte.github.io/2021/usage-of-github-pages/" class="prev" rel="prev" title="使用github的pages功能"><i class="iconfont icon-left"></i>&nbsp;使用github的pages功能</a>
+         
+        
+        <a href="https://ccbyte.github.io/2021/date-fns-usage/" class="next" rel="next" title="时间处理库date-fns的常见应用">时间处理库date-fns的常见应用&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+          
+          
+  
+
+
+<div class="post bg-white">
+    <script src="https://utteranc.es/client.js"
+          repo="ccbyte/blog_comments"
+          issue-term="pathname"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+</div>
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2011 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://ccbyte.github.io">Xuchao.He</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

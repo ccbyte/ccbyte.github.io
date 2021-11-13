@@ -22,10 +22,10 @@ Utterances使用Github登录评论，Valine可匿名评论但要备案才能用�
     
     <item>
       <title>自定义小程序checkbox样式&#39;</title>
-      <link>https://ccbyte.github.io/1/miniprogram-checkbox-style/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>https://ccbyte.github.io/2021/miniprogram-checkbox-style/</link>
+      <pubDate>Mon, 12 Jul 2021 20:08:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/1/miniprogram-checkbox-style/</guid>
+      <guid>https://ccbyte.github.io/2021/miniprogram-checkbox-style/</guid>
       <description>自定义小程序原生checkbox样式 由于项目有设计稿，要精确还原设计稿的话，本来是打算自己写一个，写是写了，大概原理就是
  隐藏原来的checkbox； 做自己的checkbox样式（比如一个圆圈⚪），通过:active选择器触发样式的更改； 内部元素（比如一个对勾✔），通过伪元素来添加；  后来网上找了一下发现，微信的实现貌似也是类似啊，我直接用下面代码覆盖它的就行了。
 /*checkbox 整体大小 */ checkbox { } /*checkbox 选项框大小 */ checkbox .wx-checkbox-input { width: 40rpx; height: 40rpx; border-radius: 50%; border: 3px solid #ccc; } /*checkbox选中后样式 */ checkbox .wx-checkbox-input.wx-checkbox-input-checked { border: 3px solid #8dc21f; background: #8dc21f; } /*checkbox选中后图标样式 */ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before { width: 28rpx; height: 28rpx; line-height: 28rpx; text-align: center; font-size: 26rpx; color: #fff; background: transparent; transform: translate(-50%, -50%) scale(1); -webkit-transform: translate(-50%, -50%) scale(1); } </description>
