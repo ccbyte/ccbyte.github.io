@@ -6,20 +6,11 @@
     <description>Recent content in Categories on Chao&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 31 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ccbyte.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ccbyte.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>diary</title>
-      <link>https://ccbyte.github.io/categories/diary/</link>
-      <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://ccbyte.github.io/categories/diary/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>front end</title>
+      <title>Front End</title>
       <link>https://ccbyte.github.io/categories/front-end/</link>
-      <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 24 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ccbyte.github.io/categories/front-end/</guid>
       <description></description>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Miniprogram on Chao&#39;s Blog</title>
+    <link>https://ccbyte.github.io/tags/miniprogram/</link>
+    <description>Recent content in Miniprogram on Chao&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 12 Nov 2021 12:10:10 +0000</lastBuildDate><atom:link href="https://ccbyte.github.io/tags/miniprogram/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Taro/小程序中的页面传参</title>
+      <link>https://ccbyte.github.io/2021/taro-delivery-data-between-pages/</link>
+      <pubDate>Fri, 12 Nov 2021 12:10:10 +0000</pubDate>
+      
+      <guid>https://ccbyte.github.io/2021/taro-delivery-data-between-pages/</guid>
+      <description>Taro/小程序中的页面传参 方法一：使用小程序跳转功能提供的传参方式（navigateTo, navigateBack）。
+方法二：使用vuex方法。 方法三：使用第三方封装好的Router组件（vue-taro-router）。
+本篇主要记录下前两种方法。
+∵ 第二种方法有局限性，比如在多级页面需要控制数据何时传输的情况，如下两种情况的A/B/C页面：
+选择教师负责班级C -&amp;gt; 编辑教师信息B -&amp;gt; 教师信息A C通知B所选择的班级，通过修改store数据的话会导致直接修改到A的数据，C页/B页的保存按钮就没意义了。
+幼儿某项活动记录C -&amp;gt; 幼儿更多活动记录B -&amp;gt; 幼儿活动记录A
+如果C中某项记录删除/修改了，更新B页，同时也要更新到A页，修改store是最方便的。
+∴ 存在需要控制数据和不需要控制数据的情况，两种方法结合使用可能比较好。
+另外，react版都有类似的方法（redux，tarojs-router-next）
+当前页往目标页传参 Taro.navigateTo({ url: `../questions/index?id=${id}`, // 由于没类似params/query，手动拼接 }) 当前页往历史页传参 使用Taro.getCurrentPages()可以获得页面栈，栈顶pages[pages.length - 1]就是当前页。
+获取到页面实例就可以在上一页用setData申明好数据/方法，在当前页需要时调用更新上一页数据。
+// 一般用的就是当前页和上一页之间传参，工具类里面封装好两个方法。 export function getCurrentPage() { // 当前页  const pages = Taro.getCurrentPages(); return pages[pages.length - 1]; } export function getPrevPage() { // 上一页  const pages = Taro.getCurrentPages(); if (pages.length &amp;gt; 1) { return pages[pages.</description>
+    </item>
+    
+    <item>
+      <title>小程序原生组件层级过高的解决方法</title>
+      <link>https://ccbyte.github.io/2021/miniprogram-comp-z/</link>
+      <pubDate>Thu, 26 Aug 2021 18:27:00 +0000</pubDate>
+      
+      <guid>https://ccbyte.github.io/2021/miniprogram-comp-z/</guid>
+      <description>原生组件层级过高问题 例如input, textarea, Canvas，如果要在页面上加弹层，且页面上有这些元素的话这些元素会高于其他包括遮罩overlay，因为原生小程序的层级最高。
+解决方法 cover-view 没太大用，能嵌套的内容有限。
+手动控制 在某个需要的地方添加该样式，再弹窗时通过vuex动态控制微信原生组件的状态。
+&amp;amp;.wechat-comp-disabled { .at-textarea { pointer-events: none; } .at-input { pointer-events: none; } .canvas { pointer-events: none; } // 也可改为display: none;看效果而定 } </description>
+    </item>
+    
+    <item>
+      <title>自定义小程序checkbox样式&#39;</title>
+      <link>https://ccbyte.github.io/1/miniprogram-checkbox-style/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ccbyte.github.io/1/miniprogram-checkbox-style/</guid>
+      <description>自定义小程序原生checkbox样式 由于项目有设计稿，要精确还原设计稿的话，本来是打算自己写一个，写是写了，大概原理就是
+ 隐藏原来的checkbox； 做自己的checkbox样式（比如一个圆圈⚪），通过:active选择器触发样式的更改； 内部元素（比如一个对勾✔），通过伪元素来添加；  后来网上找了一下发现，微信的实现貌似也是类似啊，我直接用下面代码覆盖它的就行了。
+/*checkbox 整体大小 */ checkbox { } /*checkbox 选项框大小 */ checkbox .wx-checkbox-input { width: 40rpx; height: 40rpx; border-radius: 50%; border: 3px solid #ccc; } /*checkbox选中后样式 */ checkbox .wx-checkbox-input.wx-checkbox-input-checked { border: 3px solid #8dc21f; background: #8dc21f; } /*checkbox选中后图标样式 */ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before { width: 28rpx; height: 28rpx; line-height: 28rpx; text-align: center; font-size: 26rpx; color: #fff; background: transparent; transform: translate(-50%, -50%) scale(1); -webkit-transform: translate(-50%, -50%) scale(1); } </description>
+    </item>
+    
+  </channel>
+</rss>

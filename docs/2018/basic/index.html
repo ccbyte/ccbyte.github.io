@@ -57,7 +57,7 @@
     "datePublished": "2018-04-09 00:00:00 \u002b0000 UTC",
     "dateModified" : "2018-04-09 00:00:00 \u002b0000 UTC",
     "url" : "https:\/\/ccbyte.github.io\/2018\/basic\/",
-    "wordCount" : "134",
+    "wordCount" : "257",
     "keywords" : [ "git", "Chao\u0027s Blog"]
 }
 </script>
@@ -141,10 +141,27 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#本地仓库初始化">本地仓库初始化</a></li>
+    <li><a href="#本地仓库初始化">本地仓库初始化</a>
+      <ul>
+        <li><a href="#配置">配置</a></li>
+      </ul>
+    </li>
+    <li><a href="#分支">分支</a>
+      <ul>
+        <li><a href="#切换分支">切换分支</a></li>
+        <li><a href="#新增分支">新增分支</a></li>
+        <li><a href="#拉取分支">拉取分支</a></li>
+        <li><a href="#删除分支">删除分支</a></li>
+      </ul>
+    </li>
     <li><a href="#管理远端仓库">管理远端仓库</a>
       <ul>
         <li><a href="#添加远端仓库">添加远端仓库</a></li>
+      </ul>
+    </li>
+    <li><a href="#commit相关">Commit相关</a>
+      <ul>
+        <li><a href="#撤回">撤回</a></li>
       </ul>
     </li>
   </ul>
@@ -196,8 +213,50 @@
           
 
           <h1 id="git使用基础">Git使用基础</h1>
+<p>本篇以常用例子为主以点带面各个命令的使用，不具体写名各个方法的所有用途、参数等。</p>
 <h2 id="本地仓库初始化">本地仓库初始化</h2>
-<h2 id="管理远端仓库">管理远端仓库</h2>
+<pre tabindex="0"><code>git init
+</code></pre><h3 id="配置">配置</h3>
+<pre tabindex="0"><code>git clone &lt;git地址&gt;
+git remote -v
+git rev-list --all -count
+git config --list
+git config --global user.username &lt;用户名&gt;
+git config --global user.email &lt;邮箱&gt;
+git config
+# --local是对当前项目配置
+</code></pre><h2 id="分支">分支</h2>
+<h3 id="切换分支">切换分支</h3>
+<pre tabindex="0"><code>$ git checkout 分支名称
+&gt; Switched to branch '分支名称'
+</code></pre><h3 id="新增分支">新增分支</h3>
+<p>1.检查分支</p>
+<pre tabindex="0"><code># 本地
+$ git branch 
+* master
+
+# 远程
+$ git branch -r
+* origin/HEAD -&gt; origin/master
+* origin/master
+</code></pre><p>2.新建分支（并切换到该分支）</p>
+<pre tabindex="0"><code># 本地
+$ git checkout -b dev_branch
+&gt; Switched to a new branch 'dev_branch'
+
+# 远程
+git push origin dev_branch:dev_branch
+</code></pre><h3 id="拉取分支">拉取分支</h3>
+<p>拉取分支（并切换到该分支）</p>
+<pre tabindex="0"><code># 远程
+&gt; git checkout -b 本地分支名 origin/远程分支名
+</code></pre><h3 id="删除分支">删除分支</h3>
+<pre tabindex="0"><code># 本地
+&gt; git branch --delete dev_branch
+
+# 远程
+&gt; git push origin --delete dev_branch
+</code></pre><h2 id="管理远端仓库">管理远端仓库</h2>
 <h3 id="添加远端仓库">添加远端仓库</h3>
 <p>🌳基本命令</p>
 <pre tabindex="0"><code>git remote add
@@ -217,25 +276,26 @@ $ git remote -v
 &gt; origin  https://github.com/OWNER/REPOSITORY.git (fetch)
 &gt; origin  https://github.com/OWNER/REPOSITORY.git (push)
 
-$ git remote rename origin destination
 # 把远端名由 'origin' 改成 'destination'（不会改仓库名）
+$ git remote rename origin destination
 
-$ git remote -v
 # 验证生效否
+$ git remote -v
 &gt; destination  https://github.com/OWNER/REPOSITORY.git (fetch)
 &gt; destination  https://github.com/OWNER/REPOSITORY.git (push)
 </code></pre><p>方案二：删除与远端的链接后重新链（推荐）</p>
-<pre tabindex="0"><code>$ git remote -v
-# 查看当前远端
+<pre tabindex="0"><code># 查看当前远端
+$ git remote -v
 &gt; origin  https://github.com/OWNER/REPOSITORY.git (fetch)
 &gt; origin  https://github.com/OWNER/REPOSITORY.git (push)
 &gt; destination  https://github.com/FORKER/REPOSITORY.git (fetch)
 &gt; destination  https://github.com/FORKER/REPOSITORY.git (push)
 
-$ git remote rm destination
 # 删除远端（不会删除仓库，只是删除链接）
-$ git remote -v
+$ git remote rm destination
+
 # 验证生效否
+$ git remote -v
 &gt; origin  https://github.com/OWNER/REPOSITORY.git (fetch)
 &gt; origin  https://github.com/OWNER/REPOSITORY.git (push)
 </code></pre><p>最后重新 <code>add origin</code> 就ok了
@@ -244,6 +304,13 @@ $ git remote -v
 <p>Reference  <br>
 <a href="https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories">Managing remote repositories</a></p>
 </blockquote>
+<h2 id="commit相关">Commit相关</h2>
+<h3 id="撤回">撤回</h3>
+<p>1.获得版本号</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git log --pretty<span style="color:#f92672">=</span>oneline
+</code></pre></div><p>2.退回到上一个版本号</p>
+<pre tabindex="0"><code>git reset --soft &lt;版本号&gt;
+</code></pre><p>tips: 如果参数改成&ndash;hard不仅撤回还会清空掉之前commit的缓存（慎用）</p>
 
     </div>
 

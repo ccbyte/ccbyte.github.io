@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hugo on Chao&#39;s Blog</title>
+    <title>Hugo on Chao&#39;s Blog</title>
     <link>https://ccbyte.github.io/tags/hugo/</link>
-    <description>Recent content in hugo on Chao&#39;s Blog</description>
+    <description>Recent content in Hugo on Chao&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 31 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ccbyte.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
@@ -18,6 +18,22 @@
 Utterances使用Github登录评论，Valine可匿名评论但要备案才能用，两个都加再页面上了，根据配置来，配了一个注释掉另一个配置就行。
 新增评论模块页 📝 content/themes/LeaveIt/layouts/partials/comments.html
 &amp;lt;!-- valine --&amp;gt; {{- if .Site.Params.valine.enable -}} &amp;lt;!-- id 将作为查询条件 --&amp;gt; &amp;lt;span id=&amp;#34;{{ .URL | relURL }}&amp;#34; class=&amp;#34;leancloud_visitors&amp;#34; data-flag-title=&amp;#34;{{ .Title }}&amp;#34;&amp;gt; &amp;lt;span class=&amp;#34;post-meta-item-text&amp;#34;&amp;gt;阅读量 &amp;lt;/span&amp;gt; &amp;lt;span class=&amp;#34;leancloud-visitors-count&amp;#34;&amp;gt;&amp;lt;/span&amp;gt; &amp;lt;p&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/span&amp;gt; &amp;lt;div id=&amp;#34;vcomments&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script src=&amp;#34;//cdn1.lncld.net/static/js/3.0.4/av-min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#39;//unpkg.com/valine/dist/Valine.min.js&amp;#39;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; new Valine({ el: &amp;#39;#vcomments&amp;#39; , appId: &amp;#39;{{ .Site.Params.valine.appId }}&amp;#39;, appKey: &amp;#39;{{ .Site.Params.valine.appKey }}&amp;#39;, notify: {{ .Site.Params.valine.notify }}, verify: {{ .Site.Params.valine.verify }}, avatar:&amp;#39;{{ .Site.Params.valine.avatar }}&amp;#39;, placeholder: &amp;#39;{{ .</description>
+    </item>
+    
+    <item>
+      <title>使用github的pages功能</title>
+      <link>https://ccbyte.github.io/2021/usage-of-github-pages/</link>
+      <pubDate>Fri, 25 Jun 2021 20:13:37 +0800</pubDate>
+      
+      <guid>https://ccbyte.github.io/2021/usage-of-github-pages/</guid>
+      <description>使用github的pages功能 以搭建hugo博客为例
+首先下载git，官网地址
+在github新建仓库，仓库名为：
+你的用户名.github.io初始化git
+git init 把当前目录环境和显示目录合并
+git remote add https://github.com/你的用户名/你的用户名.github.io.git 构建项目到docs目录
+hugo -d docs git add git commit git push origin master 在仓库setting中找到pages，设置页面根目录为master分支下的docs目录
+最后进入页面 https://你的用户名.github.io</description>
     </item>
     
     <item>

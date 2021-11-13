@@ -9,8 +9,8 @@
   
   
   
-  <link rel="prev" href="https://ccbyte.github.io/2021/date-fns-usage/" />
-  <link rel="next" href="https://ccbyte.github.io/2021/2021-10-31/" />
+  <link rel="prev" href="https://ccbyte.github.io/2021/a-easy-validate/" />
+  <link rel="next" href="https://ccbyte.github.io/2021/blogs-optimize/" />
   <link rel="canonical" href="https://ccbyte.github.io/2021/electron-note/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -224,7 +224,7 @@
 
           <h1 id="electron-学习笔记">Electron 学习笔记</h1>
 <h2 id="导图">导图</h2>
-<p><img src="../images/image-20211024183439858.png" alt="image-20211024183439858"></p>
+<p><img src="https://i.loli.net/2021/11/13/JrhlMv93CXYHpzQ.png" alt=""></p>
 <h2 id="基本介绍">基本介绍</h2>
 <h3 id="electron三个组成部分">Electron三个组成部分</h3>
 <ol>
@@ -268,20 +268,20 @@
 <p>main.js 管理整个应用</p>
 <h2 id="架构和原理">架构和原理</h2>
 <h3 id="chromium架构">Chromium架构</h3>
-<p><img src="../images/image-20211024190952261.png" alt="image-20211024190952261"></p>
+<p><img src="https://i.loli.net/2021/11/13/PHTq1pKvuUyijNe.png" alt=""></p>
 <p>IPC跨进程通信 （主进程RenderProcessHost，Renderer进程RenderProcess）</p>
 <p>ResourceDispatcher页面请求资源转发到IPC  Browser处理再返回</p>
 <h3 id="electron架构">Electron架构</h3>
-<p><img src="../images/image-20211029214111880.png" alt="image-20211029214111880"></p>
+<p><img src="https://i.loli.net/2021/11/13/89zRApQhS3Eo6DP.png" alt=""></p>
 <h3 id="nodejs和chromiums整合">Node.js和Chromiums整合</h3>
 <p>难点：事件循环（Node.js基于libuv，Chromium基于message bump）</p>
 <ul>
 <li>Chromium集成到Node.js ，用libuv实现messagebump(NW) 【NSRunLoop glib 边界情况】</li>
 <li>Node.js集成到Chromium【libuv轮询backend_fd】</li>
 </ul>
-<p><img src="../images/image-20211029214644142.png" alt="image-20211029214644142"></p>
+<p><img src="https://i.loli.net/2021/11/13/shuEibU4Q6YL3fG.png" alt=""></p>
 <p>延申资料</p>
-<p><img src="../images/image-20211029214722050.png" alt="image-20211029214722050"></p>
+<p><img src="https://i.loli.net/2021/11/13/wgdMLeOtpraU7A3.png" alt=""></p>
 <h2 id="桌面端技术选型">桌面端技术选型</h2>
 <p>入口快捷</p>
 <p>离线可用</p>
@@ -309,7 +309,7 @@
 <h2 id="开发一个番茄钟">开发一个番茄钟</h2>
 <p>休息5分钟弹出休息结束</p>
 <p>应用启动 → 倒计时工作25分钟 → 弹出是否休息→休息则5分钟倒计时后结束→不休息则重新开始25分钟</p>
-<p><img src="../images/image-20211029220941267.png" alt="image-20211029220941267"></p>
+<p><img src="https://i.loli.net/2021/11/13/1B3YZLaqrF7zOu4.png" alt=""></p>
 <h3 id="引入模块">引入模块</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">app</span>, <span style="color:#a6e22e">BrowserWindow</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;electron&#39;</span>)
 </code></pre></div><p>可以先阅读&amp;操作一遍官方的<a href="https://www.electronjs.org/zh/docs/latest/tutorial/quick-start">快速开始文档</a></p>
@@ -336,7 +336,7 @@
 <li>展示Web页面的进程</li>
 <li>通过Node.js、Electron提供的API跟系统底层打交道</li>
 </ul>
-<p><img src="../images/image-20211030160549560.png" alt="image-20211030160549560"></p>
+<p><img src="https://i.loli.net/2021/11/13/aCwW3I48t5MOiSR.png" alt=""></p>
 <table>
 <thead>
 <tr>
@@ -498,7 +498,7 @@
 <li>Shell（node.js child_process）</li>
 </ul>
 <h4 id="electron能力">Electron能力</h4>
-<p><img src="./image-20211030165814764.png" alt="image-20211030165814764"></p>
+<p><img src="https://i.loli.net/2021/11/13/kWbyjTlwS71KrPL.png" alt=""></p>
 <h3 id="四释放前端想象力">四、释放前端想象力</h3>
 <ul>
 <li>
@@ -576,10 +576,10 @@
 
     <div class="post-nav">
         
-        <a href="https://ccbyte.github.io/2021/date-fns-usage/" class="prev" rel="prev" title="时间处理库date-fns的常见应用"><i class="iconfont icon-left"></i>&nbsp;时间处理库date-fns的常见应用</a>
+        <a href="https://ccbyte.github.io/2021/a-easy-validate/" class="prev" rel="prev" title="实现简单的表单数据校验功能"><i class="iconfont icon-left"></i>&nbsp;实现简单的表单数据校验功能</a>
          
         
-        <a href="https://ccbyte.github.io/2021/2021-10-31/" class="next" rel="next" title="尾款日">尾款日&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://ccbyte.github.io/2021/blogs-optimize/" class="next" rel="next" title="Hugo博客/Leaveit主题优化">Hugo博客/Leaveit主题优化&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 

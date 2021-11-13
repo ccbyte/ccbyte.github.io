@@ -2,19 +2,9 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>https://ccbyte.github.io/categories/</loc>
-      
-      <lastmod>2021-10-31T00:00:00+00:00</lastmod>
-      
-      
-      
-      
-    </url>
-  
-    <url>
       <loc>https://ccbyte.github.io/</loc>
       
-      <lastmod>2021-10-31T00:00:00+00:00</lastmod>
+      <lastmod>2021-11-12T12:10:10+00:00</lastmod>
       
       
       
@@ -22,19 +12,9 @@
     </url>
   
     <url>
-      <loc>https://ccbyte.github.io/tags/diary/</loc>
+      <loc>https://ccbyte.github.io/tags/javascript/</loc>
       
-      <lastmod>2021-10-31T00:00:00+00:00</lastmod>
-      
-      
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://ccbyte.github.io/categories/diary/</loc>
-      
-      <lastmod>2021-10-31T00:00:00+00:00</lastmod>
+      <lastmod>2021-11-12T12:10:10+00:00</lastmod>
       
       
       
@@ -42,7 +22,77 @@
     </url>
   
     <url>
-      <loc>https://ccbyte.github.io/categories/front-end/</loc>
+      <loc>https://ccbyte.github.io/tags/miniprogram/</loc>
+      
+      <lastmod>2021-11-12T12:10:10+00:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://ccbyte.github.io/posts/</loc>
+      
+      <lastmod>2021-11-12T12:10:10+00:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://ccbyte.github.io/tags/</loc>
+      
+      <lastmod>2021-11-12T12:10:10+00:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://ccbyte.github.io/tags/taro/</loc>
+      
+      <lastmod>2021-11-12T12:10:10+00:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://ccbyte.github.io/2021/taro-delivery-data-between-pages/</loc>
+      
+      <lastmod>2021-11-12T12:10:10+00:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://ccbyte.github.io/tags/vue.js/</loc>
+      
+      <lastmod>2021-11-12T12:10:10+00:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://ccbyte.github.io/2021/ydkjs-01/</loc>
+      
+      <lastmod>2021-11-10T12:01:50+00:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://ccbyte.github.io/tags/html/</loc>
       
       <lastmod>2021-10-31T00:00:00+00:00</lastmod>
       
@@ -72,7 +122,7 @@
     </url>
   
     <url>
-      <loc>https://ccbyte.github.io/posts/</loc>
+      <loc>https://ccbyte.github.io/tags/scss/</loc>
       
       <lastmod>2021-10-31T00:00:00+00:00</lastmod>
       
@@ -82,19 +132,9 @@
     </url>
   
     <url>
-      <loc>https://ccbyte.github.io/tags/</loc>
+      <loc>https://ccbyte.github.io/categories/</loc>
       
-      <lastmod>2021-10-31T00:00:00+00:00</lastmod>
-      
-      
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://ccbyte.github.io/2021/2021-10-31/</loc>
-      
-      <lastmod>2021-10-31T00:00:00+00:00</lastmod>
+      <lastmod>2021-10-24T00:00:00+00:00</lastmod>
       
       
       
@@ -122,6 +162,36 @@
     </url>
   
     <url>
+      <loc>https://ccbyte.github.io/categories/front-end/</loc>
+      
+      <lastmod>2021-10-24T00:00:00+00:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://ccbyte.github.io/2021/a-easy-validate/</loc>
+      
+      <lastmod>2021-10-15T19:33:03+00:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://ccbyte.github.io/2021/use-vuex-map-method-in-vue3/</loc>
+      
+      <lastmod>2021-10-12T18:29:00+00:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
       <loc>https://ccbyte.github.io/about/</loc>
       
       <lastmod>2021-09-25T16:42:16+08:00</lastmod>
@@ -132,9 +202,19 @@
     </url>
   
     <url>
-      <loc>https://ccbyte.github.io/tags/javascript/</loc>
+      <loc>https://ccbyte.github.io/tags/css/</loc>
       
-      <lastmod>2021-07-25T20:13:03+00:00</lastmod>
+      <lastmod>2021-08-26T18:27:00+00:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://ccbyte.github.io/2021/miniprogram-comp-z/</loc>
+      
+      <lastmod>2021-08-26T18:27:00+00:00</lastmod>
       
       
       
@@ -192,9 +272,59 @@
     </url>
   
     <url>
+      <loc>https://ccbyte.github.io/tags/blog/</loc>
+      
+      <lastmod>2021-06-25T20:13:37+08:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://ccbyte.github.io/tags/shell/</loc>
+      
+      <lastmod>2021-06-25T20:13:37+08:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
       <loc>https://ccbyte.github.io/2021/usage-of-github-pages/</loc>
       
       <lastmod>2021-06-25T20:13:37+08:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://ccbyte.github.io/tags/terminal/</loc>
+      
+      <lastmod>2020-11-12T12:03:03+00:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://ccbyte.github.io/tags/vscode/</loc>
+      
+      <lastmod>2020-11-12T12:03:03+00:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://ccbyte.github.io/2020/vscode-terminal/</loc>
+      
+      <lastmod>2020-11-12T12:03:03+00:00</lastmod>
       
       
       
@@ -640,7 +770,7 @@
     </url>
   
     <url>
-      <loc>https://ccbyte.github.io/1/a-easy-validate/</loc>
+      <loc>https://ccbyte.github.io/1/miniprogram-checkbox-style/</loc>
       
       
       

@@ -31,11 +31,10 @@
       <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ccbyte.github.io/2018/basic/</guid>
-      <description>Git使用基础 本地仓库初始化 管理远端仓库 添加远端仓库 🌳基本命令
-git remote add🌰例子
-$ git remote add origin https://github.com/user/repo.git# Set a new remote$ git remote -v# Verify new remote&amp;gt; origin https://github.com/user/repo.git (fetch)&amp;gt; origin https://github.com/user/repo.git (push)🏹问题解决
-fatal: remote origin already exists.方案一：重命名与远端的链接后重新链
-$ git remote -v# 查看远端链接信息&amp;gt; origin https://github.com/OWNER/REPOSITORY.git (fetch)&amp;gt; origin https://github.com/OWNER/REPOSITORY.git (push)$ git remote rename origin destination# 把远端名由 &#39;origin&#39; 改成 &#39;destination&#39;（不会改仓库名）$ git remote -v# 验证生效否&amp;gt; destination https://github.</description>
+      <description>Git使用基础 本篇以常用例子为主以点带面各个命令的使用，不具体写名各个方法的所有用途、参数等。
+本地仓库初始化 git init配置 git clone &amp;lt;git地址&amp;gt;git remote -vgit rev-list --all -countgit config --listgit config --global user.username &amp;lt;用户名&amp;gt;git config --global user.email &amp;lt;邮箱&amp;gt;git config# --local是对当前项目配置分支 切换分支 $ git checkout 分支名称&amp;gt; Switched to branch &#39;分支名称&#39;新增分支 1.检查分支
+# 本地$ git branch * master# 远程$ git branch -r* origin/HEAD -&amp;gt; origin/master* origin/master2.新建分支（并切换到该分支）
+# 本地$ git checkout -b dev_branch&amp;gt; Switched to a new branch &#39;dev_branch&#39;# 远程git push origin dev_branch:dev_branch拉取分支 拉取分支（并切换到该分支）</description>
     </item>
     
   </channel>

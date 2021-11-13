@@ -8,7 +8,7 @@ categories: ["Front End"]
 
 ## 导图
 
-![image-20211024183439858](./images/image-20211024183439858.png)
+![](https://i.loli.net/2021/11/13/JrhlMv93CXYHpzQ.png)
 
 ## 基本介绍
 
@@ -73,7 +73,7 @@ main.js 管理整个应用
 
 ### Chromium架构
 
-![image-20211024190952261](./images/image-20211024190952261.png)
+![](https://i.loli.net/2021/11/13/PHTq1pKvuUyijNe.png)
 
 IPC跨进程通信 （主进程RenderProcessHost，Renderer进程RenderProcess）
 
@@ -81,7 +81,7 @@ ResourceDispatcher页面请求资源转发到IPC  Browser处理再返回
 
 ### Electron架构
 
-![image-20211029214111880](./images/image-20211029214111880.png)
+![](https://i.loli.net/2021/11/13/89zRApQhS3Eo6DP.png)
 
 ### Node.js和Chromiums整合
 
@@ -90,11 +90,11 @@ ResourceDispatcher页面请求资源转发到IPC  Browser处理再返回
 - Chromium集成到Node.js ，用libuv实现messagebump(NW) 【NSRunLoop glib 边界情况】
 - Node.js集成到Chromium【libuv轮询backend_fd】
 
-![image-20211029214644142](./images/image-20211029214644142.png)
+![](https://i.loli.net/2021/11/13/shuEibU4Q6YL3fG.png)
 
 延申资料
 
-![image-20211029214722050](./images/image-20211029214722050.png)
+![](https://i.loli.net/2021/11/13/wgdMLeOtpraU7A3.png)
 
 ## 桌面端技术选型
 
@@ -160,7 +160,7 @@ Carlo，WPF，Chromium Embedded Framework，PWA
 
 应用启动 → 倒计时工作25分钟 → 弹出是否休息→休息则5分钟倒计时后结束→不休息则重新开始25分钟
 
-![image-20211029220941267](./images/image-20211029220941267.png)
+![](https://i.loli.net/2021/11/13/1B3YZLaqrF7zOu4.png)
 
 ### 引入模块
 
@@ -208,7 +208,7 @@ var myTimer = new Timer({
 - 展示Web页面的进程
 - 通过Node.js、Electron提供的API跟系统底层打交道
 
-![image-20211030160549560](./images/image-20211030160549560.png)
+![](https://i.loli.net/2021/11/13/aCwW3I48t5MOiSR.png)
 
 | 主进程                                        | 渲染进程                            | 交叉                  |
 | --------------------------------------------- | ----------------------------------- | --------------------- |
@@ -348,7 +348,7 @@ node-ffi (Foreign Function Interface)
 
 #### Electron能力
 
-![image-20211030165814764](./image-20211030165814764.png)
+![](https://i.loli.net/2021/11/13/kWbyjTlwS71KrPL.png)
 
 
 

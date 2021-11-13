@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Html on Chao&#39;s Blog</title>
+    <link>https://ccbyte.github.io/tags/html/</link>
+    <description>Recent content in Html on Chao&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 31 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ccbyte.github.io/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo博客/Leaveit主题优化</title>
+      <link>https://ccbyte.github.io/2021/blogs-optimize/</link>
+      <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ccbyte.github.io/2021/blogs-optimize/</guid>
+      <description>主题优化 很喜欢hugo的这个主题。
+评论模块 该主题不自带评论模块，需要我们手动添加，挑了一下选了Utterances。
+Utterances使用Github登录评论，Valine可匿名评论但要备案才能用，两个都加再页面上了，根据配置来，配了一个注释掉另一个配置就行。
+新增评论模块页 📝 content/themes/LeaveIt/layouts/partials/comments.html
+&amp;lt;!-- valine --&amp;gt; {{- if .Site.Params.valine.enable -}} &amp;lt;!-- id 将作为查询条件 --&amp;gt; &amp;lt;span id=&amp;#34;{{ .URL | relURL }}&amp;#34; class=&amp;#34;leancloud_visitors&amp;#34; data-flag-title=&amp;#34;{{ .Title }}&amp;#34;&amp;gt; &amp;lt;span class=&amp;#34;post-meta-item-text&amp;#34;&amp;gt;阅读量 &amp;lt;/span&amp;gt; &amp;lt;span class=&amp;#34;leancloud-visitors-count&amp;#34;&amp;gt;&amp;lt;/span&amp;gt; &amp;lt;p&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/span&amp;gt; &amp;lt;div id=&amp;#34;vcomments&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script src=&amp;#34;//cdn1.lncld.net/static/js/3.0.4/av-min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#39;//unpkg.com/valine/dist/Valine.min.js&amp;#39;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; new Valine({ el: &amp;#39;#vcomments&amp;#39; , appId: &amp;#39;{{ .Site.Params.valine.appId }}&amp;#39;, appKey: &amp;#39;{{ .Site.Params.valine.appKey }}&amp;#39;, notify: {{ .Site.Params.valine.notify }}, verify: {{ .Site.Params.valine.verify }}, avatar:&amp;#39;{{ .Site.Params.valine.avatar }}&amp;#39;, placeholder: &amp;#39;{{ .</description>
+    </item>
+    
+  </channel>
+</rss>

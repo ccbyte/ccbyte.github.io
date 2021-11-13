@@ -19,7 +19,7 @@ tags: ['Vscode', 'Terminal']
 
 🌰 修改默认配置PowerShell
 
-![alt image](./images/Snipaste_2021-11-12_11-31-01.png)
+![](https://i.loli.net/2021/11/13/AxyQBf3D5ZbR2nm.png)
 
 🖥️ 唤起终端    
 <button>ctrl</button>+<button>shift</button>+<button>`</button>

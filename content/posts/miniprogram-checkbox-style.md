@@ -1,6 +1,6 @@
 ---
 title: 自定义小程序checkbox样式'
-date: '2021-07-12T'
+date: '2021-07-12T20:08:00'
 tags: ["Miniprogram", "Scss", "Css"]
 ---
 # 自定义小程序原生checkbox样式
