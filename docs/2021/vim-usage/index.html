@@ -9,9 +9,9 @@
   
   
   
-  <link rel="prev" href="https://ccbyte.github.io/2018/basic/" />
+  <link rel="prev" href="https://ccbyte.github.io/2021/taro-delivery-data-between-pages/" />
   
-  <link rel="canonical" href="https://ccbyte.github.io/2020/advanced/" />
+  <link rel="canonical" href="https://ccbyte.github.io/2021/vim-usage/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           Git使用进阶 | Chao&#39;s Blog
+           使用vim进行编辑 | Chao&#39;s Blog
        
   </title>
-  <meta name="title" content="Git使用进阶 | Chao&#39;s Blog">
+  <meta name="title" content="使用vim进行编辑 | Chao&#39;s Blog">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,21 +44,21 @@
          "@id": "https:\/\/ccbyte.github.io"
     },
     "articleSection" : "posts",
-    "name" : "Git使用进阶",
-    "headline" : "Git使用进阶",
-    "description" : "记录一下",
+    "name" : "使用vim进行编辑",
+    "headline" : "使用vim进行编辑",
+    "description" : "常用 i 进入编辑\nv 是进入Visual(可视）模式\ngg 是让光标移到首行，在vim才有效，vi中无效\nG 光标移到最后一行\nd 删除选中内容\n:q 退出编辑模式\nd 删除选中内容\ny 复制选中内容到0号寄存器\n\u0026quot;\u002by 复制选中内容到＋寄存器，也就是系统的剪贴板，供其他程序用\n常见错误 E212: Can\u0026rsquo;t open file for writing\n1 当前用户的权限不足\n2 可能是文件被占用了 被其它程序打开了",
     "inLanguage" : "en-us",
     "author" : "Xuchao.He",
     "creator" : "Xuchao.He",
     "publisher": "Xuchao.He",
     "accountablePerson" : "Xuchao.He",
     "copyrightHolder" : "Xuchao.He",
-    "copyrightYear" : "2020",
-    "datePublished": "2020-06-09 00:00:00 \u002b0000 UTC",
-    "dateModified" : "2020-06-09 00:00:00 \u002b0000 UTC",
-    "url" : "https:\/\/ccbyte.github.io\/2020\/advanced\/",
-    "wordCount" : "2",
-    "keywords" : [ "git", "Chao\u0027s Blog"]
+    "copyrightYear" : "2021",
+    "datePublished": "2021-11-14 13:51:00 \u002b0000 UTC",
+    "dateModified" : "2021-11-14 13:51:00 \u002b0000 UTC",
+    "url" : "https:\/\/ccbyte.github.io\/2021\/vim-usage\/",
+    "wordCount" : "31",
+    "keywords" : [  "Chao\u0027s Blog"]
 }
 </script>
 
@@ -120,18 +120,14 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Git使用进阶</h1>
+        <h1 class="post-title" itemprop="name headline">使用vim进行编辑</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://ccbyte.github.io" rel="author">Xuchao.He</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2020-06-09 itemprop="datePublished">June 9, 2020</time>
+                on <time datetime=2021-11-14 itemprop="datePublished">November 14, 2021</time>
                 </span>
                 in
-                <i class="iconfont icon-folder"></i>
-                <span class="post-category">
-                        <a href="https://ccbyte.github.io/categories/git/"> git </a>
-                        
-                </span>
+                
         </div>
     </header>
     
@@ -139,7 +135,12 @@
   <h2 class="post-toc-title"></h2>
   
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#常用">常用</a></li>
+    <li><a href="#常见错误">常见错误</a></li>
+  </ul>
+</nav>
   </div>
 </div>
 <script type="text/javascript">
@@ -186,7 +187,20 @@
           
           
 
-          <p>No Content&hellip;</p>
+          <h2 id="常用">常用</h2>
+<p><code>i</code> 进入编辑</p>
+<p><code>v</code> 是进入Visual(可视）模式</p>
+<p><code>gg</code> 是让光标移到首行，在vim才有效，vi中无效</p>
+<p><code>G</code> 光标移到最后一行</p>
+<p><code>d</code>  删除选中内容</p>
+<p><code>:q</code> 退出编辑模式</p>
+<p><code>d</code>  删除选中内容</p>
+<p><code>y</code>  复制选中内容到0号寄存器</p>
+<p><code>&quot;+y</code>  复制选中内容到＋寄存器，也就是系统的剪贴板，供其他程序用</p>
+<h2 id="常见错误">常见错误</h2>
+<p>E212: Can&rsquo;t open file for writing</p>
+<p>1 当前用户的权限不足</p>
+<p>2 可能是文件被占用了 被其它程序打开了</p>
 
     </div>
 
@@ -201,7 +215,7 @@
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://ccbyte.github.io/2020/advanced/>https://ccbyte.github.io/2020/advanced/</span>
+                    <a href=https://ccbyte.github.io/2021/vim-usage/>https://ccbyte.github.io/2021/vim-usage/</span>
             </p>
             
              
@@ -214,14 +228,6 @@
   
     <div class="post-tags">
         
-            <section>
-            <i class="iconfont icon-tag"></i>Tag(s): 
-            
-            <span class="tag"><a href="https://ccbyte.github.io/tags/git/">
-                    #git</a></span>
-            
-            </section>
-        
         <section>
                 <a href="javascript:window.history.back();">back</a></span> · 
                 <span><a href="https://ccbyte.github.io">home</a></span>
@@ -230,7 +236,7 @@
 
     <div class="post-nav">
         
-        <a href="https://ccbyte.github.io/2018/basic/" class="prev" rel="prev" title="Git使用基础"><i class="iconfont icon-left"></i>&nbsp;Git使用基础</a>
+        <a href="https://ccbyte.github.io/2021/taro-delivery-data-between-pages/" class="prev" rel="prev" title="Taro/小程序中的页面传参"><i class="iconfont icon-left"></i>&nbsp;Taro/小程序中的页面传参</a>
          
         
     </div>

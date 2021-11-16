@@ -32,9 +32,17 @@
       <guid>https://ccbyte.github.io/2021/ydkjs-01/</guid>
       <description>YDKJS Note 在阅读YDKJS复习JS时做的一些摘录&amp;amp;笔记，只记录一些重要部分。
 进入JavaScript 入门与进阶第二章
-值与类型  string number boolean null 和 undefined object symbol （ES6新增类型）  值的比较 Truthy与Falsy 在JavaScript中“falsy”的明确列表如下：
- &amp;quot;&amp;quot; （空字符串） 0, -0, NaN （非法的number） null, undefined false  任何不在这个“falsy”列表中的值都是“truthy”，例如：
- &amp;ldquo;hello&amp;rdquo; 42 true [ ], [ 1, &amp;ldquo;2&amp;rdquo;, 3 ] （数组） { }, { a: 42 } （对象） function foo() { .. } （函数）  类型强制转换 let a = &amp;#34;42&amp;#34; // 显式 let b = Number(a); // 隐式 let b = a * 1; // 两者结果都是 a; // &amp;#34;42&amp;#34; 字符串 b; // 42 数字 等价性中的强制转换 📕 准确描述</description>
+值的比较 Truthy与Falsy 在JavaScript中“falsy”的明确列表如下：
+ &amp;quot;&amp;quot; （空字符串） 0, -0, NaN （非法的number） null, undefined false  任何不在这个“falsy”列表中的值都是“truthy”
+等价性中的类型强制转换 📕 准确描述
+==在允许强制转换的条件下检查值的等价性，而===是在不允许强制转换的条件下检查值的等价性。
+🍽️ 具体使用 使用==大部情况都会进行合理的类型转换，不要怕，怕的话看下 ECMA规定的==转换规则。
+可以总结为如下的情况避免==而使用===：
+ 如果一个比较的两个值之一可能是true或false值。 如果一个比较的两个值之一可能是这些具体的值（0，&amp;quot;&amp;quot;，）。  两个非基本类型值检查的是引用是否相同，而非底层的值是否相同。
+var a = [1,2,3]; var b = [1,2,3]; var c = &amp;#34;1,2,3&amp;#34;; // array默认情况下会通过使用逗号（,）连接所有值来被强制转换为string a == c;	// true b == c;	// true a == b;	// false 在所有其他情况下，使用==是安全的，而且它可以简代码并改善可读性。
+🏷️提示&amp;amp;备注
+!= 不等价形式对应==，而!==形式对应===，强制转换性对应适用。
+不等价性中的类型强制转换 41 &amp;lt; 42 // true  &amp;#34;41&amp;#34; &amp;lt; 42 // true 字符串 转数字后 进行比较  41 &amp;lt; &amp;#34;foo&amp;#34; // false 其中foo被强制转换成了NaN无法参与比较 （但NaN!</description>
     </item>
     
     <item>
@@ -52,7 +60,7 @@
       <pubDate>Fri, 15 Oct 2021 19:33:03 +0000</pubDate>
       
       <guid>https://ccbyte.github.io/2021/a-easy-validate/</guid>
-      <description>实现表单数据校验功能 因为项目用的UI库功能太少，表单不具备校验功能，所以自己写了一个很简陋的，只有一个文件。
+      <description>实现表单数据校验功能 因为项目用的UI库功能太少，表单不具备校验功能，所以自己写了一个，只有一个文件。
 使用 import { required, email, useValidate } from &amp;#39;validate&amp;#39; let rules = { username: { name:&amp;#39;邮箱号&amp;#39;, validate: [required, email] }, // name用于错误提示，validate是需要符合的校验规则列表  password: { name:&amp;#39;密码&amp;#39;, validate: [required] } } useValidate(formData, rules) 源文件 📝 validate.js
 // 校验的主函数 export const useValidate = (formData, rules) =&amp;gt; { return Promise.all( Object.entries(rules).map(([key, rule]) =&amp;gt; { return Promise.all( rule.validate.map(func =&amp;gt; func(formData[key])) ).catch((err) =&amp;gt; { console.log(rule.name + err) // 错误提示（打印或弹窗）  return Promise.reject() }) }) ) } // 以下都是一些常见的校验方法 // 是否必填 export const required = (value) =&amp;gt; { return isEmpty(value) ?</description>
     </item>

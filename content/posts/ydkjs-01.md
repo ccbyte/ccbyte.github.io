@@ -7,13 +7,6 @@ tags: ['JavaScript']
 在阅读[YDKJS](https://github.com/getify/You-Dont-Know-JS)复习JS时做的一些摘录&笔记，只记录一些重要部分。
 # 进入JavaScript
 入门与进阶第二章
-## 值与类型
-- string
-- number
-- boolean
-- null 和 undefined
-- object
-- symbol （ES6新增类型）
 ## 值的比较
 ### Truthy与Falsy
 在JavaScript中“falsy”的明确列表如下：
@@ -22,27 +15,10 @@ tags: ['JavaScript']
 - null, undefined
 - false
   
-任何不在这个“falsy”列表中的值都是“truthy”，例如：
-- "hello"
-- 42
-- true
-- \[ \], [ 1, "2", 3 ] （数组）
-- { }, { a: 42 } （对象）
-- function foo() { .. } （函数）
+任何不在这个“falsy”列表中的值都是“truthy”
 
-### 类型强制转换
-```js
-let a = "42"
-// 显式
-let b = Number(a);
-// 隐式
-let b = a * 1;
-// 两者结果都是
-a;                // "42" 字符串
-b;                // 42   数字
-```
 
-### 等价性中的强制转换
+### 等价性中的类型强制转换
 📕 准确描述     
 
  ```==```在允许强制转换的条件下检查值的等价性，而```===```是在不允许强制转换的条件下检查值的等价性。
@@ -77,7 +53,7 @@ a == b;		// false
 
 <br/>
 
-### 不等价性中的强制转换
+### 不等价性中的类型强制转换
 ```js
 41 < 42 // true
 

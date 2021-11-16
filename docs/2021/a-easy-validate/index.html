@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "实现简单的表单数据校验功能",
     "headline" : "实现简单的表单数据校验功能",
-    "description" : "实现表单数据校验功能 因为项目用的UI库功能太少，表单不具备校验功能，所以自己写了一个很简陋的，只有一个文件。\n使用 import { required, email, useValidate } from \u0026#39;validate\u0026#39; let rules = { username: { name:\u0026#39;邮箱号\u0026#39;, validate: [required, email] }, \/\/ name用于错误提示，validate是需要符合的校验规则列表  password: { name:\u0026#39;密码\u0026#39;, validate: [required] } } useValidate(formData, rules) 源文件 📝 validate.js\n\/\/ 校验的主函数 export const useValidate = (formData, rules) =\u0026gt; { return Promise.all( Object.entries(rules).map(([key, rule]) =\u0026gt; { return Promise.all( rule.validate.map(func =\u0026gt; func(formData[key])) ).catch((err) =\u0026gt; { console.log(rule.name \u002b err) \/\/ 错误提示（打印或弹窗）  return Promise.reject() }) }) ) } \/\/ 以下都是一些常见的校验方法 \/\/ 是否必填 export const required = (value) =\u0026gt; { return isEmpty(value) ?",
+    "description" : "实现表单数据校验功能 因为项目用的UI库功能太少，表单不具备校验功能，所以自己写了一个，只有一个文件。\n使用 import { required, email, useValidate } from \u0026#39;validate\u0026#39; let rules = { username: { name:\u0026#39;邮箱号\u0026#39;, validate: [required, email] }, \/\/ name用于错误提示，validate是需要符合的校验规则列表  password: { name:\u0026#39;密码\u0026#39;, validate: [required] } } useValidate(formData, rules) 源文件 📝 validate.js\n\/\/ 校验的主函数 export const useValidate = (formData, rules) =\u0026gt; { return Promise.all( Object.entries(rules).map(([key, rule]) =\u0026gt; { return Promise.all( rule.validate.map(func =\u0026gt; func(formData[key])) ).catch((err) =\u0026gt; { console.log(rule.name \u002b err) \/\/ 错误提示（打印或弹窗）  return Promise.reject() }) }) ) } \/\/ 以下都是一些常见的校验方法 \/\/ 是否必填 export const required = (value) =\u0026gt; { return isEmpty(value) ?",
     "inLanguage" : "en-us",
     "author" : "Xuchao.He",
     "creator" : "Xuchao.He",
@@ -188,7 +188,7 @@
           
 
           <h1 id="实现表单数据校验功能">实现表单数据校验功能</h1>
-<p>因为项目用的UI库功能太少，表单不具备校验功能，所以自己写了一个很简陋的，只有一个文件。</p>
+<p>因为项目用的UI库功能太少，表单不具备校验功能，所以自己写了一个，只有一个文件。</p>
 <h2 id="使用">使用</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">required</span>, <span style="color:#a6e22e">email</span>, <span style="color:#a6e22e">useValidate</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;validate&#39;</span>
 <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">rules</span> <span style="color:#f92672">=</span> {

@@ -6,16 +6,7 @@
     <description>Recent content in 📂Git Usage on Chao&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ccbyte.github.io/posts/git/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Git分支</title>
-      <link>https://ccbyte.github.io/2021/branch/</link>
-      <pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://ccbyte.github.io/2021/branch/</guid>
-      <description>No content&amp;hellip;</description>
-    </item>
-    
+    <lastBuildDate>Tue, 09 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ccbyte.github.io/posts/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git使用进阶</title>
       <link>https://ccbyte.github.io/2020/advanced/</link>
