@@ -125,6 +125,11 @@ $ git remote -v
 > Reference     
 > [Managing remote repositories](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories)
 
+### 修改远端仓库
+```
+git remote set-url origin https://xxxxx.git
+```
+
 ## Commit相关
 ### 撤回
 1.获得版本号
