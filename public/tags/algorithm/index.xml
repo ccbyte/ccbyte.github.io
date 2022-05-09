@@ -6,15 +6,40 @@
     <description>Recent content in algorithm on Chao&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 30 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://ccbyte.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ccbyte.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>二分法</title>
-      <link>https://ccbyte.github.io/2019/binary-search/</link>
-      <pubDate>Fri, 30 Aug 2019 00:00:00 +0000</pubDate>
+      <link>https://ccbyte.github.io/2020/binary-search/</link>
+      <pubDate>Sun, 30 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2019/binary-search/</guid>
+      <guid>https://ccbyte.github.io/2020/binary-search/</guid>
       <description>二分法 二分查找 基于有序序列的查找方法，时间复杂度为O(logn)
 #include&amp;lt;cstdio&amp;gt; int binarySearch(int A[], int left, int right, int x) { int mid; // left和right中点  while (left &amp;lt;= right) { mid = (left + right) / 2; // 取中点  if(A[mid] == x) return mid; else if(A[mid] &amp;gt; x) right = mid - 1; else left = mid + 1; } return -1; // 查找失败返回-1 } int main() { const int n = 10; int A[n] = { 1, 3, 4, 6, 7, 8, 10, 11, 12, 15 }; printf(&amp;#34;%d, %d\n&amp;#34;, binarySearch(A, 0, n-1, 6), binarySearch(A, 0, n-1, 9)); return 0; } 二分法拓展 快速幂 </description>
+    </item>
+    
+    <item>
+      <title>递归</title>
+      <link>https://ccbyte.github.io/2020/recursion/</link>
+      <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ccbyte.github.io/2020/recursion/</guid>
+      <description>递归 两个重要概念：
+ 递归边界 递归式（递归调用）  其中的递归式是将原问题分成若干子问题的手段，递归边界则是分解的尽头。（如果没有尽头就会无限分解）
+🌰 使用递归求解n的阶乘 🌰 求Fibonacci数列的第n项 🌰 全排列（Full Permutation） 一个数列所有的排列方式的集合称为全排列。
+【举例】如1,2,3的全排列：(1,2,3),(1,3,2),(2,1,3),(2,3,1),(3,1,2),(3,2,1)；（按字典序）
+【目的】按字典序从小到大输出全排列：其中(a1,a2,&amp;hellip;an)的字典序小于(b1,b2,&amp;hellip;bn)，是指存在一个i，使得a1=b1,a2=b2,……,ai&amp;lt;bi成立；
+#include&amp;lt;cstdio&amp;gt;const int maxn = 11; // max number int n, p[maxn], hashTable[maxn] = {false}; // p: Now permutation, hashTable: Record whether x has been placed in p  void generateP(int index) { if(index == n + 1) // recursion boundary  { for(int i = 1; i &amp;lt;= n; i++) // print result  { printf(&amp;#34;%d&amp;#34;, p[i]); } printf(&amp;#34;\n&amp;#34;); return; } for(int x = 1; x &amp;lt;= n; x++) { if(hashTable[x] == false) // x hasn&amp;#39;t been used  { p[index] = x; // use x (place x in p)  hashTable[x] = true; // x has been used  generateP(index + 1); // recursion (resolve the sub-problems when p[index] = x)  hashTable[x] = false; // restore the x (resolved)  } } } int main() { n = 3; // want to print 1~3 full permutation  generateP(1); // recursion start from 1  return 0; } 🌰 n皇后问题 #include&amp;lt;cstdio&amp;gt;#include&amp;lt;cmath&amp;gt;#include&amp;lt;algorithm&amp;gt;using namespace std; const int maxn = 11; int n, P[maxn], hashTable[maxn] = {false};// p: 当前排列, hashTable: 记录x是否已经放入pint counter = 0;  void generateP1(int index){ /* 递归边界 生成一个排列 */ if(index == n + 1){ bool flag = true; // 当前排列合法  /* 遍历任意两个皇后 */ for(int i = 1; i &amp;lt;= n; i++){ for(int j = i + 1; j &amp;lt;= n; j++){ for(int j = i + 1; j &amp;lt;= n; j++){ if(abs(i - j) == abs(P[i] - P[j])){ // 在同一对角线上  flag = false; // 冲突  } } } } if(flag) counter++; return; } for(int x = 1; x &amp;lt;= n; x++){ if(hashTable[x] == false){ P[index] = x; hashTable[x] = true; generateP1(index + 1); hashTable[x] = false; } } } void generateP2(int index){ /* 递归边界 */ if(index == n + 1){ counter++; return; } /* 遍历行 */ for(int x = 1; x &amp;lt;= n; x++){ /* 若第x行还没皇后 */ if(hashTable[x] == false){ bool flag = true; // flag为true表示不会与之前的皇后冲突  /* 遍历之前的皇后 */ for(int pre = 1; pre &amp;lt; index; pre++){ /* 判断是否冲突 */ if(abs(index - pre) == abs(x - P[pre])){ flag = false; // 冲突（在同一对角线）  break; // 跳出循环  } } /* 无冲突则放置皇后 */ if(flag) { P[index] = x; hashTable[x] = true; //占用第x行  generateP2(index + 1); // 处理下一行（子问题）  hashTable[x] = false; // 子问题都处理完了，还原第x行状态  } } } } int main(){ n = 8; // 棋盘大小 n*n  generateP2(1); //从P[1]开始填  printf(&amp;#34;%d\n&amp;#34;, counter); return 0; }  n皇后问题方法总结</description>
+    </item>
+    
+    <item>
+      <title>贪心</title>
+      <link>https://ccbyte.github.io/2020/greedy/</link>
+      <pubDate>Tue, 23 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ccbyte.github.io/2020/greedy/</guid>
+      <description>贪心 贪心是只考虑当下的一种局部最优（或较优），来使全局结果达到最优（或较优）的策略。 证明策略是最优（或较优）的：反证法、数学归纳法【证明较复杂，若有不错的思路且无法找到反例，直接实现即可】
+简单贪心 🌰 PAT B1020（卖月饼P118） 📣 只在乎销售额，只要每次选最贵的就能达到总销售额最多（贪心）。
+#include&amp;lt;cstdio&amp;gt;#include&amp;lt;algorithm&amp;gt;using namespace std; struct mooncake { // 结构体整合输入数据  double store; // 库存  double sell; // 总价  double price; // 单价（库存除总价） }cake[1010]; bool cmp(mooncake a, mooncake b) { return a.price &amp;gt; b.price; } int main() { int n; // 月饼种类数  double D; // 月饼需求量  scanf(&amp;#34;%d%lf&amp;#34;, &amp;amp;n, &amp;amp;D); for(int i = 0; i &amp;lt; n; i++) { // 输入库存  scanf(&amp;#34;%lf&amp;#34;, &amp;amp;cake[i].</description>
     </item>
     
   </channel>

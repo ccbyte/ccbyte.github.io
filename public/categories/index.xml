@@ -6,22 +6,58 @@
     <description>Recent content in Categories on Chao&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ccbyte.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ccbyte.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>git</title>
-      <link>https://ccbyte.github.io/categories/git/</link>
-      <pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate>
+      <title>Front End</title>
+      <link>https://ccbyte.github.io/categories/front-end/</link>
+      <pubDate>Sun, 24 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/categories/git/</guid>
+      <guid>https://ccbyte.github.io/categories/front-end/</guid>
       <description></description>
     </item>
     
     <item>
       <title>algorithm</title>
       <link>https://ccbyte.github.io/categories/algorithm/</link>
-      <pubDate>Fri, 30 Aug 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 30 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ccbyte.github.io/categories/algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cocos</title>
+      <link>https://ccbyte.github.io/categories/cocos/</link>
+      <pubDate>Tue, 09 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ccbyte.github.io/categories/cocos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>egret</title>
+      <link>https://ccbyte.github.io/categories/egret/</link>
+      <pubDate>Tue, 09 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ccbyte.github.io/categories/egret/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://ccbyte.github.io/categories/git/</link>
+      <pubDate>Tue, 09 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ccbyte.github.io/categories/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>svn</title>
+      <link>https://ccbyte.github.io/categories/svn/</link>
+      <pubDate>Sat, 09 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ccbyte.github.io/categories/svn/</guid>
       <description></description>
     </item>
     

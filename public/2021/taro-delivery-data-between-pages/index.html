@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Xuchao.He">
+  
+  
+  
+  <link rel="prev" href="https://ccbyte.github.io/2021/ydkjs-01/" />
+  <link rel="next" href="https://ccbyte.github.io/2021/vim-usage/" />
+  <link rel="canonical" href="https://ccbyte.github.io/2021/taro-delivery-data-between-pages/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Taro/小程序中的页面传参 | Chao&#39;s Blog
+       
+  </title>
+  <meta name="title" content="Taro/小程序中的页面传参 | Chao&#39;s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/ccbyte.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Taro\/小程序中的页面传参",
+    "headline" : "Taro\/小程序中的页面传参",
+    "description" : "Taro\/小程序中的页面传参 方法一：使用小程序跳转功能提供的传参方式（navigateTo, navigateBack）。\n方法二：使用vuex方法。 方法三：使用第三方封装好的Router组件（vue-taro-router）。\n本篇主要记录下前两种方法。\n\r∵ 第二种方法有局限性，比如在多级页面需要控制数据何时传输的情况，如下两种情况的A\/B\/C页面： 选择教师负责班级C -\u0026gt; 编辑教师信息B -\u0026gt; 教师信息A C通知B所选择的班级，通过修改store数据的话会导致直接修改到A的数据，C页\/B页的保存按钮就没意义了。\n幼儿某项活动记录C -\u0026gt; 幼儿更多活动记录B -\u0026gt; 幼儿活动记录A\n如果C中某项记录删除\/修改了，更新B页，同时也要更新到A页，修改store是最方便的。\n\r∴ 存在需要控制数据和不需要控制数据的情况，两种方法结合使用可能比较好。\r\r\r另外，react版都有类似的方法（[redux](https:\/\/redux.js.org\/introduction\/getting-started)，[tarojs-router-next](https:\/\/taro-ext.jd.com\/plugin\/view\/5f64832f0dd8313026e0942b)）\r当前页往目标页传参 Taro.navigateTo({ url: `..\/questions\/index?id=${id}`, \/\/ 由于没类似params\/query，手动拼接 }) 当前页往历史页传参 使用Taro.getCurrentPages()可以获得页面栈，栈顶pages[pages.length - 1]就是当前页。\n获取到页面实例就可以在上一页用setData申明好数据\/方法，在当前页需要时调用更新上一页数据。\n\/\/ 一般用的就是当前页和上一页之间传参，工具类里面封装好两个方法。 export function getCurrentPage() { \/\/ 当前页  const pages = Taro.getCurrentPages(); return pages[pages.length - 1]; } export function getPrevPage() { \/\/ 上一页  const pages = Taro.getCurrentPages(); if (pages.length \u0026gt; 1) { return pages[pages.",
+    "inLanguage" : "en-us",
+    "author" : "Xuchao.He",
+    "creator" : "Xuchao.He",
+    "publisher": "Xuchao.He",
+    "accountablePerson" : "Xuchao.He",
+    "copyrightHolder" : "Xuchao.He",
+    "copyrightYear" : "2021",
+    "datePublished": "2021-11-12 12:10:10 \u002b0000 UTC",
+    "dateModified" : "2021-11-12 12:10:10 \u002b0000 UTC",
+    "url" : "https:\/\/ccbyte.github.io\/2021\/taro-delivery-data-between-pages\/",
+    "wordCount" : "113",
+    "keywords" : [ "Taro","Vue.js","Miniprogram","JavaScript", "Chao\u0027s Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://ccbyte.github.io">Chao&#39;s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/more/" title="More">More</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://ccbyte.github.io">Chao&#39;s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/more/" title="More">More</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Taro/小程序中的页面传参</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://ccbyte.github.io" rel="author">Xuchao.He</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2021-11-12 itemprop="datePublished">November 12, 2021</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    
+          <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title"></h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#当前页往目标页传参">当前页往目标页传参</a></li>
+    <li><a href="#当前页往历史页传参">当前页往历史页传参</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+<script type="text/javascript">
+  window.onload = function () {
+    var fix = $('.post-toc');
+    var end = $('.post-comment');
+    var fixTop = fix.offset().top, fixHeight = fix.height();
+    var endTop, miss;
+    var offsetTop = fix[0].offsetTop;
+    $(window).scroll(function () {
+      var docTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+      if (end.length > 0) {
+        endTop = end.offset().top;
+        miss = endTop - docTop - fixHeight;
+      }
+      if (fixTop < docTop) {
+        fix.css({ 'position': 'fixed' });
+        if ((end.length > 0) && (endTop < (docTop + fixHeight))) {
+          fix.css({ top: miss });
+        } else {
+          fix.css({ top: 0 });
+        }
+      } else {
+        fix.css({ 'position': 'absolute' });
+        fix.css({ top: offsetTop });
+      }
+    })
+  }
+</script> 
+	
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h1 id="taro小程序中的页面传参">Taro/小程序中的页面传参</h1>
+<p>方法一：使用小程序跳转功能提供的传参方式（navigateTo, navigateBack）。<br>
+方法二：使用<a href="https://v3.cn.vuejs.org/guide/migration/introduction.html#vuex">vuex</a>方法。 <br>
+方法三：使用第三方封装好的Router组件（<a href="https://taro-ext.jd.com/plugin/view/607f975f2ae2b4ed20b8f289">vue-taro-router</a>）。</p>
+<p>本篇主要记录下前两种方法。</p>
+<br/>
+∵ 第二种方法有局限性，比如在多级页面需要控制数据何时传输的情况，如下两种情况的A/B/C页面：    
+<p><code>选择教师负责班级C -&gt; 编辑教师信息B -&gt; 教师信息A</code> <br>
+C通知B所选择的班级，通过修改store数据的话会导致直接修改到A的数据，C页/B页的保存按钮就没意义了。</p>
+<p><code>幼儿某项活动记录C -&gt; 幼儿更多活动记录B -&gt; 幼儿活动记录A</code><br>
+如果C中某项记录删除/修改了，更新B页，同时也要更新到A页，修改store是最方便的。</p>
+<br/>
+∴ 存在需要控制数据和不需要控制数据的情况，两种方法结合使用可能比较好。
+<br/>
+<br/>
+另外，react版都有类似的方法（[redux](https://redux.js.org/introduction/getting-started)，[tarojs-router-next](https://taro-ext.jd.com/plugin/view/5f64832f0dd8313026e0942b)）
+<h2 id="当前页往目标页传参">当前页往目标页传参</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">Taro</span>.<span style="color:#a6e22e">navigateTo</span>({
+    <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`../questions/index?id=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">id</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, <span style="color:#75715e">// 由于没类似params/query，手动拼接
+</span><span style="color:#75715e"></span>})
+</code></pre></div><h2 id="当前页往历史页传参">当前页往历史页传参</h2>
+<p>使用<code>Taro.getCurrentPages()</code>可以获得页面栈，栈顶<code>pages[pages.length - 1]</code>就是当前页。</p>
+<p>获取到页面实例就可以在<strong>上一页</strong>用setData申明好数据/方法，在<strong>当前页</strong>需要时调用更新<strong>上一页</strong>数据。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 一般用的就是当前页和上一页之间传参，工具类里面封装好两个方法。
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getCurrentPage</span>() { <span style="color:#75715e">// 当前页
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">pages</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Taro</span>.<span style="color:#a6e22e">getCurrentPages</span>();
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">pages</span>[<span style="color:#a6e22e">pages</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getPrevPage</span>() { <span style="color:#75715e">// 上一页
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">pages</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Taro</span>.<span style="color:#a6e22e">getCurrentPages</span>();
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">pages</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">pages</span>[<span style="color:#a6e22e">pages</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>];
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">undefined</span>;
+}
+</code></pre></div><p>历史页面</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">currentPage</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getCurrentPage</span>() <span style="color:#75715e">// 获取当前页实例
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">currentPage</span>.<span style="color:#a6e22e">setData</span>({ <span style="color:#75715e">// 提供公共方法/数据
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">setClassList</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">list</span>) =&gt; {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">classList</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span> <span style="color:#75715e">// 传进list保存到当前页classList中
+</span><span style="color:#75715e"></span>    }
+})
+</code></pre></div><p>当前页</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">list</span> <span style="color:#f92672">=</span> []
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">prevPage</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getPrevPage</span>() <span style="color:#75715e">// 获取上一页实例
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">prevPage</span>.<span style="color:#a6e22e">data</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">setClassList</span>(<span style="color:#a6e22e">list</span>)  <span style="color:#75715e">// 调用公共方法/数据
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">Taro</span>.<span style="color:#a6e22e">navigateBack</span>() <span style="color:#75715e">// 返回上一页
+</span></code></pre></div>
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Xuchao.He </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://ccbyte.github.io/2021/taro-delivery-data-between-pages/>https://ccbyte.github.io/2021/taro-delivery-data-between-pages/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://ccbyte.github.io/tags/taro/">
+                    #Taro</a></span>
+            
+            <span class="tag"><a href="https://ccbyte.github.io/tags/vue.js/">
+                    #Vue.js</a></span>
+            
+            <span class="tag"><a href="https://ccbyte.github.io/tags/miniprogram/">
+                    #Miniprogram</a></span>
+            
+            <span class="tag"><a href="https://ccbyte.github.io/tags/javascript/">
+                    #JavaScript</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://ccbyte.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://ccbyte.github.io/2021/ydkjs-01/" class="prev" rel="prev" title="You Don&#39;t Know JS阅读笔记"><i class="iconfont icon-left"></i>&nbsp;You Don&#39;t Know JS阅读笔记</a>
+         
+        
+        <a href="https://ccbyte.github.io/2021/vim-usage/" class="next" rel="next" title="使用vim进行编辑">使用vim进行编辑&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+          
+          
+  
+
+
+<div class="post bg-white">
+    <script src="https://utteranc.es/client.js"
+          repo="ccbyte/blog_comments"
+          issue-term="pathname"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+</div>
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2011 - 2022</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://ccbyte.github.io">Xuchao.He</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
