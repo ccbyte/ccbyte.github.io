@@ -46,12 +46,22 @@ var a = [1,2,3]; var b = [1,2,3]; var c = &amp;#34;1,2,3&amp;#34;; // array默�
     </item>
     
     <item>
+      <title>axios常用参数</title>
+      <link>https://ccbyte.github.io/2021/axios-use/</link>
+      <pubDate>Wed, 03 Nov 2021 10:15:23 +0000</pubDate>
+      
+      <guid>https://ccbyte.github.io/2021/axios-use/</guid>
+      <description>下载进度 axios.create({ // 下载文件  baseURL: process.env.VUE_APP_EPUB_URL, method: &amp;#39;get&amp;#39;, responseType: &amp;#39;blob&amp;#39;, timeout: 180 * 1000, // 3分钟超时  onDownloadProgress: progressEvent =&amp;gt; { // axios监听下载进度  if (onProgress) onProgress(progressEvent) } }).get(`www/abc.xlsx`) 取消请求 </description>
+    </item>
+    
+    <item>
       <title>二维数组和树</title>
       <link>https://ccbyte.github.io/2021/array-to-tree/</link>
       <pubDate>Wed, 03 Nov 2021 10:15:23 +0000</pubDate>
       
       <guid>https://ccbyte.github.io/2021/array-to-tree/</guid>
-      <description>起因 经过 结果 </description>
+      <description>树 -&amp;gt; 数组 当我们收到如下一棵树，需要转成一维数组时
+const nav = [ { id: 1, subitems: [ { id: 2, subitems: [ { id: 3, subitems: [], }, { id: 4, subitems: [], }, ], }, { id: 5, subitems: [], }, ], }, { id: 6, subitems: [], }, ]; export function flatten (array) { // return array.map(item =&amp;gt; [].concat(item, ...item.subitems))// 只能2级  const arr2d = array.map(item =&amp;gt; [].concat(item, ...flatten(item.subitems)))// 多级（转成二维数组）  return [].</description>
     </item>
     
     <item>
@@ -104,6 +114,22 @@ import { format } from &amp;#39;date-fns&amp;#39; format(new Date(), &amp;#39;yy
 比较开始时间和结束时间 if(differenceInMinutes(formData.end, formData.start) &amp;lt; 0) { console.log(&amp;#39;开始时间小于结束时间&amp;#39;) } 本地化/I18n(locale) 📚
 输出中文年月日 只有format相关函数支持
 import format from &amp;#39;date-fns/format&amp;#39; import { zhCN } from &amp;#39;date-fns/locale&amp;#39; format(new Date(), &amp;#34;yyyy&amp;#39;年&amp;#39;M&amp;#39;月&amp;#39;d日&amp;#34;, {locale: zhCN}) // 单个M在1~9月不补0 日期计算(addDays, subDays, addMonts, subMonth&amp;hellip;) 📚 这里太多了，还有📚addWeeks等等。</description>
+    </item>
+    
+    <item>
+      <title>H5实现钉钉扫码登录</title>
+      <link>https://ccbyte.github.io/1/dingding-login/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ccbyte.github.io/1/dingding-login/</guid>
+      <description>总体思路 官方有两种实现方式
+ 使用钉钉提供的扫码登录页面 支持网站将钉钉登录二维码内嵌到自己页面中  这里我们采用效果比较好的第二种
+配置使用sdk -&amp;gt; DDLogin生成二维码 -&amp;gt; 扫码得到返回的code -&amp;gt; 用code访问一个会302的钉钉地址（iframe -&amp;gt; postMessage -&amp;gt; 来源校验）
+实现细节 配置回调域名 进入钉钉开发者后台
+  进入已创建的应用详情页，在基础信息页面可以查看到应用的SuiteKey/SuiteSecret(第三方企业应用)或AppKey/AppSecret(企业内部应用)。
+  在应用详情页，然后单击钉钉登录与分享，添加应用回调的URL，以http或https开头。
+  添加sdk 在index.html中加入钉钉的Api
+&amp;lt;script src=&amp;#34;https://g.alicdn.com/dingding/dinglogin/0.0.5/ddLogin.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 添加wait页面 &amp;lt;template&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { data(){ return{ } }, mounted(){ this.loadLogin() }, methods:{ async loadLogin(){ const loading = this.$loading({ lock: true, text: &amp;#39;登陆中&amp;#39;, spinner: &amp;#39;el-icon-loading&amp;#39;, background: &amp;#39;rgba(0, 0, 0, 0.7)&amp;#39; }); const { code } = this.</description>
     </item>
     
   </channel>
