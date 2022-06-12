@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vue.js on Chao&#39;s Blog</title>
-    <link>https://ccbyte.github.io/tags/vue.js/</link>
+    <link>https://undefcc.github.io/tags/vue.js/</link>
     <description>Recent content in Vue.js on Chao&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Nov 2021 12:10:10 +0000</lastBuildDate><atom:link href="https://ccbyte.github.io/tags/vue.js/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Nov 2021 12:10:10 +0000</lastBuildDate><atom:link href="https://undefcc.github.io/tags/vue.js/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Taro/小程序中的页面传参</title>
-      <link>https://ccbyte.github.io/2021/taro-delivery-data-between-pages/</link>
+      <link>https://undefcc.github.io/2021/taro-delivery-data-between-pages/</link>
       <pubDate>Fri, 12 Nov 2021 12:10:10 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/taro-delivery-data-between-pages/</guid>
+      <guid>https://undefcc.github.io/2021/taro-delivery-data-between-pages/</guid>
       <description>Taro/小程序中的页面传参 方法一：使用小程序跳转功能提供的传参方式（navigateTo, navigateBack）。
 方法二：使用vuex方法。 方法三：使用第三方封装好的Router组件（vue-taro-router）。
 本篇主要记录下前两种方法。
@@ -26,10 +26,10 @@
     
     <item>
       <title>在vue3中实现mapAction和mapGetters功能</title>
-      <link>https://ccbyte.github.io/2021/use-vuex-map-method-in-vue3/</link>
+      <link>https://undefcc.github.io/2021/use-vuex-map-method-in-vue3/</link>
       <pubDate>Tue, 12 Oct 2021 18:29:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/use-vuex-map-method-in-vue3/</guid>
+      <guid>https://undefcc.github.io/2021/use-vuex-map-method-in-vue3/</guid>
       <description>vue2 mixin.js
 import { mapGetters, mapActions } from &amp;#39;vuex&amp;#39; export const storeMixin = { computed: { ...mapGetters([ &amp;#39;dataA&amp;#39;, &amp;#39;dataB&amp;#39; ]) }, methods: { ...mapActions([ &amp;#39;setDataA&amp;#39;, &amp;#39;setDataB&amp;#39;, ]), } } return storeMixin 页面中使用
 import mixin from &amp;#39;mixin.js&amp;#39; export default { mixins: [mixin], data () { return {} }, methods: { func() {} } } vue3 使用vue3 Composition API可以避免vue2 mixins混入的重名问题。
@@ -40,10 +40,10 @@ import mixin from &amp;#39;mixin.js&amp;#39; export default { mixins: [mixin], d
     
     <item>
       <title>小程序原生组件层级过高的解决方法</title>
-      <link>https://ccbyte.github.io/2021/miniprogram-comp-z/</link>
+      <link>https://undefcc.github.io/2021/miniprogram-comp-z/</link>
       <pubDate>Thu, 26 Aug 2021 18:27:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/miniprogram-comp-z/</guid>
+      <guid>https://undefcc.github.io/2021/miniprogram-comp-z/</guid>
       <description>原生组件层级过高问题 例如input, textarea, Canvas，如果要在页面上加弹层，且页面上有这些元素的话这些元素会高于其他包括遮罩overlay，因为原生小程序的层级最高。
 解决方法 cover-view 没太大用，能嵌套的内容有限。
 手动控制 在某个需要的地方添加该样式，再弹窗时通过vuex动态控制微信原生组件的状态。

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Xuchao.He">
+  
+  
+  
+  <link rel="prev" href="https://undefcc.github.io/2022/dingding-login/" />
+  
+  <link rel="canonical" href="https://undefcc.github.io/2022/vue-jest/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           在Vue3中使用Jest进行单元测试 | Chao&#39;s Blog
+       
+  </title>
+  <meta name="title" content="在Vue3中使用Jest进行单元测试 | Chao&#39;s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/undefcc.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "在Vue3中使用Jest进行单元测试",
+    "headline" : "在Vue3中使用Jest进行单元测试",
+    "description" : "JEST 安装 yarn add --dev jest\n配置 package.json -\u0026gt; scripts -\u0026gt; \u0026ldquo;test\u0026rdquo;: \u0026ldquo;jest\u0026rdquo;\n使用 export 建立测试目录 foo.spec.js\nimport Jest不支持ESM的问题 直接使用会报错：(因为Jest默认是node下的不支持ESM) SyntaxError: Cannot use import statement outside a module\n配置Babel（ESM转为CMJ） \/\/ babel.config.js module.exports = { presets: [[\u0026#39;@babel\/preset-env\u0026#39;, {targets: {node: \u0026#39;current\u0026#39;}}]], }; 配置Nodejs webpack\/vite\/rollup打包工具处理支持Jest使用ESM",
+    "inLanguage" : "en-us",
+    "author" : "Xuchao.He",
+    "creator" : "Xuchao.He",
+    "publisher": "Xuchao.He",
+    "accountablePerson" : "Xuchao.He",
+    "copyrightHolder" : "Xuchao.He",
+    "copyrightYear" : "2022",
+    "datePublished": "2022-05-09 23:24:57 \u002b0000 UTC",
+    "dateModified" : "2022-05-09 23:24:57 \u002b0000 UTC",
+    "url" : "https:\/\/undefcc.github.io\/2022\/vue-jest\/",
+    "wordCount" : "42",
+    "keywords" : [  "Chao\u0027s Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://undefcc.github.io">Chao&#39;s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/more/" title="More">More</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://undefcc.github.io">Chao&#39;s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/more/" title="More">More</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">在Vue3中使用Jest进行单元测试</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://undefcc.github.io" rel="author">Xuchao.He</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2022-05-09 itemprop="datePublished">May 9, 2022</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    
+          <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title"></h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#安装">安装</a></li>
+    <li><a href="#配置">配置</a></li>
+    <li><a href="#使用">使用</a></li>
+    <li><a href="#建立测试目录">建立测试目录</a></li>
+    <li><a href="#jest不支持esm的问题">Jest不支持ESM的问题</a>
+      <ul>
+        <li><a href="#配置babelesm转为cmj">配置Babel（ESM转为CMJ）</a></li>
+        <li><a href="#配置nodejs">配置Nodejs</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+<script type="text/javascript">
+  window.onload = function () {
+    var fix = $('.post-toc');
+    var end = $('.post-comment');
+    var fixTop = fix.offset().top, fixHeight = fix.height();
+    var endTop, miss;
+    var offsetTop = fix[0].offsetTop;
+    $(window).scroll(function () {
+      var docTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+      if (end.length > 0) {
+        endTop = end.offset().top;
+        miss = endTop - docTop - fixHeight;
+      }
+      if (fixTop < docTop) {
+        fix.css({ 'position': 'fixed' });
+        if ((end.length > 0) && (endTop < (docTop + fixHeight))) {
+          fix.css({ top: miss });
+        } else {
+          fix.css({ top: 0 });
+        }
+      } else {
+        fix.css({ 'position': 'absolute' });
+        fix.css({ top: offsetTop });
+      }
+    })
+  }
+</script> 
+	
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h1 id="jest">JEST</h1>
+<h2 id="安装">安装</h2>
+<p><code>yarn add --dev jest</code></p>
+<h2 id="配置">配置</h2>
+<p>package.json -&gt; scripts -&gt; &ldquo;test&rdquo;: &ldquo;jest&rdquo;</p>
+<h2 id="使用">使用</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">export</span>
+</code></pre></div><h2 id="建立测试目录">建立测试目录</h2>
+<p>foo.spec.js</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span>
+</code></pre></div><h2 id="jest不支持esm的问题">Jest不支持ESM的问题</h2>
+<p>直接使用会报错：(因为Jest默认是node下的不支持ESM)
+<code>SyntaxError: Cannot use import statement outside a module</code></p>
+<h3 id="配置babelesm转为cmj">配置Babel（ESM转为CMJ）</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// babel.config.js
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">presets</span><span style="color:#f92672">:</span> [[<span style="color:#e6db74">&#39;@babel/preset-env&#39;</span>, {<span style="color:#a6e22e">targets</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">node</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;current&#39;</span>}}]],
+};
+</code></pre></div><h3 id="配置nodejs">配置Nodejs</h3>
+<p>webpack/vite/rollup打包工具处理支持Jest使用ESM</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Xuchao.He </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://undefcc.github.io/2022/vue-jest/>https://undefcc.github.io/2022/vue-jest/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://undefcc.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://undefcc.github.io/2022/dingding-login/" class="prev" rel="prev" title="H5实现钉钉扫码登录"><i class="iconfont icon-left"></i>&nbsp;H5实现钉钉扫码登录</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+          
+          
+  
+
+
+<div class="post bg-white">
+    <script src="https://utteranc.es/client.js"
+          repo="undefcc/blog_comments"
+          issue-term="pathname"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+</div>
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2011 - 2022</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://undefcc.github.io">Xuchao.He</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

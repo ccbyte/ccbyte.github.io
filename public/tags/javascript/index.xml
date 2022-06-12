@@ -2,17 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>javascript on Chao&#39;s Blog</title>
-    <link>https://ccbyte.github.io/tags/javascript/</link>
+    <link>https://undefcc.github.io/tags/javascript/</link>
     <description>Recent content in javascript on Chao&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Nov 2021 12:10:10 +0000</lastBuildDate><atom:link href="https://ccbyte.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Feb 2022 19:33:03 +0000</lastBuildDate><atom:link href="https://undefcc.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>H5实现钉钉扫码登录</title>
+      <link>https://undefcc.github.io/2022/dingding-login/</link>
+      <pubDate>Sun, 20 Feb 2022 19:33:03 +0000</pubDate>
+      
+      <guid>https://undefcc.github.io/2022/dingding-login/</guid>
+      <description>总体思路 官方有两种实现方式
+ 使用钉钉提供的扫码登录页面 支持网站将钉钉登录二维码内嵌到自己页面中  这里我们采用效果比较好的第二种
+配置使用sdk -&amp;gt; DDLogin生成二维码 -&amp;gt; 扫码得到返回的code -&amp;gt; 用code访问一个会302的钉钉地址（iframe -&amp;gt; postMessage -&amp;gt; 来源校验）
+实现细节 配置回调域名 进入钉钉开发者后台
+  进入已创建的应用详情页，在基础信息页面可以查看到应用的SuiteKey/SuiteSecret(第三方企业应用)或AppKey/AppSecret(企业内部应用)。
+  在应用详情页，然后单击钉钉登录与分享，添加应用回调的URL，以http或https开头。
+  添加sdk 在index.html中加入钉钉的Api
+&amp;lt;script src=&amp;#34;https://g.alicdn.com/dingding/dinglogin/0.0.5/ddLogin.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 添加wait页面 &amp;lt;template&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { data(){ return{ } }, mounted(){ this.loadLogin() }, methods:{ async loadLogin(){ const loading = this.$loading({ lock: true, text: &amp;#39;登陆中&amp;#39;, spinner: &amp;#39;el-icon-loading&amp;#39;, background: &amp;#39;rgba(0, 0, 0, 0.7)&amp;#39; }); const { code } = this.</description>
+    </item>
+    
     <item>
       <title>Taro/小程序中的页面传参</title>
-      <link>https://ccbyte.github.io/2021/taro-delivery-data-between-pages/</link>
+      <link>https://undefcc.github.io/2021/taro-delivery-data-between-pages/</link>
       <pubDate>Fri, 12 Nov 2021 12:10:10 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/taro-delivery-data-between-pages/</guid>
+      <guid>https://undefcc.github.io/2021/taro-delivery-data-between-pages/</guid>
       <description>Taro/小程序中的页面传参 方法一：使用小程序跳转功能提供的传参方式（navigateTo, navigateBack）。
 方法二：使用vuex方法。 方法三：使用第三方封装好的Router组件（vue-taro-router）。
 本篇主要记录下前两种方法。
@@ -26,10 +42,10 @@
     
     <item>
       <title>You Don&#39;t Know JS阅读笔记</title>
-      <link>https://ccbyte.github.io/2021/ydkjs-01/</link>
+      <link>https://undefcc.github.io/2021/ydkjs-01/</link>
       <pubDate>Wed, 10 Nov 2021 12:01:50 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/ydkjs-01/</guid>
+      <guid>https://undefcc.github.io/2021/ydkjs-01/</guid>
       <description>YDKJS Note 在阅读YDKJS复习JS时做的一些摘录&amp;amp;笔记，只记录一些重要部分。
 进入JavaScript 入门与进阶第二章
 值的比较 Truthy与Falsy 在JavaScript中“falsy”的明确列表如下：
@@ -47,29 +63,29 @@ var a = [1,2,3]; var b = [1,2,3]; var c = &amp;#34;1,2,3&amp;#34;; // array默�
     
     <item>
       <title>axios常用参数</title>
-      <link>https://ccbyte.github.io/2021/axios-use/</link>
+      <link>https://undefcc.github.io/2021/axios-use/</link>
       <pubDate>Wed, 03 Nov 2021 10:15:23 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/axios-use/</guid>
+      <guid>https://undefcc.github.io/2021/axios-use/</guid>
       <description>下载进度 axios.create({ // 下载文件  baseURL: process.env.VUE_APP_EPUB_URL, method: &amp;#39;get&amp;#39;, responseType: &amp;#39;blob&amp;#39;, timeout: 180 * 1000, // 3分钟超时  onDownloadProgress: progressEvent =&amp;gt; { // axios监听下载进度  if (onProgress) onProgress(progressEvent) } }).get(`www/abc.xlsx`) 取消请求 </description>
     </item>
     
     <item>
       <title>二维数组和树</title>
-      <link>https://ccbyte.github.io/2021/array-to-tree/</link>
+      <link>https://undefcc.github.io/2021/array-to-tree/</link>
       <pubDate>Wed, 03 Nov 2021 10:15:23 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/array-to-tree/</guid>
+      <guid>https://undefcc.github.io/2021/array-to-tree/</guid>
       <description>树 -&amp;gt; 数组 当我们收到如下一棵树，需要转成一维数组时
 const nav = [ { id: 1, subitems: [ { id: 2, subitems: [ { id: 3, subitems: [], }, { id: 4, subitems: [], }, ], }, { id: 5, subitems: [], }, ], }, { id: 6, subitems: [], }, ]; export function flatten (array) { // return array.map(item =&amp;gt; [].concat(item, ...item.subitems))// 只能2级  const arr2d = array.map(item =&amp;gt; [].concat(item, ...flatten(item.subitems)))// 多级（转成二维数组）  return [].</description>
     </item>
     
     <item>
       <title>实现简单的表单数据校验功能</title>
-      <link>https://ccbyte.github.io/2021/a-easy-validate/</link>
+      <link>https://undefcc.github.io/2021/a-easy-validate/</link>
       <pubDate>Fri, 15 Oct 2021 19:33:03 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/a-easy-validate/</guid>
+      <guid>https://undefcc.github.io/2021/a-easy-validate/</guid>
       <description>实现表单数据校验功能 因为项目用的UI库功能太少，表单不具备校验功能，所以自己写了一个，只有一个文件。
 使用 import { required, email, useValidate } from &amp;#39;validate&amp;#39; let rules = { username: { name:&amp;#39;邮箱号&amp;#39;, validate: [required, email] }, // name用于错误提示，validate是需要符合的校验规则列表  password: { name:&amp;#39;密码&amp;#39;, validate: [required] } } useValidate(formData, rules) 源文件 📝 validate.js
 // 校验的主函数 export const useValidate = (formData, rules) =&amp;gt; { return Promise.all( Object.entries(rules).map(([key, rule]) =&amp;gt; { return Promise.all( rule.validate.map(func =&amp;gt; func(formData[key])) ).catch((err) =&amp;gt; { console.log(rule.name + err) // 错误提示（打印或弹窗）  return Promise.reject() }) }) ) } // 以下都是一些常见的校验方法 // 是否必填 export const required = (value) =&amp;gt; { return isEmpty(value) ?</description>
@@ -77,10 +93,10 @@ const nav = [ { id: 1, subitems: [ { id: 2, subitems: [ { id: 3, subitems: [], }
     
     <item>
       <title>在vue3中实现mapAction和mapGetters功能</title>
-      <link>https://ccbyte.github.io/2021/use-vuex-map-method-in-vue3/</link>
+      <link>https://undefcc.github.io/2021/use-vuex-map-method-in-vue3/</link>
       <pubDate>Tue, 12 Oct 2021 18:29:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/use-vuex-map-method-in-vue3/</guid>
+      <guid>https://undefcc.github.io/2021/use-vuex-map-method-in-vue3/</guid>
       <description>vue2 mixin.js
 import { mapGetters, mapActions } from &amp;#39;vuex&amp;#39; export const storeMixin = { computed: { ...mapGetters([ &amp;#39;dataA&amp;#39;, &amp;#39;dataB&amp;#39; ]) }, methods: { ...mapActions([ &amp;#39;setDataA&amp;#39;, &amp;#39;setDataB&amp;#39;, ]), } } return storeMixin 页面中使用
 import mixin from &amp;#39;mixin.js&amp;#39; export default { mixins: [mixin], data () { return {} }, methods: { func() {} } } vue3 使用vue3 Composition API可以避免vue2 mixins混入的重名问题。
@@ -91,10 +107,10 @@ import mixin from &amp;#39;mixin.js&amp;#39; export default { mixins: [mixin], d
     
     <item>
       <title>小程序原生组件层级过高的解决方法</title>
-      <link>https://ccbyte.github.io/2021/miniprogram-comp-z/</link>
+      <link>https://undefcc.github.io/2021/miniprogram-comp-z/</link>
       <pubDate>Thu, 26 Aug 2021 18:27:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/miniprogram-comp-z/</guid>
+      <guid>https://undefcc.github.io/2021/miniprogram-comp-z/</guid>
       <description>原生组件层级过高问题 例如input, textarea, Canvas，如果要在页面上加弹层，且页面上有这些元素的话这些元素会高于其他包括遮罩overlay，因为原生小程序的层级最高。
 解决方法 cover-view 没太大用，能嵌套的内容有限。
 手动控制 在某个需要的地方添加该样式，再弹窗时通过vuex动态控制微信原生组件的状态。
@@ -103,10 +119,10 @@ import mixin from &amp;#39;mixin.js&amp;#39; export default { mixins: [mixin], d
     
     <item>
       <title>时间处理库date-fns的常见应用</title>
-      <link>https://ccbyte.github.io/2021/date-fns-usage/</link>
+      <link>https://undefcc.github.io/2021/date-fns-usage/</link>
       <pubDate>Sun, 25 Jul 2021 20:13:03 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/date-fns-usage/</guid>
+      <guid>https://undefcc.github.io/2021/date-fns-usage/</guid>
       <description>时间处理库Date-fns (v2.25.0) 这个库功能十分齐全，可能需要科学上网，这里记录一下之前做项目中常用的方法。
 npm i date-fns 格式化(format) 📚
 import { format } from &amp;#39;date-fns&amp;#39; format(new Date(), &amp;#39;yyyy-MM-dd HH:mm:ss&amp;#39;) // &amp;lt;String&amp;gt; 2021-07-25 20:13:03 日期差(intervalToDuration) 📚
@@ -114,22 +130,6 @@ import { format } from &amp;#39;date-fns&amp;#39; format(new Date(), &amp;#39;yy
 比较开始时间和结束时间 if(differenceInMinutes(formData.end, formData.start) &amp;lt; 0) { console.log(&amp;#39;开始时间小于结束时间&amp;#39;) } 本地化/I18n(locale) 📚
 输出中文年月日 只有format相关函数支持
 import format from &amp;#39;date-fns/format&amp;#39; import { zhCN } from &amp;#39;date-fns/locale&amp;#39; format(new Date(), &amp;#34;yyyy&amp;#39;年&amp;#39;M&amp;#39;月&amp;#39;d日&amp;#34;, {locale: zhCN}) // 单个M在1~9月不补0 日期计算(addDays, subDays, addMonts, subMonth&amp;hellip;) 📚 这里太多了，还有📚addWeeks等等。</description>
-    </item>
-    
-    <item>
-      <title>H5实现钉钉扫码登录</title>
-      <link>https://ccbyte.github.io/1/dingding-login/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ccbyte.github.io/1/dingding-login/</guid>
-      <description>总体思路 官方有两种实现方式
- 使用钉钉提供的扫码登录页面 支持网站将钉钉登录二维码内嵌到自己页面中  这里我们采用效果比较好的第二种
-配置使用sdk -&amp;gt; DDLogin生成二维码 -&amp;gt; 扫码得到返回的code -&amp;gt; 用code访问一个会302的钉钉地址（iframe -&amp;gt; postMessage -&amp;gt; 来源校验）
-实现细节 配置回调域名 进入钉钉开发者后台
-  进入已创建的应用详情页，在基础信息页面可以查看到应用的SuiteKey/SuiteSecret(第三方企业应用)或AppKey/AppSecret(企业内部应用)。
-  在应用详情页，然后单击钉钉登录与分享，添加应用回调的URL，以http或https开头。
-  添加sdk 在index.html中加入钉钉的Api
-&amp;lt;script src=&amp;#34;https://g.alicdn.com/dingding/dinglogin/0.0.5/ddLogin.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 添加wait页面 &amp;lt;template&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { data(){ return{ } }, mounted(){ this.loadLogin() }, methods:{ async loadLogin(){ const loading = this.$loading({ lock: true, text: &amp;#39;登陆中&amp;#39;, spinner: &amp;#39;el-icon-loading&amp;#39;, background: &amp;#39;rgba(0, 0, 0, 0.7)&amp;#39; }); const { code } = this.</description>
     </item>
     
   </channel>

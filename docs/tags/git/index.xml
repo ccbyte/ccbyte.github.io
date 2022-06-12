@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on Chao&#39;s Blog</title>
-    <link>https://ccbyte.github.io/tags/git/</link>
+    <link>https://undefcc.github.io/tags/git/</link>
     <description>Recent content in git on Chao&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ccbyte.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://undefcc.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git使用进阶</title>
-      <link>https://ccbyte.github.io/2020/advanced/</link>
+      <link>https://undefcc.github.io/2020/advanced/</link>
       <pubDate>Tue, 09 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2020/advanced/</guid>
+      <guid>https://undefcc.github.io/2020/advanced/</guid>
       <description>No Content&amp;hellip;</description>
     </item>
     
     <item>
       <title>Git使用基础</title>
-      <link>https://ccbyte.github.io/2018/basic/</link>
+      <link>https://undefcc.github.io/2018/basic/</link>
       <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2018/basic/</guid>
+      <guid>https://undefcc.github.io/2018/basic/</guid>
       <description>Git使用基础 本篇以常用例子为主以点带面各个命令的使用，不具体写名各个方法的所有用途、参数等。
 本地仓库初始化 git init配置 git clone &amp;lt;git地址&amp;gt;git remote -vgit rev-list --all -countgit config --listgit config --global user.username &amp;lt;用户名&amp;gt;git config --global user.email &amp;lt;邮箱&amp;gt;git config# --local是对当前项目配置分支 切换分支 $ git checkout 分支名称&amp;gt; Switched to branch &#39;分支名称&#39;新增分支 1.检查分支
 # 本地$ git branch * master# 远程$ git branch -r* origin/HEAD -&amp;gt; origin/master* origin/master2.新建分支（并切换到该分支）

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CSS on Chao&#39;s Blog</title>
-    <link>https://ccbyte.github.io/tags/css/</link>
+    <link>https://undefcc.github.io/tags/css/</link>
     <description>Recent content in CSS on Chao&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 Aug 2021 18:27:00 +0000</lastBuildDate><atom:link href="https://ccbyte.github.io/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 Aug 2021 18:27:00 +0000</lastBuildDate><atom:link href="https://undefcc.github.io/tags/css/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>小程序原生组件层级过高的解决方法</title>
-      <link>https://ccbyte.github.io/2021/miniprogram-comp-z/</link>
+      <link>https://undefcc.github.io/2021/miniprogram-comp-z/</link>
       <pubDate>Thu, 26 Aug 2021 18:27:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/miniprogram-comp-z/</guid>
+      <guid>https://undefcc.github.io/2021/miniprogram-comp-z/</guid>
       <description>原生组件层级过高问题 例如input, textarea, Canvas，如果要在页面上加弹层，且页面上有这些元素的话这些元素会高于其他包括遮罩overlay，因为原生小程序的层级最高。
 解决方法 cover-view 没太大用，能嵌套的内容有限。
 手动控制 在某个需要的地方添加该样式，再弹窗时通过vuex动态控制微信原生组件的状态。
@@ -21,10 +21,10 @@
     
     <item>
       <title>自定义小程序checkbox样式&#39;</title>
-      <link>https://ccbyte.github.io/2021/miniprogram-checkbox-style/</link>
+      <link>https://undefcc.github.io/2021/miniprogram-checkbox-style/</link>
       <pubDate>Mon, 12 Jul 2021 20:08:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/miniprogram-checkbox-style/</guid>
+      <guid>https://undefcc.github.io/2021/miniprogram-checkbox-style/</guid>
       <description>自定义小程序原生checkbox样式 由于项目有设计稿，要精确还原设计稿的话，本来是打算自己写一个，写是写了，大概原理就是
  隐藏原来的checkbox； 做自己的checkbox样式（比如一个圆圈⚪），通过:active选择器触发样式的更改； 内部元素（比如一个对勾✔），通过伪元素来添加；  后来网上找了一下发现，微信的实现貌似也是类似啊，我直接用下面代码覆盖它的就行了。
 /*checkbox 整体大小 */ checkbox { } /*checkbox 选项框大小 */ checkbox .wx-checkbox-input { width: 40rpx; height: 40rpx; border-radius: 50%; border: 3px solid #ccc; } /*checkbox选中后样式 */ checkbox .wx-checkbox-input.wx-checkbox-input-checked { border: 3px solid #8dc21f; background: #8dc21f; } /*checkbox选中后图标样式 */ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before { width: 28rpx; height: 28rpx; line-height: 28rpx; text-align: center; font-size: 26rpx; color: #fff; background: transparent; transform: translate(-50%, -50%) scale(1); -webkit-transform: translate(-50%, -50%) scale(1); } </description>
@@ -32,10 +32,10 @@
     
     <item>
       <title>CSS3引用自定义字体</title>
-      <link>https://ccbyte.github.io/1/css3-fontface/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>https://undefcc.github.io/2020/css3-fontface/</link>
+      <pubDate>Tue, 10 Mar 2020 10:15:23 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/1/css3-fontface/</guid>
+      <guid>https://undefcc.github.io/2020/css3-fontface/</guid>
       <description>@font-face规则 使得不仅可以使用计算机上安装的字体。 方法一：fonts目录（内含css+woff2组合）拷贝到public中；[下载地址：fonts.googleapis.com/css?family=字体名称] 在index.html引用web字体（即引用它的css文件，注意加&amp;lt;%=BASE_URL=&amp;gt;）
 方法二：将fonts移动到src/assets目录下，在main.js中引用 方法三：引入js中，可以动态切换，可以加载到iframe中</description>
     </item>

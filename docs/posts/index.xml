@@ -2,17 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Chao&#39;s Blog</title>
-    <link>https://ccbyte.github.io/posts/</link>
+    <link>https://undefcc.github.io/posts/</link>
     <description>Recent content in Posts on Chao&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 14 Nov 2021 13:51:00 +0000</lastBuildDate><atom:link href="https://ccbyte.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 May 2022 23:24:57 +0000</lastBuildDate><atom:link href="https://undefcc.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在Vue3中使用Jest进行单元测试</title>
+      <link>https://undefcc.github.io/2022/vue-jest/</link>
+      <pubDate>Mon, 09 May 2022 23:24:57 +0000</pubDate>
+      
+      <guid>https://undefcc.github.io/2022/vue-jest/</guid>
+      <description>JEST 安装 yarn add --dev jest
+配置 package.json -&amp;gt; scripts -&amp;gt; &amp;ldquo;test&amp;rdquo;: &amp;ldquo;jest&amp;rdquo;
+使用 export 建立测试目录 foo.spec.js
+import Jest不支持ESM的问题 直接使用会报错：(因为Jest默认是node下的不支持ESM) SyntaxError: Cannot use import statement outside a module
+配置Babel（ESM转为CMJ） // babel.config.js module.exports = { presets: [[&amp;#39;@babel/preset-env&amp;#39;, {targets: {node: &amp;#39;current&amp;#39;}}]], }; 配置Nodejs webpack/vite/rollup打包工具处理支持Jest使用ESM</description>
+    </item>
+    
+    <item>
+      <title>H5实现钉钉扫码登录</title>
+      <link>https://undefcc.github.io/2022/dingding-login/</link>
+      <pubDate>Sun, 20 Feb 2022 19:33:03 +0000</pubDate>
+      
+      <guid>https://undefcc.github.io/2022/dingding-login/</guid>
+      <description>总体思路 官方有两种实现方式
+ 使用钉钉提供的扫码登录页面 支持网站将钉钉登录二维码内嵌到自己页面中  这里我们采用效果比较好的第二种
+配置使用sdk -&amp;gt; DDLogin生成二维码 -&amp;gt; 扫码得到返回的code -&amp;gt; 用code访问一个会302的钉钉地址（iframe -&amp;gt; postMessage -&amp;gt; 来源校验）
+实现细节 配置回调域名 进入钉钉开发者后台
+  进入已创建的应用详情页，在基础信息页面可以查看到应用的SuiteKey/SuiteSecret(第三方企业应用)或AppKey/AppSecret(企业内部应用)。
+  在应用详情页，然后单击钉钉登录与分享，添加应用回调的URL，以http或https开头。
+  添加sdk 在index.html中加入钉钉的Api
+&amp;lt;script src=&amp;#34;https://g.alicdn.com/dingding/dinglogin/0.0.5/ddLogin.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 添加wait页面 &amp;lt;template&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { data(){ return{ } }, mounted(){ this.loadLogin() }, methods:{ async loadLogin(){ const loading = this.$loading({ lock: true, text: &amp;#39;登陆中&amp;#39;, spinner: &amp;#39;el-icon-loading&amp;#39;, background: &amp;#39;rgba(0, 0, 0, 0.7)&amp;#39; }); const { code } = this.</description>
+    </item>
+    
     <item>
       <title>使用vim进行编辑</title>
-      <link>https://ccbyte.github.io/2021/vim-usage/</link>
+      <link>https://undefcc.github.io/2021/vim-usage/</link>
       <pubDate>Sun, 14 Nov 2021 13:51:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/vim-usage/</guid>
+      <guid>https://undefcc.github.io/2021/vim-usage/</guid>
       <description>常用 i 进入编辑
 v 是进入Visual(可视）模式
 gg 是让光标移到首行，在vim才有效，vi中无效
@@ -29,10 +58,10 @@ y 复制选中内容到0号寄存器
     
     <item>
       <title>Taro/小程序中的页面传参</title>
-      <link>https://ccbyte.github.io/2021/taro-delivery-data-between-pages/</link>
+      <link>https://undefcc.github.io/2021/taro-delivery-data-between-pages/</link>
       <pubDate>Fri, 12 Nov 2021 12:10:10 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/taro-delivery-data-between-pages/</guid>
+      <guid>https://undefcc.github.io/2021/taro-delivery-data-between-pages/</guid>
       <description>Taro/小程序中的页面传参 方法一：使用小程序跳转功能提供的传参方式（navigateTo, navigateBack）。
 方法二：使用vuex方法。 方法三：使用第三方封装好的Router组件（vue-taro-router）。
 本篇主要记录下前两种方法。
@@ -46,10 +75,10 @@ y 复制选中内容到0号寄存器
     
     <item>
       <title>You Don&#39;t Know JS阅读笔记</title>
-      <link>https://ccbyte.github.io/2021/ydkjs-01/</link>
+      <link>https://undefcc.github.io/2021/ydkjs-01/</link>
       <pubDate>Wed, 10 Nov 2021 12:01:50 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/ydkjs-01/</guid>
+      <guid>https://undefcc.github.io/2021/ydkjs-01/</guid>
       <description>YDKJS Note 在阅读YDKJS复习JS时做的一些摘录&amp;amp;笔记，只记录一些重要部分。
 进入JavaScript 入门与进阶第二章
 值的比较 Truthy与Falsy 在JavaScript中“falsy”的明确列表如下：
@@ -67,29 +96,29 @@ var a = [1,2,3]; var b = [1,2,3]; var c = &amp;#34;1,2,3&amp;#34;; // array默�
     
     <item>
       <title>axios常用参数</title>
-      <link>https://ccbyte.github.io/2021/axios-use/</link>
+      <link>https://undefcc.github.io/2021/axios-use/</link>
       <pubDate>Wed, 03 Nov 2021 10:15:23 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/axios-use/</guid>
+      <guid>https://undefcc.github.io/2021/axios-use/</guid>
       <description>下载进度 axios.create({ // 下载文件  baseURL: process.env.VUE_APP_EPUB_URL, method: &amp;#39;get&amp;#39;, responseType: &amp;#39;blob&amp;#39;, timeout: 180 * 1000, // 3分钟超时  onDownloadProgress: progressEvent =&amp;gt; { // axios监听下载进度  if (onProgress) onProgress(progressEvent) } }).get(`www/abc.xlsx`) 取消请求 </description>
     </item>
     
     <item>
       <title>二维数组和树</title>
-      <link>https://ccbyte.github.io/2021/array-to-tree/</link>
+      <link>https://undefcc.github.io/2021/array-to-tree/</link>
       <pubDate>Wed, 03 Nov 2021 10:15:23 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/array-to-tree/</guid>
+      <guid>https://undefcc.github.io/2021/array-to-tree/</guid>
       <description>树 -&amp;gt; 数组 当我们收到如下一棵树，需要转成一维数组时
 const nav = [ { id: 1, subitems: [ { id: 2, subitems: [ { id: 3, subitems: [], }, { id: 4, subitems: [], }, ], }, { id: 5, subitems: [], }, ], }, { id: 6, subitems: [], }, ]; export function flatten (array) { // return array.map(item =&amp;gt; [].concat(item, ...item.subitems))// 只能2级  const arr2d = array.map(item =&amp;gt; [].concat(item, ...flatten(item.subitems)))// 多级（转成二维数组）  return [].</description>
     </item>
     
     <item>
       <title>Hugo博客/Leaveit主题优化</title>
-      <link>https://ccbyte.github.io/2021/blogs-optimize/</link>
+      <link>https://undefcc.github.io/2021/blogs-optimize/</link>
       <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/blogs-optimize/</guid>
+      <guid>https://undefcc.github.io/2021/blogs-optimize/</guid>
       <description>主题优化 很喜欢hugo的这个主题。
 评论模块 该主题不自带评论模块，需要我们手动添加，挑了一下选了Utterances。
 Utterances使用Github登录评论，Valine可匿名评论但要备案才能用，两个都加再页面上了，根据配置来，配了一个注释掉另一个配置就行。
@@ -99,10 +128,10 @@ Utterances使用Github登录评论，Valine可匿名评论但要备案才能用�
     
     <item>
       <title>Electron学习笔记</title>
-      <link>https://ccbyte.github.io/2021/electron-note/</link>
+      <link>https://undefcc.github.io/2021/electron-note/</link>
       <pubDate>Sun, 24 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/electron-note/</guid>
+      <guid>https://undefcc.github.io/2021/electron-note/</guid>
       <description>Electron 学习笔记 导图 基本介绍 Electron三个组成部分  Chormium - UI   Web生态兼容性  Node.js - 底层操作   文件读写； 使用C++；  Native API - 跨平台   统一原生界面如窗口，托盘； 系统能力：Notification； 基础能力：软件更新/崩溃；  浏览器发展史 Nexus世界上第一个浏览器
 Mosaic - Mozilla - NetScape（所有浏览器的UA(user-agent)都会带上Mozilla）
 IE (1995 Microsoft)
@@ -116,10 +145,10 @@ Atom-shell -&amp;gt; Electron (2013-&amp;gt;2015)</description>
     
     <item>
       <title>实现简单的表单数据校验功能</title>
-      <link>https://ccbyte.github.io/2021/a-easy-validate/</link>
+      <link>https://undefcc.github.io/2021/a-easy-validate/</link>
       <pubDate>Fri, 15 Oct 2021 19:33:03 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/a-easy-validate/</guid>
+      <guid>https://undefcc.github.io/2021/a-easy-validate/</guid>
       <description>实现表单数据校验功能 因为项目用的UI库功能太少，表单不具备校验功能，所以自己写了一个，只有一个文件。
 使用 import { required, email, useValidate } from &amp;#39;validate&amp;#39; let rules = { username: { name:&amp;#39;邮箱号&amp;#39;, validate: [required, email] }, // name用于错误提示，validate是需要符合的校验规则列表  password: { name:&amp;#39;密码&amp;#39;, validate: [required] } } useValidate(formData, rules) 源文件 📝 validate.js
 // 校验的主函数 export const useValidate = (formData, rules) =&amp;gt; { return Promise.all( Object.entries(rules).map(([key, rule]) =&amp;gt; { return Promise.all( rule.validate.map(func =&amp;gt; func(formData[key])) ).catch((err) =&amp;gt; { console.log(rule.name + err) // 错误提示（打印或弹窗）  return Promise.reject() }) }) ) } // 以下都是一些常见的校验方法 // 是否必填 export const required = (value) =&amp;gt; { return isEmpty(value) ?</description>
@@ -127,10 +156,10 @@ Atom-shell -&amp;gt; Electron (2013-&amp;gt;2015)</description>
     
     <item>
       <title>在vue3中实现mapAction和mapGetters功能</title>
-      <link>https://ccbyte.github.io/2021/use-vuex-map-method-in-vue3/</link>
+      <link>https://undefcc.github.io/2021/use-vuex-map-method-in-vue3/</link>
       <pubDate>Tue, 12 Oct 2021 18:29:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/use-vuex-map-method-in-vue3/</guid>
+      <guid>https://undefcc.github.io/2021/use-vuex-map-method-in-vue3/</guid>
       <description>vue2 mixin.js
 import { mapGetters, mapActions } from &amp;#39;vuex&amp;#39; export const storeMixin = { computed: { ...mapGetters([ &amp;#39;dataA&amp;#39;, &amp;#39;dataB&amp;#39; ]) }, methods: { ...mapActions([ &amp;#39;setDataA&amp;#39;, &amp;#39;setDataB&amp;#39;, ]), } } return storeMixin 页面中使用
 import mixin from &amp;#39;mixin.js&amp;#39; export default { mixins: [mixin], data () { return {} }, methods: { func() {} } } vue3 使用vue3 Composition API可以避免vue2 mixins混入的重名问题。
@@ -141,10 +170,10 @@ import mixin from &amp;#39;mixin.js&amp;#39; export default { mixins: [mixin], d
     
     <item>
       <title>小程序原生组件层级过高的解决方法</title>
-      <link>https://ccbyte.github.io/2021/miniprogram-comp-z/</link>
+      <link>https://undefcc.github.io/2021/miniprogram-comp-z/</link>
       <pubDate>Thu, 26 Aug 2021 18:27:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/miniprogram-comp-z/</guid>
+      <guid>https://undefcc.github.io/2021/miniprogram-comp-z/</guid>
       <description>原生组件层级过高问题 例如input, textarea, Canvas，如果要在页面上加弹层，且页面上有这些元素的话这些元素会高于其他包括遮罩overlay，因为原生小程序的层级最高。
 解决方法 cover-view 没太大用，能嵌套的内容有限。
 手动控制 在某个需要的地方添加该样式，再弹窗时通过vuex动态控制微信原生组件的状态。
@@ -153,10 +182,10 @@ import mixin from &amp;#39;mixin.js&amp;#39; export default { mixins: [mixin], d
     
     <item>
       <title>时间处理库date-fns的常见应用</title>
-      <link>https://ccbyte.github.io/2021/date-fns-usage/</link>
+      <link>https://undefcc.github.io/2021/date-fns-usage/</link>
       <pubDate>Sun, 25 Jul 2021 20:13:03 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/date-fns-usage/</guid>
+      <guid>https://undefcc.github.io/2021/date-fns-usage/</guid>
       <description>时间处理库Date-fns (v2.25.0) 这个库功能十分齐全，可能需要科学上网，这里记录一下之前做项目中常用的方法。
 npm i date-fns 格式化(format) 📚
 import { format } from &amp;#39;date-fns&amp;#39; format(new Date(), &amp;#39;yyyy-MM-dd HH:mm:ss&amp;#39;) // &amp;lt;String&amp;gt; 2021-07-25 20:13:03 日期差(intervalToDuration) 📚
@@ -168,10 +197,10 @@ import format from &amp;#39;date-fns/format&amp;#39; import { zhCN } from &amp;#
     
     <item>
       <title>自定义小程序checkbox样式&#39;</title>
-      <link>https://ccbyte.github.io/2021/miniprogram-checkbox-style/</link>
+      <link>https://undefcc.github.io/2021/miniprogram-checkbox-style/</link>
       <pubDate>Mon, 12 Jul 2021 20:08:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/miniprogram-checkbox-style/</guid>
+      <guid>https://undefcc.github.io/2021/miniprogram-checkbox-style/</guid>
       <description>自定义小程序原生checkbox样式 由于项目有设计稿，要精确还原设计稿的话，本来是打算自己写一个，写是写了，大概原理就是
  隐藏原来的checkbox； 做自己的checkbox样式（比如一个圆圈⚪），通过:active选择器触发样式的更改； 内部元素（比如一个对勾✔），通过伪元素来添加；  后来网上找了一下发现，微信的实现貌似也是类似啊，我直接用下面代码覆盖它的就行了。
 /*checkbox 整体大小 */ checkbox { } /*checkbox 选项框大小 */ checkbox .wx-checkbox-input { width: 40rpx; height: 40rpx; border-radius: 50%; border: 3px solid #ccc; } /*checkbox选中后样式 */ checkbox .wx-checkbox-input.wx-checkbox-input-checked { border: 3px solid #8dc21f; background: #8dc21f; } /*checkbox选中后图标样式 */ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before { width: 28rpx; height: 28rpx; line-height: 28rpx; text-align: center; font-size: 26rpx; color: #fff; background: transparent; transform: translate(-50%, -50%) scale(1); -webkit-transform: translate(-50%, -50%) scale(1); } </description>
@@ -179,10 +208,10 @@ import format from &amp;#39;date-fns/format&amp;#39; import { zhCN } from &amp;#
     
     <item>
       <title>使用github的pages功能</title>
-      <link>https://ccbyte.github.io/2021/usage-of-github-pages/</link>
+      <link>https://undefcc.github.io/2021/usage-of-github-pages/</link>
       <pubDate>Fri, 25 Jun 2021 20:13:37 +0800</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/usage-of-github-pages/</guid>
+      <guid>https://undefcc.github.io/2021/usage-of-github-pages/</guid>
       <description>使用github的pages功能 以搭建hugo博客为例
 首先下载git，官网地址
 在github新建仓库，仓库名为：
@@ -195,10 +224,10 @@ hugo -d docs git add git commit git push origin master 在仓库setting中找到
     
     <item>
       <title>vscode中配置默认终端</title>
-      <link>https://ccbyte.github.io/2020/vscode-terminal/</link>
+      <link>https://undefcc.github.io/2020/vscode-terminal/</link>
       <pubDate>Thu, 12 Nov 2020 12:03:03 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2020/vscode-terminal/</guid>
+      <guid>https://undefcc.github.io/2020/vscode-terminal/</guid>
       <description>vscode中配置默认终端 原方法 在设置中找到Terminal › Integrated › Shell: Windows配置项，把它的值改为终端启动路径。
 新方法 配置默认 shell 的新推荐方法
  在 Terminal › Integrated › Profiles: Windows 中创建一个终端配置文件 将其配置文件名称设置为 Terminal › Integrated › Default Profile: Windows 中的默认值。  执行完后，运行终端可能会提示迁移配置，点击迁移就ok了。
@@ -208,31 +237,41 @@ hugo -d docs git add git commit git push origin master 在仓库setting中找到
     </item>
     
     <item>
+      <title>CSS3引用自定义字体</title>
+      <link>https://undefcc.github.io/2020/css3-fontface/</link>
+      <pubDate>Tue, 10 Mar 2020 10:15:23 +0000</pubDate>
+      
+      <guid>https://undefcc.github.io/2020/css3-fontface/</guid>
+      <description>@font-face规则 使得不仅可以使用计算机上安装的字体。 方法一：fonts目录（内含css+woff2组合）拷贝到public中；[下载地址：fonts.googleapis.com/css?family=字体名称] 在index.html引用web字体（即引用它的css文件，注意加&amp;lt;%=BASE_URL=&amp;gt;）
+方法二：将fonts移动到src/assets目录下，在main.js中引用 方法三：引入js中，可以动态切换，可以加载到iframe中</description>
+    </item>
+    
+    <item>
       <title>Creating a New Theme</title>
-      <link>https://ccbyte.github.io/2014/creating-a-new-theme/</link>
+      <link>https://undefcc.github.io/2014/creating-a-new-theme/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2014/creating-a-new-theme/</guid>
+      <guid>https://undefcc.github.io/2014/creating-a-new-theme/</guid>
       <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
 We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
     </item>
     
     <item>
       <title>(Hu)go Template Primer</title>
-      <link>https://ccbyte.github.io/2014/goisforlovers/</link>
+      <link>https://undefcc.github.io/2014/goisforlovers/</link>
       <pubDate>Mon, 28 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2014/goisforlovers/</guid>
+      <guid>https://undefcc.github.io/2014/goisforlovers/</guid>
       <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
 This document is a brief primer on using go templates.</description>
     </item>
     
     <item>
       <title>Getting Started with Hugo</title>
-      <link>https://ccbyte.github.io/2014/hugoisforlovers/</link>
+      <link>https://undefcc.github.io/2014/hugoisforlovers/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2014/hugoisforlovers/</guid>
+      <guid>https://undefcc.github.io/2014/hugoisforlovers/</guid>
       <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
 Save it somewhere specific as we will be using it in the next step.
 More complete instructions are available at installing hugo
@@ -243,39 +282,13 @@ Follow the following steps:
     
     <item>
       <title>Migrate to Hugo from Jekyll</title>
-      <link>https://ccbyte.github.io/2014/migrate-from-jekyll/</link>
+      <link>https://undefcc.github.io/2014/migrate-from-jekyll/</link>
       <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2014/migrate-from-jekyll/</guid>
+      <guid>https://undefcc.github.io/2014/migrate-from-jekyll/</guid>
       <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
 ▾ &amp;lt;root&amp;gt;/▾ images/logo.png should become
 ▾ &amp;lt;root&amp;gt;/▾ static/▾ images/logo.png Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
-    </item>
-    
-    <item>
-      <title>CSS3引用自定义字体</title>
-      <link>https://ccbyte.github.io/1/css3-fontface/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ccbyte.github.io/1/css3-fontface/</guid>
-      <description>@font-face规则 使得不仅可以使用计算机上安装的字体。 方法一：fonts目录（内含css+woff2组合）拷贝到public中；[下载地址：fonts.googleapis.com/css?family=字体名称] 在index.html引用web字体（即引用它的css文件，注意加&amp;lt;%=BASE_URL=&amp;gt;）
-方法二：将fonts移动到src/assets目录下，在main.js中引用 方法三：引入js中，可以动态切换，可以加载到iframe中</description>
-    </item>
-    
-    <item>
-      <title>H5实现钉钉扫码登录</title>
-      <link>https://ccbyte.github.io/1/dingding-login/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ccbyte.github.io/1/dingding-login/</guid>
-      <description>总体思路 官方有两种实现方式
- 使用钉钉提供的扫码登录页面 支持网站将钉钉登录二维码内嵌到自己页面中  这里我们采用效果比较好的第二种
-配置使用sdk -&amp;gt; DDLogin生成二维码 -&amp;gt; 扫码得到返回的code -&amp;gt; 用code访问一个会302的钉钉地址（iframe -&amp;gt; postMessage -&amp;gt; 来源校验）
-实现细节 配置回调域名 进入钉钉开发者后台
-  进入已创建的应用详情页，在基础信息页面可以查看到应用的SuiteKey/SuiteSecret(第三方企业应用)或AppKey/AppSecret(企业内部应用)。
-  在应用详情页，然后单击钉钉登录与分享，添加应用回调的URL，以http或https开头。
-  添加sdk 在index.html中加入钉钉的Api
-&amp;lt;script src=&amp;#34;https://g.alicdn.com/dingding/dinglogin/0.0.5/ddLogin.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 添加wait页面 &amp;lt;template&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { data(){ return{ } }, mounted(){ this.loadLogin() }, methods:{ async loadLogin(){ const loading = this.$loading({ lock: true, text: &amp;#39;登陆中&amp;#39;, spinner: &amp;#39;el-icon-loading&amp;#39;, background: &amp;#39;rgba(0, 0, 0, 0.7)&amp;#39; }); const { code } = this.</description>
     </item>
     
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on Chao&#39;s Blog</title>
-    <link>https://ccbyte.github.io/tags/hugo/</link>
+    <link>https://undefcc.github.io/tags/hugo/</link>
     <description>Recent content in Hugo on Chao&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 31 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ccbyte.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://undefcc.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo博客/Leaveit主题优化</title>
-      <link>https://ccbyte.github.io/2021/blogs-optimize/</link>
+      <link>https://undefcc.github.io/2021/blogs-optimize/</link>
       <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/blogs-optimize/</guid>
+      <guid>https://undefcc.github.io/2021/blogs-optimize/</guid>
       <description>主题优化 很喜欢hugo的这个主题。
 评论模块 该主题不自带评论模块，需要我们手动添加，挑了一下选了Utterances。
 Utterances使用Github登录评论，Valine可匿名评论但要备案才能用，两个都加再页面上了，根据配置来，配了一个注释掉另一个配置就行。
@@ -22,10 +22,10 @@ Utterances使用Github登录评论，Valine可匿名评论但要备案才能用�
     
     <item>
       <title>使用github的pages功能</title>
-      <link>https://ccbyte.github.io/2021/usage-of-github-pages/</link>
+      <link>https://undefcc.github.io/2021/usage-of-github-pages/</link>
       <pubDate>Fri, 25 Jun 2021 20:13:37 +0800</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/usage-of-github-pages/</guid>
+      <guid>https://undefcc.github.io/2021/usage-of-github-pages/</guid>
       <description>使用github的pages功能 以搭建hugo博客为例
 首先下载git，官网地址
 在github新建仓库，仓库名为：
@@ -38,20 +38,20 @@ hugo -d docs git add git commit git push origin master 在仓库setting中找到
     
     <item>
       <title>Creating a New Theme</title>
-      <link>https://ccbyte.github.io/2014/creating-a-new-theme/</link>
+      <link>https://undefcc.github.io/2014/creating-a-new-theme/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2014/creating-a-new-theme/</guid>
+      <guid>https://undefcc.github.io/2014/creating-a-new-theme/</guid>
       <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
 We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
     </item>
     
     <item>
       <title>Getting Started with Hugo</title>
-      <link>https://ccbyte.github.io/2014/hugoisforlovers/</link>
+      <link>https://undefcc.github.io/2014/hugoisforlovers/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2014/hugoisforlovers/</guid>
+      <guid>https://undefcc.github.io/2014/hugoisforlovers/</guid>
       <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
 Save it somewhere specific as we will be using it in the next step.
 More complete instructions are available at installing hugo

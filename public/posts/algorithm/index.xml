@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>📂算法笔记 on Chao&#39;s Blog</title>
-    <link>https://ccbyte.github.io/posts/algorithm/</link>
+    <link>https://undefcc.github.io/posts/algorithm/</link>
     <description>Recent content in 📂算法笔记 on Chao&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 30 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ccbyte.github.io/posts/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://undefcc.github.io/posts/algorithm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>二分法</title>
-      <link>https://ccbyte.github.io/2020/binary-search/</link>
+      <link>https://undefcc.github.io/2020/binary-search/</link>
       <pubDate>Sun, 30 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2020/binary-search/</guid>
+      <guid>https://undefcc.github.io/2020/binary-search/</guid>
       <description>二分法 二分查找 基于有序序列的查找方法，时间复杂度为O(logn)
 #include&amp;lt;cstdio&amp;gt; int binarySearch(int A[], int left, int right, int x) { int mid; // left和right中点  while (left &amp;lt;= right) { mid = (left + right) / 2; // 取中点  if(A[mid] == x) return mid; else if(A[mid] &amp;gt; x) right = mid - 1; else left = mid + 1; } return -1; // 查找失败返回-1 } int main() { const int n = 10; int A[n] = { 1, 3, 4, 6, 7, 8, 10, 11, 12, 15 }; printf(&amp;#34;%d, %d\n&amp;#34;, binarySearch(A, 0, n-1, 6), binarySearch(A, 0, n-1, 9)); return 0; } 二分法拓展 快速幂 </description>
     </item>
     
     <item>
       <title>递归</title>
-      <link>https://ccbyte.github.io/2020/recursion/</link>
+      <link>https://undefcc.github.io/2020/recursion/</link>
       <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2020/recursion/</guid>
+      <guid>https://undefcc.github.io/2020/recursion/</guid>
       <description>递归 两个重要概念：
  递归边界 递归式（递归调用）  其中的递归式是将原问题分成若干子问题的手段，递归边界则是分解的尽头。（如果没有尽头就会无限分解）
 🌰 使用递归求解n的阶乘 🌰 求Fibonacci数列的第n项 🌰 全排列（Full Permutation） 一个数列所有的排列方式的集合称为全排列。
@@ -33,10 +33,10 @@
     
     <item>
       <title>贪心</title>
-      <link>https://ccbyte.github.io/2020/greedy/</link>
+      <link>https://undefcc.github.io/2020/greedy/</link>
       <pubDate>Tue, 23 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2020/greedy/</guid>
+      <guid>https://undefcc.github.io/2020/greedy/</guid>
       <description>贪心 贪心是只考虑当下的一种局部最优（或较优），来使全局结果达到最优（或较优）的策略。 证明策略是最优（或较优）的：反证法、数学归纳法【证明较复杂，若有不错的思路且无法找到反例，直接实现即可】
 简单贪心 🌰 PAT B1020（卖月饼P118） 📣 只在乎销售额，只要每次选最贵的就能达到总销售额最多（贪心）。
 #include&amp;lt;cstdio&amp;gt;#include&amp;lt;algorithm&amp;gt;using namespace std; struct mooncake { // 结构体整合输入数据  double store; // 库存  double sell; // 总价  double price; // 单价（库存除总价） }cake[1010]; bool cmp(mooncake a, mooncake b) { return a.price &amp;gt; b.price; } int main() { int n; // 月饼种类数  double D; // 月饼需求量  scanf(&amp;#34;%d%lf&amp;#34;, &amp;amp;n, &amp;amp;D); for(int i = 0; i &amp;lt; n; i++) { // 输入库存  scanf(&amp;#34;%lf&amp;#34;, &amp;amp;cake[i].</description>

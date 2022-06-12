@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Terminal on Chao&#39;s Blog</title>
-    <link>https://ccbyte.github.io/tags/terminal/</link>
+    <link>https://undefcc.github.io/tags/terminal/</link>
     <description>Recent content in Terminal on Chao&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 12 Nov 2020 12:03:03 +0000</lastBuildDate><atom:link href="https://ccbyte.github.io/tags/terminal/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Nov 2020 12:03:03 +0000</lastBuildDate><atom:link href="https://undefcc.github.io/tags/terminal/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>vscode中配置默认终端</title>
-      <link>https://ccbyte.github.io/2020/vscode-terminal/</link>
+      <link>https://undefcc.github.io/2020/vscode-terminal/</link>
       <pubDate>Thu, 12 Nov 2020 12:03:03 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2020/vscode-terminal/</guid>
+      <guid>https://undefcc.github.io/2020/vscode-terminal/</guid>
       <description>vscode中配置默认终端 原方法 在设置中找到Terminal › Integrated › Shell: Windows配置项，把它的值改为终端启动路径。
 新方法 配置默认 shell 的新推荐方法
  在 Terminal › Integrated › Profiles: Windows 中创建一个终端配置文件 将其配置文件名称设置为 Terminal › Integrated › Default Profile: Windows 中的默认值。  执行完后，运行终端可能会提示迁移配置，点击迁移就ok了。

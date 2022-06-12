@@ -1,4 +1,4 @@
-baseURL = "https://ccbyte.github.io"
+baseURL = "https://undefcc.github.io"
 languageCode = "en-us"
 title = "Chao's Blog"
 theme = "LeaveIt"
@@ -60,7 +60,7 @@ preserveTaxonomyNames = true
     autoCollapseToc = false   # Auto expand and collapse toc
     
 [params.social]
-    GitHub = "ccbyte"
+    GitHub = "undefcc"
     Twitter = "xxoo"
     Email   = "hexuchao1997@126.com"
     Instagram = "xxoo"
@@ -72,7 +72,7 @@ preserveTaxonomyNames = true
 
 # Utterances.
 [params.utterances]         # utteranc is a comment system based on GitHub issues. see https://utteranc.es
- owner = "ccbyte" # github用户名
+ owner = "undefcc" # github用户名
  repo = "blog_comments"    # 仓库地址The repo to store comments
  issueTerm = "pathname"  
  theme = "github-light"

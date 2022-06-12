@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Miniprogram on Chao&#39;s Blog</title>
-    <link>https://ccbyte.github.io/tags/miniprogram/</link>
+    <link>https://undefcc.github.io/tags/miniprogram/</link>
     <description>Recent content in Miniprogram on Chao&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Nov 2021 12:10:10 +0000</lastBuildDate><atom:link href="https://ccbyte.github.io/tags/miniprogram/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Nov 2021 12:10:10 +0000</lastBuildDate><atom:link href="https://undefcc.github.io/tags/miniprogram/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Taro/小程序中的页面传参</title>
-      <link>https://ccbyte.github.io/2021/taro-delivery-data-between-pages/</link>
+      <link>https://undefcc.github.io/2021/taro-delivery-data-between-pages/</link>
       <pubDate>Fri, 12 Nov 2021 12:10:10 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/taro-delivery-data-between-pages/</guid>
+      <guid>https://undefcc.github.io/2021/taro-delivery-data-between-pages/</guid>
       <description>Taro/小程序中的页面传参 方法一：使用小程序跳转功能提供的传参方式（navigateTo, navigateBack）。
 方法二：使用vuex方法。 方法三：使用第三方封装好的Router组件（vue-taro-router）。
 本篇主要记录下前两种方法。
@@ -26,10 +26,10 @@
     
     <item>
       <title>小程序原生组件层级过高的解决方法</title>
-      <link>https://ccbyte.github.io/2021/miniprogram-comp-z/</link>
+      <link>https://undefcc.github.io/2021/miniprogram-comp-z/</link>
       <pubDate>Thu, 26 Aug 2021 18:27:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/miniprogram-comp-z/</guid>
+      <guid>https://undefcc.github.io/2021/miniprogram-comp-z/</guid>
       <description>原生组件层级过高问题 例如input, textarea, Canvas，如果要在页面上加弹层，且页面上有这些元素的话这些元素会高于其他包括遮罩overlay，因为原生小程序的层级最高。
 解决方法 cover-view 没太大用，能嵌套的内容有限。
 手动控制 在某个需要的地方添加该样式，再弹窗时通过vuex动态控制微信原生组件的状态。
@@ -38,10 +38,10 @@
     
     <item>
       <title>自定义小程序checkbox样式&#39;</title>
-      <link>https://ccbyte.github.io/2021/miniprogram-checkbox-style/</link>
+      <link>https://undefcc.github.io/2021/miniprogram-checkbox-style/</link>
       <pubDate>Mon, 12 Jul 2021 20:08:00 +0000</pubDate>
       
-      <guid>https://ccbyte.github.io/2021/miniprogram-checkbox-style/</guid>
+      <guid>https://undefcc.github.io/2021/miniprogram-checkbox-style/</guid>
       <description>自定义小程序原生checkbox样式 由于项目有设计稿，要精确还原设计稿的话，本来是打算自己写一个，写是写了，大概原理就是
  隐藏原来的checkbox； 做自己的checkbox样式（比如一个圆圈⚪），通过:active选择器触发样式的更改； 内部元素（比如一个对勾✔），通过伪元素来添加；  后来网上找了一下发现，微信的实现貌似也是类似啊，我直接用下面代码覆盖它的就行了。
 /*checkbox 整体大小 */ checkbox { } /*checkbox 选项框大小 */ checkbox .wx-checkbox-input { width: 40rpx; height: 40rpx; border-radius: 50%; border: 3px solid #ccc; } /*checkbox选中后样式 */ checkbox .wx-checkbox-input.wx-checkbox-input-checked { border: 3px solid #8dc21f; background: #8dc21f; } /*checkbox选中后图标样式 */ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before { width: 28rpx; height: 28rpx; line-height: 28rpx; text-align: center; font-size: 26rpx; color: #fff; background: transparent; transform: translate(-50%, -50%) scale(1); -webkit-transform: translate(-50%, -50%) scale(1); } </description>
